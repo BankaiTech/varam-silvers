@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Varam Silvers - Children's Silver Jewelry E-commerce
+
+A modern and beautiful e-commerce website built with Next.js, Bootstrap, and Framer Motion for selling children's silver jewelry.
+
+## Features
+
+- 🛍️ Modern and responsive design
+- 🎨 Beautiful animations and transitions
+- 🔐 User authentication
+- 🛒 Shopping cart functionality
+- 💳 Secure payment integration
+- 📱 Mobile-friendly interface
+- 🔍 Product filtering and sorting
+- 📦 Order tracking
+- 💝 Wishlist functionality
+
+## Tech Stack
+
+- Next.js 14
+- TypeScript
+- Bootstrap 5
+- Framer Motion
+- React Icons
+- NextAuth.js
+- Stripe Payment Integration
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18.x or later
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/varam-silvers.git
+cd varam-silvers
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Create a `.env.local` file in the root directory and add the following environment variables:
+```env
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+STRIPE_SECRET_KEY=your_stripe_secret_key
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_nextauth_secret
+```
+
+4. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+varam-silvers/
+├── app/
+│   ├── (auth)/
+│   │   ├── login/
+│   │   └── register/
+│   ├── products/
+│   │   ├── [id]/
+│   │   └── page.tsx
+│   ├── cart/
+│   │   └── page.tsx
+│   ├── checkout/
+│   │   └── page.tsx
+│   └── page.tsx
+├── components/
+│   ├── Navbar.tsx
+│   ├── ProductCard.tsx
+│   └── CartItem.tsx
+├── lib/
+│   ├── auth.ts
+│   └── stripe.ts
+├── public/
+│   └── images/
+└── styles/
+    └── globals.css
+```
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Deploy on Vercel
+## Acknowledgments
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js](https://nextjs.org/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Stripe](https://stripe.com/)
