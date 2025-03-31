@@ -37,15 +37,26 @@ export default function ClientLayout({
     // Initialize tooltips after component mounts
     const initTooltips = () => {
       // Clean up existing tooltips
-      tooltips.forEach(tooltip => tooltip.dispose());
+      tooltips.forEach(tooltip => {
+        try {
+          tooltip.dispose();
+        } catch (error) {
+          // Ignore errors when disposing tooltips
+        }
+      });
       setTooltips([]);
 
       // Initialize new tooltips
       const tooltipElements = document.querySelectorAll('[data-bs-toggle="tooltip"]');
       const newTooltips = Array.from(tooltipElements).map(element => {
-        const Tooltip = require('bootstrap').Tooltip;
-        return new Tooltip(element);
-      });
+        try {
+          const Tooltip = require('bootstrap').Tooltip;
+          return new Tooltip(element);
+        } catch (error) {
+          console.error('Error initializing tooltip:', error);
+          return null;
+        }
+      }).filter(Boolean); // Remove any null tooltips
       setTooltips(newTooltips);
     };
 
@@ -54,7 +65,13 @@ export default function ClientLayout({
 
     return () => {
       clearTimeout(timer);
-      tooltips.forEach(tooltip => tooltip.dispose());
+      tooltips.forEach(tooltip => {
+        try {
+          tooltip.dispose();
+        } catch (error) {
+          // Ignore errors when disposing tooltips
+        }
+      });
     };
   }, [pathname]);
 
