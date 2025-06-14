@@ -5,8 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaShoppingCart } from 'react-icons/fa';
-import { useCurrency } from '@/context/CurrencyContext';
-import Navbar from '@/components/Navbar';
+import { useCurrency } from '../context/CurrencyContext';
 
 const heroImages = [
   {
@@ -76,8 +75,6 @@ export default function HomePage() {
 
   return (
     <main>
-      <Navbar />
-      
       {/* Hero Section with Carousel */}
       <section className="hero-section position-relative">
         {heroImages.map((slide, index) => (
@@ -95,35 +92,13 @@ export default function HomePage() {
               className="object-fit-cover"
               priority={index === 0}
             />
-            <div className="hero-overlay position-absolute w-100 h-100">
-              <div className="container h-100 d-flex align-items-center">
-                <div className="hero-content text-white">
-                  <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="display-4 fw-bold mb-3"
-                  >
-                    {slide.title}
-                  </motion.h1>
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                    className="lead mb-4"
-                  >
-                    {slide.subtitle}
-                  </motion.p>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                  >
-                    <Link href={slide.link} className="btn btn-light btn-lg">
-                      {slide.cta}
-                    </Link>
-                  </motion.div>
-                </div>
+            <div className="container h-100 d-flex align-items-center justify-content-center">
+              <div className="hero-content">
+                <h1 className="display-3 fw-bold mb-3 text-white">{slide.title}</h1>
+                <p className="lead mb-4 text-white-50">{slide.subtitle}</p>
+                <Link href={slide.link} className="btn btn-primary btn-lg">
+                  {slide.cta}
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -153,10 +128,10 @@ export default function HomePage() {
                     className="card-img-top"
                   />
                   <div className="card-body">
-                    <h3 className="h5 card-title">{product.name}</h3>
-                    <p className="card-text text-muted">{product.description}</p>
+                    <h3 className="card-title">{product.name}</h3>
+                    <p className="card-text">{product.description}</p>
                     <div className="mb-3">
-                      <span className="badge bg-light text-dark me-2">
+                      <span className="badge me-2">
                         Wastage: {product.wastagePercentage}%
                       </span>
                     </div>
