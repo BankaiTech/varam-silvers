@@ -45,7 +45,7 @@ export default function Navbar() {
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
+            data-bs-target="#navbarNav" 
             aria-controls="navbarNav"
             aria-expanded={isMenuOpen ? "true" : "false"}
             aria-label="Toggle navigation"
