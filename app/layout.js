@@ -4,6 +4,7 @@ import { CurrencyProvider } from '../context/CurrencyContext';
 import { AuthProvider } from '../context/AuthContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import PageLoader from '../components/PageLoader';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <AuthProvider>
           <CurrencyProvider>
+            <PageLoader />
             <Navbar />
             <main>{children}</main>
             <Footer />

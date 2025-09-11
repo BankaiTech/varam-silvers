@@ -2,16 +2,19 @@ import { Suspense } from 'react';
 import ProductDetail from './ProductDetail';
 
 export async function generateMetadata({ params }) {
+  const { id } = await params;
   return {
-    title: `Product ${params.id}`,
+    title: `Product ${id}`,
     description: 'Product details page',
   };
 }
 
 export default async function ProductDetailPage({ params }) {
+  const { id } = await params;
+  
   // In a real app, you would fetch this data from an API or database
   const product = {
-    id: parseInt(params.id),
+    id: parseInt(id),
     name: 'Silver Anklet',
     priceINR: 2499,
     priceUSD: 29.99,

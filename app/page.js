@@ -154,6 +154,43 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Additional content for testing sticky header */}
+      <section className="py-5 bg-light">
+        <div className="container">
+          <h2 className="text-center mb-5">About Our Silver Collection</h2>
+          <div className="row">
+            <div className="col-md-6">
+              <h3>Premium Quality</h3>
+              <p>Our silver jewelry is crafted from 925 sterling silver, ensuring durability and beauty that lasts a lifetime.</p>
+            </div>
+            <div className="col-md-6">
+              <h3>Handcrafted with Love</h3>
+              <p>Each piece is carefully handcrafted by skilled artisans who take pride in creating beautiful jewelry for little ones.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-5">
+        <div className="container">
+          <h2 className="text-center mb-5">Why Choose Varam Silvers?</h2>
+          <div className="row g-4">
+            <div className="col-md-4 text-center">
+              <h4>Hypoallergenic</h4>
+              <p>Safe for sensitive skin, perfect for children.</p>
+            </div>
+            <div className="col-md-4 text-center">
+              <h4>Adjustable Sizes</h4>
+              <p>Designed to grow with your child.</p>
+            </div>
+            <div className="col-md-4 text-center">
+              <h4>Beautiful Designs</h4>
+              <p>Elegant and timeless pieces for every occasion.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 } 
