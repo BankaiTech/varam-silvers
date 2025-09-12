@@ -10,105 +10,258 @@ import { useCurrency } from '../../context/CurrencyContext';
 const products = [
   {
     id: 1,
-    name: 'Silver Anklet',
+    name: 'Princess Silver Anklet',
     priceINR: 2499,
     priceUSD: 29.99,
     image: '/images/slide1.jpg',
-    description: 'Beautiful silver anklet for little girls',
+    description: 'Delicate sterling silver anklet adorned with tiny charms, perfect for your little princess',
     wastagePercentage: 8,
+    category: 'Anklets',
+    material: '925 Sterling Silver',
+    ageRange: '2-12 years',
+    inStock: true,
+    isNew: true,
+    rating: 4.8
   },
   {
     id: 2,
-    name: 'Silver Bracelet',
+    name: 'Elegant Silver Bracelet',
     priceINR: 1999,
     priceUSD: 24.99,
     image: '/images/slide2.jpg',
-    description: 'Elegant silver bracelet for children',
+    description: 'Adjustable silver bracelet with intricate detailing, designed to grow with your child',
     wastagePercentage: 10,
+    category: 'Bracelets',
+    material: '925 Sterling Silver',
+    ageRange: '3-14 years',
+    inStock: true,
+    isNew: false,
+    rating: 4.9
   },
   {
     id: 3,
-    name: 'Silver Necklace',
+    name: 'Dreamy Silver Necklace',
     priceINR: 3499,
     priceUSD: 42.99,
     image: '/images/slide3.jpg',
-    description: 'Delicate silver necklace for kids',
+    description: 'Exquisite silver necklace featuring a delicate pendant, creating magical moments',
     wastagePercentage: 12,
+    category: 'Necklaces',
+    material: '925 Sterling Silver',
+    ageRange: '4-16 years',
+    inStock: true,
+    isNew: true,
+    rating: 4.7
+  },
+  {
+    id: 4,
+    name: 'Royal Silver Ring',
+    priceINR: 1799,
+    priceUSD: 21.99,
+    image: '/images/slide1.jpg',
+    description: 'Beautiful silver ring with adjustable sizing, perfect for little fingers',
+    wastagePercentage: 6,
+    category: 'Rings',
+    material: '925 Sterling Silver',
+    ageRange: '3-12 years',
+    inStock: false,
+    isNew: false,
+    rating: 4.6
+  },
+  {
+    id: 5,
+    name: 'Fairy Silver Earrings',
+    priceINR: 1299,
+    priceUSD: 15.99,
+    image: '/images/slide2.jpg',
+    description: 'Hypoallergenic silver earrings designed for sensitive skin',
+    wastagePercentage: 5,
+    category: 'Earrings',
+    material: '925 Sterling Silver',
+    ageRange: '2-10 years',
+    inStock: true,
+    isNew: true,
+    rating: 4.9
+  },
+  {
+    id: 6,
+    name: 'Angel Silver Set',
+    priceINR: 4999,
+    priceUSD: 59.99,
+    image: '/images/slide3.jpg',
+    description: 'Complete jewelry set including necklace, bracelet, and earrings',
+    wastagePercentage: 15,
+    category: 'Sets',
+    material: '925 Sterling Silver',
+    ageRange: '4-14 years',
+    inStock: true,
+    isNew: false,
+    rating: 5.0
   },
 ];
 
 export default function ProductsPage() {
-  const { showUSD, formatPrice } = useCurrency();
+  const { showUSD } = useCurrency();
   const [sortBy, setSortBy] = useState('default');
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
-  const sortedProducts = [...products].sort((a, b) => {
+  const categories = ['all', 'Anklets', 'Bracelets', 'Necklaces', 'Rings', 'Earrings', 'Sets'];
+
+  const filteredProducts = products.filter(product => 
+    selectedCategory === 'all' || product.category === selectedCategory
+  );
+
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
     if (sortBy === 'price-asc') {
       return showUSD ? a.priceUSD - b.priceUSD : a.priceINR - b.priceINR;
     }
     if (sortBy === 'price-desc') {
       return showUSD ? b.priceUSD - a.priceUSD : b.priceINR - a.priceINR;
     }
+    if (sortBy === 'rating') {
+      return b.rating - a.rating;
+    }
+    if (sortBy === 'new') {
+      return b.isNew - a.isNew;
+    }
     return 0;
   });
 
   return (
     <main>
-      <div className="container py-4">
-        <div className="d-flex justify-content-between align-items-center mb-4">
-          <h1 className="h2 mb-0">Our Products</h1>
-          <select
-            className="form-select py-2 px-3"
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value)}
-            style={{ width: '200px', cursor: 'pointer' }}
-          >
-            <option value="default">Sort by</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-          </select>
+      {/* Hero Section */}
+      <section className="products-hero">
+        <div className="products-hero-container">
+          <div className="products-hero-content">
+            <h1 className="products-hero-title">Our Exquisite Collection</h1>
+            <p className="products-hero-subtitle">Discover handcrafted silver jewelry that celebrates the magic of childhood</p>
+          </div>
         </div>
+      </section>
 
-        <div className="row g-4">
-          {sortedProducts.map((product) => (
-            <motion.div
-              key={product.id}
-              className="col-md-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="card h-100">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={400}
-                  height={400}
-                  className="card-img-top"
-                />
-                <div className="card-body">
-                  <h3 className="card-title">{product.name}</h3>
-                  <p className="card-text">{product.description}</p>
-                  <div className="mb-3">
-                    <span className="badge me-2">
-                      Wastage: {product.wastagePercentage}%
+      <div className="products-page">
+        <div className="products-container">
+          {/* Filters and Sort */}
+          <div className="products-filters">
+            <div className="filters-section">
+              <div className="category-filters">
+                <span className="filter-label">Filter by Category:</span>
+                <div className="category-buttons">
+                  {categories.map(category => (
+                    <button
+                      key={category}
+                      className={`category-btn ${selectedCategory === category ? 'active' : ''}`}
+                      onClick={() => setSelectedCategory(category)}
+                    >
+                      {category === 'all' ? 'All Products' : category}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="sort-section">
+                <select
+                  className="sort-select"
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                >
+                  <option value="default">Sort by</option>
+                  <option value="new">Newest First</option>
+                  <option value="rating">Highest Rated</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div className="products-grid">
+            {sortedProducts.map((product) => (
+              <motion.div
+                key={product.id}
+                className="product-card"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="product-image-container">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={400}
+                    height={400}
+                    className="product-image"
+                  />
+                  {product.isNew && (
+                    <span className="product-badge new-badge">
+                      New
                     </span>
+                  )}
+                  {!product.inStock && (
+                    <span className="product-badge out-of-stock-badge">
+                      Out of Stock
+                    </span>
+                  )}
+                </div>
+                <div className="product-content">
+                  <div className="product-category">
+                    <span className="category-badge">{product.category}</span>
                   </div>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <span className="h5 mb-0">
-                      {formatPrice(product.priceINR, product.priceUSD)}
-                    </span>
+                  <h3 className="product-title">{product.name}</h3>
+                  <p className="product-description">{product.description}</p>
+                  
+                  {/* Rating */}
+                  <div className="product-rating">
+                    <div className="rating-stars">
+                      {[...Array(5)].map((_, i) => (
+                        <i
+                          key={i}
+                          className={`fas fa-star ${i < Math.floor(product.rating) ? 'star-filled' : 'star-empty'}`}
+                        />
+                      ))}
+                    </div>
+                    <span className="rating-text">({product.rating})</span>
+                  </div>
+                  
+                  <span className="wastage-info">Including {product.wastagePercentage}% wastage</span>
+
+                  <div className="product-details">
+                    <div className="detail-item">
+                      <span className="detail-label">Material</span>
+                      <span className="detail-value">{product.material}</span>
+                    </div>
+                    <div className="detail-item">
+                      <span className="detail-label">Age Range</span>
+                      <span className="detail-value">{product.ageRange}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="product-footer">
+                    <div className="price-section">
+                      <div className="product-price">
+                        <span className="original-price">₹{Math.round(product.priceINR * 1.2).toLocaleString('en-IN')}</span>
+                        <span className="current-price">₹{product.priceINR.toLocaleString('en-IN')}</span>
+                      </div>
+                      <span className="gst-info">Including GST</span>
+                    </div>
                     <Link
                       href={`/products/${product.id}`}
-                      className="btn btn-primary"
+                      className={`view-details-btn ${!product.inStock ? 'disabled' : ''}`}
                     >
-                      <FaShoppingCart className="me-2" />
-                      View Details
+                      <FaShoppingCart />
+                      {product.inStock ? 'View Details' : 'Out of Stock'}
                     </Link>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
+
+          {sortedProducts.length === 0 && (
+            <div className="no-products">
+              <h3 className="no-products-title">No products found</h3>
+              <p className="no-products-subtitle">Try adjusting your filters to see more products.</p>
+            </div>
+          )}
         </div>
       </div>
     </main>

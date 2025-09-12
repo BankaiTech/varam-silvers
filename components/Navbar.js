@@ -2,32 +2,18 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { FaShoppingCart, FaUser, FaTimes } from 'react-icons/fa';
+import { useCurrency } from '../context/CurrencyContext';
+import { FaShoppingCart, FaUser, FaSearch, FaHeart, FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Navbar() {
-  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Detect if on home page
-  const isHome = pathname === '/';
+  const { getCartCount, getWishlistCount } = useCurrency();
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 50;
+      const scrolled = window.scrollY > 20;
       setIsScrolled(scrolled);
-      
-      // Add/remove scrolled class to navbar
-      const navbar = document.querySelector('.navbar');
-      if (navbar) {
-        if (scrolled) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-      }
     };
     
     window.addEventListener('scroll', handleScroll);
@@ -36,75 +22,118 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top py-3" style={{zIndex: 1030}}>
-        <div className="container">
-          <Link href="/" className="navbar-brand fw-bold fs-3 text-gradient">
-            Varam Silvers
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" 
-            aria-controls="navbarNav"
-            aria-expanded={isMenuOpen ? "true" : "false"}
-            aria-label="Toggle navigation"
+      {/* Modern Silver Navbar */}
+      <nav className={`silver-navbar ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="nav-container">
+          {/* Brand Logo */}
+          <div className="nav-brand">
+            <Link href="/" className="brand-link">
+              <span className="brand-text">Varam Silvers</span>
+              <span className="brand-accent">✨</span>
+            </Link>
+          </div>
+          
+          {/* Desktop Navigation */}
+          <div className="nav-links">
+            <Link href="/products" className="nav-link">
+              <span>Collections</span>
+            </Link>
+            <Link href="#about" className="nav-link">
+              <span>About</span>
+            </Link>
+            <Link href="#contact" className="nav-link">
+              <span>Contact</span>
+            </Link>
+          </div>
+
+          {/* Search Bar */}
+          <div className="nav-search">
+            <div className="search-wrapper">
+              <FaSearch className="search-icon" />
+              <input 
+                type="text" 
+                placeholder="Search silver jewelry..." 
+                className="search-input"
+              />
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="nav-actions">
+            <Link href="/wishlist" className="action-btn wishlist-btn">
+              <FaHeart />
+              <span className="badge">{getWishlistCount()}</span>
+            </Link>
+            <Link href="/cart" className="action-btn cart-btn">
+              <FaShoppingCart />
+              <span className="badge">{getCartCount()}</span>
+            </Link>
+            <Link href="/login" className="login-btn">
+              <FaUser />
+              <span>Login</span>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="mobile-toggle"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
-            <span className="navbar-toggler-icon"></span>
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
-          <div className={`collapse navbar-collapse${isMenuOpen ? ' show' : ''}`} id="navbarNav">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-3">
-              <li className="nav-item">
-                <Link href="/products" className="nav-link">
-                  Products
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="#JavaScript:void(0)" className="nav-link">
-                  About Us
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="#JavaScript:void(0)" className="nav-link">
-                  Contact
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/cart" className="btn btn-primary ms-lg-3">
-                  <FaShoppingCart className="me-2" /> Cart
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/login" className="btn btn-outline-primary ms-lg-2">
-                  <FaUser className="me-2" /> Login
-                </Link>
-              </li>
-            </ul>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+          <div className="mobile-content">
+            {/* Mobile Search */}
+            <div className="mobile-search">
+              <div className="mobile-search-wrapper">
+                <FaSearch className="mobile-search-icon" />
+                <input 
+                  type="text" 
+                  placeholder="Search silver jewelry..." 
+                  className="mobile-search-input"
+                />
+              </div>
+            </div>
+            
+            {/* Mobile Navigation */}
+            <div className="mobile-nav-links">
+              <Link href="/products" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+                Collections
+              </Link>
+              <Link href="#about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+                About Us
+              </Link>
+              <Link href="#contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+                Contact
+              </Link>
+            </div>
+
+            {/* Mobile Actions */}
+            <div className="mobile-actions">
+              <Link href="/wishlist" className="mobile-action-btn" onClick={() => setIsMenuOpen(false)}>
+                <FaHeart />
+                <span>Wishlist ({getWishlistCount()})</span>
+              </Link>
+              <Link href="/cart" className="mobile-action-btn" onClick={() => setIsMenuOpen(false)}>
+                <FaShoppingCart />
+                <span>Cart ({getCartCount()})</span>
+              </Link>
+              <Link href="/login" className="mobile-login-btn" onClick={() => setIsMenuOpen(false)}>
+                <FaUser />
+                <span>Login</span>
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
 
-      {isSearchOpen && (
-        <div className="search-overlay">
-          <div className="container">
-            <div className="search-container">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Search for silver jewelry..."
-                autoFocus
-              />
-              <button
-                className="btn btn-link"
-                onClick={() => setIsSearchOpen(false)}
-                aria-label="Close search"
-              >
-                <FaTimes className={`icon${isHome && !isScrolled ? ' icon-hero' : ''}`} />
-              </button>
-            </div>
-          </div>
-        </div>
+      {/* Mobile Overlay */}
+      {isMenuOpen && (
+        <div className="mobile-overlay" onClick={() => setIsMenuOpen(false)}></div>
       )}
     </>
   );

@@ -1,263 +1,329 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
+import { FaCreditCard, FaTruck, FaShieldAlt } from 'react-icons/fa';
 import { useCurrency } from '../../context/CurrencyContext';
-import Navbar from '../../components/Navbar';
-import { FaArrowLeft, FaLock, FaCreditCard, FaTruck, FaUser } from 'react-icons/fa';
 
 export default function CheckoutPage() {
-  const router = useRouter();
-  const { cart, getCartTotal, formatPrice, clearCart } = useCurrency();
+  const { formatPrice, getCartTotal } = useCurrency();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
+    phone: '',
     address: '',
     city: '',
     state: '',
     zipCode: '',
+    country: 'India',
+    paymentMethod: 'card',
     cardNumber: '',
     expiryDate: '',
     cvv: '',
+    cardName: '',
+    saveCard: false
   });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? checked : value
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically process the payment and order
-    clearCart();
-    router.push('/thank-you');
+    setIsProcessing(true);
+    
+    // Simulate payment processing
+    setTimeout(() => {
+      setIsProcessing(false);
+      // Handle checkout logic here
+    }, 3000);
   };
 
-  if (cart.length === 0) {
-    return (
-      <div className="container py-5">
-        <Navbar />
-        <div className="text-center py-5">
-          <h2>Your cart is empty</h2>
-          <p className="text-muted">Add some items to your cart to proceed with checkout</p>
-          <button
-            className="btn btn-primary mt-3"
-            onClick={() => router.push('/products')}
-          >
-            Browse Products
-          </button>
-        </div>
-      </div>
-    );
-  }
+  const subtotal = getCartTotal();
+  const shipping = 100; // Fixed shipping cost
+  const tax = subtotal * 0.18; // 18% GST
+  const total = subtotal + shipping + tax;
 
   return (
-    <div className="container py-5">
-      <Navbar />
-      <button
-        className="btn btn-link text-decoration-none mb-4"
-        onClick={() => router.back()}
-      >
-        <FaArrowLeft className="me-2" />
-        Back to Cart
-      </button>
+    <div className="checkout-page">
+      <div className="checkout-container">
+        <div className="checkout-header">
+          <h1 className="checkout-title">Checkout</h1>
+          <p className="checkout-subtitle">Complete your order securely</p>
+        </div>
 
-      <div className="row">
-        <div className="col-md-8">
-          <div className="card mb-4">
-            <div className="card-body">
-              <h5 className="card-title mb-4">
-                <FaUser className="me-2" />
-                Contact Information
-              </h5>
-              <form onSubmit={handleSubmit}>
-                <div className="row">
-                  <div className="col-md-6 mb-3">
-                    <label htmlFor="firstName" className="form-label">
-                      First Name
-                    </label>
+        <div className="checkout-content">
+          <div className="checkout-form-section">
+            <form onSubmit={handleSubmit} className="checkout-form">
+              {/* Shipping Information */}
+              <div className="form-section">
+                <h2 className="section-title">
+                  <FaTruck />
+                  Shipping Information
+                </h2>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="firstName" className="form-label">First Name</label>
                     <input
                       type="text"
-                      className="form-control"
                       id="firstName"
                       name="firstName"
                       value={formData.firstName}
-                      onChange={handleInputChange}
+                      onChange={handleChange}
+                      className="form-input"
                       required
                     />
                   </div>
-                  <div className="col-md-6 mb-3">
-                    <label htmlFor="lastName" className="form-label">
-                      Last Name
-                    </label>
+                  <div className="form-group">
+                    <label htmlFor="lastName" className="form-label">Last Name</label>
                     <input
                       type="text"
-                      className="form-control"
                       id="lastName"
                       name="lastName"
                       value={formData.lastName}
-                      onChange={handleInputChange}
+                      onChange={handleChange}
+                      className="form-input"
                       required
                     />
                   </div>
                 </div>
-                <div className="mb-3">
-                  <label htmlFor="email" className="form-label">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                  />
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="email" className="form-label">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="phone" className="form-label">Phone</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="form-input"
+                      required
+                    />
+                  </div>
                 </div>
 
-                <h5 className="card-title mb-4 mt-4">
-                  <FaTruck className="me-2" />
-                  Shipping Address
-                </h5>
-                <div className="mb-3">
-                  <label htmlFor="address" className="form-label">
-                    Address
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
+                <div className="form-group">
+                  <label htmlFor="address" className="form-label">Address</label>
+                  <textarea
                     id="address"
                     name="address"
                     value={formData.address}
-                    onChange={handleInputChange}
+                    onChange={handleChange}
+                    className="form-textarea"
+                    rows="3"
                     required
                   />
                 </div>
-                <div className="row">
-                  <div className="col-md-6 mb-3">
-                    <label htmlFor="city" className="form-label">
-                      City
-                    </label>
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="city" className="form-label">City</label>
                     <input
                       type="text"
-                      className="form-control"
                       id="city"
                       name="city"
                       value={formData.city}
-                      onChange={handleInputChange}
+                      onChange={handleChange}
+                      className="form-input"
                       required
                     />
                   </div>
-                  <div className="col-md-3 mb-3">
-                    <label htmlFor="state" className="form-label">
-                      State
-                    </label>
+                  <div className="form-group">
+                    <label htmlFor="state" className="form-label">State</label>
                     <input
                       type="text"
-                      className="form-control"
                       id="state"
                       name="state"
                       value={formData.state}
-                      onChange={handleInputChange}
+                      onChange={handleChange}
+                      className="form-input"
                       required
                     />
                   </div>
-                  <div className="col-md-3 mb-3">
-                    <label htmlFor="zipCode" className="form-label">
-                      ZIP Code
-                    </label>
+                  <div className="form-group">
+                    <label htmlFor="zipCode" className="form-label">ZIP Code</label>
                     <input
                       type="text"
-                      className="form-control"
                       id="zipCode"
                       name="zipCode"
                       value={formData.zipCode}
-                      onChange={handleInputChange}
+                      onChange={handleChange}
+                      className="form-input"
                       required
                     />
                   </div>
                 </div>
+              </div>
 
-                <h5 className="card-title mb-4 mt-4">
-                  <FaCreditCard className="me-2" />
+              {/* Payment Information */}
+              <div className="form-section">
+                <h2 className="section-title">
+                  <FaCreditCard />
                   Payment Information
-                </h5>
-                <div className="mb-3">
-                  <label htmlFor="cardNumber" className="form-label">
-                    Card Number
+                </h2>
+                
+                <div className="payment-methods">
+                  <label className="payment-method">
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      value="card"
+                      checked={formData.paymentMethod === 'card'}
+                      onChange={handleChange}
+                    />
+                    <span className="payment-method-label">Credit/Debit Card</span>
                   </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="cardNumber"
-                    name="cardNumber"
-                    value={formData.cardNumber}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                <div className="row">
-                  <div className="col-md-6 mb-3">
-                    <label htmlFor="expiryDate" className="form-label">
-                      Expiry Date
-                    </label>
+                  <label className="payment-method">
                     <input
-                      type="text"
-                      className="form-control"
-                      id="expiryDate"
-                      name="expiryDate"
-                      placeholder="MM/YY"
-                      value={formData.expiryDate}
-                      onChange={handleInputChange}
-                      required
+                      type="radio"
+                      name="paymentMethod"
+                      value="upi"
+                      checked={formData.paymentMethod === 'upi'}
+                      onChange={handleChange}
                     />
-                  </div>
-                  <div className="col-md-6 mb-3">
-                    <label htmlFor="cvv" className="form-label">
-                      CVV
-                    </label>
+                    <span className="payment-method-label">UPI</span>
+                  </label>
+                  <label className="payment-method">
                     <input
-                      type="text"
-                      className="form-control"
-                      id="cvv"
-                      name="cvv"
-                      value={formData.cvv}
-                      onChange={handleInputChange}
-                      required
+                      type="radio"
+                      name="paymentMethod"
+                      value="cod"
+                      checked={formData.paymentMethod === 'cod'}
+                      onChange={handleChange}
                     />
-                  </div>
+                    <span className="payment-method-label">Cash on Delivery</span>
+                  </label>
                 </div>
 
-                <button type="submit" className="btn btn-primary w-100 mt-4">
-                  <FaLock className="me-2" />
-                  Place Order
-                </button>
-              </form>
-            </div>
+                {formData.paymentMethod === 'card' && (
+                  <div className="card-details">
+                    <div className="form-group">
+                      <label htmlFor="cardNumber" className="form-label">Card Number</label>
+                      <input
+                        type="text"
+                        id="cardNumber"
+                        name="cardNumber"
+                        value={formData.cardNumber}
+                        onChange={handleChange}
+                        className="form-input"
+                        placeholder="1234 5678 9012 3456"
+                        required
+                      />
+                    </div>
+
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label htmlFor="expiryDate" className="form-label">Expiry Date</label>
+                        <input
+                          type="text"
+                          id="expiryDate"
+                          name="expiryDate"
+                          value={formData.expiryDate}
+                          onChange={handleChange}
+                          className="form-input"
+                          placeholder="MM/YY"
+                          required
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="cvv" className="form-label">CVV</label>
+                        <input
+                          type="text"
+                          id="cvv"
+                          name="cvv"
+                          value={formData.cvv}
+                          onChange={handleChange}
+                          className="form-input"
+                          placeholder="123"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-group">
+                      <label htmlFor="cardName" className="form-label">Name on Card</label>
+                      <input
+                        type="text"
+                        id="cardName"
+                        name="cardName"
+                        value={formData.cardName}
+                        onChange={handleChange}
+                        className="form-input"
+                        required
+                      />
+                    </div>
+
+                    <label className="checkbox-container">
+                      <input
+                        type="checkbox"
+                        name="saveCard"
+                        checked={formData.saveCard}
+                        onChange={handleChange}
+                      />
+                      <span className="checkmark"></span>
+                      Save card for future purchases
+                    </label>
+                  </div>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                className={`checkout-btn ${isProcessing ? 'processing' : ''}`}
+                disabled={isProcessing}
+              >
+                {isProcessing ? 'Processing...' : 'Complete Order'}
+              </button>
+            </form>
           </div>
-        </div>
 
-        <div className="col-md-4">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">Order Summary</h5>
-              <div className="d-flex justify-content-between mb-3">
+          <div className="checkout-summary">
+            <div className="summary-card">
+              <h3 className="summary-title">Order Summary</h3>
+              
+              <div className="summary-row">
                 <span>Subtotal</span>
-                <span>{formatPrice(getCartTotal(), getCartTotal() / 83)}</span>
+                <span>{formatPrice(subtotal, subtotal / 83)}</span>
               </div>
-              <div className="d-flex justify-content-between mb-3">
+              
+              <div className="summary-row">
                 <span>Shipping</span>
-                <span>Free</span>
+                <span>{formatPrice(shipping, shipping / 83)}</span>
               </div>
-              <hr />
-              <div className="d-flex justify-content-between mb-3">
-                <strong>Total</strong>
-                <strong>{formatPrice(getCartTotal(), getCartTotal() / 83)}</strong>
+              
+              <div className="summary-row">
+                <span>Tax (GST 18%)</span>
+                <span>{formatPrice(tax, tax / 83)}</span>
+              </div>
+              
+              <div className="summary-total">
+                <span>Total</span>
+                <span>{formatPrice(total, total / 83)}</span>
+              </div>
+
+              <div className="security-badge">
+                <FaShieldAlt />
+                <span>Secure checkout with SSL encryption</span>
               </div>
             </div>
           </div>
@@ -265,4 +331,4 @@ export default function CheckoutPage() {
       </div>
     </div>
   );
-} 
+}

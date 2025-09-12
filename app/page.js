@@ -5,28 +5,27 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaShoppingCart } from 'react-icons/fa';
-import { useCurrency } from '../context/CurrencyContext';
 
 const heroImages = [
   {
     src: '/images/homeslide1.png',
-    title: 'Beautiful Silver Jewelry',
-    subtitle: 'Elegant designs for little ones',
-    cta: 'Shop Now',
-    link: '/products'
-  },
-  {
-    src: '/images/homeslide2.jpg',
-    title: 'Handcrafted with Love',
-    subtitle: 'Each piece tells a story',
+    title: 'Timeless Elegance for Little Princesses',
+    subtitle: 'Discover our exquisite collection of handcrafted silver jewelry, where every piece is designed to celebrate the precious moments of childhood',
     cta: 'Explore Collection',
     link: '/products'
   },
   {
+    src: '/images/homeslide2.jpg',
+    title: 'Crafted with Love & Precision',
+    subtitle: 'Each piece tells a story of tradition, quality, and the pure joy of childhood. Made with 925 sterling silver and endless care',
+    cta: 'Shop Now',
+    link: '/products'
+  },
+  {
     src: '/images/homeslide3.jpg',
-    title: 'Pure Silver Quality',
-    subtitle: '925 Sterling Silver',
-    cta: 'View Products',
+    title: 'Where Dreams Meet Silver',
+    subtitle: 'Premium quality jewelry that grows with your child, creating memories that will last a lifetime',
+    cta: 'View Collection',
     link: '/products'
   }
 ];
@@ -34,36 +33,44 @@ const heroImages = [
 const featuredProducts = [
   {
     id: 1,
-    name: 'Silver Anklet',
+    name: 'Princess Silver Anklet',
     priceINR: 2499,
     priceUSD: 29.99,
     image: '/images/slide1.jpg',
-    description: 'Beautiful silver anklet for little girls',
+    description: 'Delicate sterling silver anklet adorned with tiny charms, perfect for your little princess',
     wastagePercentage: 8,
+    category: 'Anklets',
+    material: '925 Sterling Silver',
+    ageRange: '2-12 years'
   },
   {
     id: 2,
-    name: 'Silver Bracelet',
+    name: 'Elegant Silver Bracelet',
     priceINR: 1999,
     priceUSD: 24.99,
     image: '/images/slide2.jpg',
-    description: 'Elegant silver bracelet for children',
+    description: 'Adjustable silver bracelet with intricate detailing, designed to grow with your child',
     wastagePercentage: 10,
+    category: 'Bracelets',
+    material: '925 Sterling Silver',
+    ageRange: '3-14 years'
   },
   {
     id: 3,
-    name: 'Silver Necklace',
+    name: 'Dreamy Silver Necklace',
     priceINR: 3499,
     priceUSD: 42.99,
     image: '/images/slide3.jpg',
-    description: 'Delicate silver necklace for kids',
+    description: 'Exquisite silver necklace featuring a delicate pendant, creating magical moments',
     wastagePercentage: 12,
+    category: 'Necklaces',
+    material: '925 Sterling Silver',
+    ageRange: '4-16 years'
   },
 ];
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const { formatPrice } = useCurrency();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -76,11 +83,11 @@ export default function HomePage() {
   return (
     <main>
       {/* Hero Section with Carousel */}
-      <section className="hero-section position-relative">
+      <section className="hero-section">
         {heroImages.map((slide, index) => (
           <motion.div
             key={index}
-            className="hero-slide position-absolute w-100 h-100"
+            className={`hero-slide ${currentSlide === index ? 'active' : ''}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: currentSlide === index ? 1 : 0 }}
             transition={{ duration: 0.5 }}
@@ -89,16 +96,18 @@ export default function HomePage() {
               src={slide.src}
               alt={slide.title}
               fill
-              className="object-fit-cover"
+              className="hero-image"
               priority={index === 0}
             />
-            <div className="container h-100 d-flex align-items-center justify-content-center">
-              <div className="hero-content">
-                <h1 className="display-3 fw-bold mb-3 text-white">{slide.title}</h1>
-                <p className="lead mb-4 text-white-50">{slide.subtitle}</p>
-                <Link href={slide.link} className="btn btn-primary btn-lg">
-                  {slide.cta}
-                </Link>
+            <div className="hero-overlay">
+              <div className="hero-container">
+                <div className="hero-content">
+                  <h1 className="hero-title">{slide.title}</h1>
+                  <p className="hero-subtitle">{slide.subtitle}</p>
+                  <Link href={slide.link} className="hero-btn">
+                    {slide.cta}
+                  </Link>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -106,47 +115,66 @@ export default function HomePage() {
       </section>
 
       {/* Featured Products Section */}
-      <section className="py-5">
-        <div className="container">
-          <h2 className="text-center mb-5">Featured Products</h2>
-          <div className="row g-4">
+      <section className="featured-products-section">
+        <div className="section-container">
+          <div className="section-header">
+            <h2 className="section-title">✨ Trending Now ✨</h2>
+            <p className="section-subtitle">Handpicked favorites that are stealing hearts this season</p>
+          </div>
+          <div className="products-grid">
             {featuredProducts.map((product) => (
               <motion.div
                 key={product.id}
-                className="col-md-4"
+                className="product-card"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
                 viewport={{ once: true }}
               >
-                <div className="card h-100">
+                <div className="product-image-container">
                   <Image
                     src={product.image}
                     alt={product.name}
                     width={400}
                     height={400}
-                    className="card-img-top"
+                    className="product-image"
                   />
-                  <div className="card-body">
-                    <h3 className="card-title">{product.name}</h3>
-                    <p className="card-text">{product.description}</p>
-                    <div className="mb-3">
-                      <span className="badge me-2">
-                        Wastage: {product.wastagePercentage}%
-                      </span>
+                </div>
+                <div className="product-content">
+                  <div className="product-category">
+                    <span className="category-badge">{product.category}</span>
+                  </div>
+                  <h3 className="product-title">{product.name}</h3>
+                  <p className="product-description">{product.description}</p>
+                  
+                  <span className="wastage-info">Including {product.wastagePercentage}% wastage</span>
+                  
+                  <div className="product-details">
+                    <div className="detail-item">
+                      <span className="detail-label">Material</span>
+                      <span className="detail-value">{product.material}</span>
                     </div>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <span className="h5 mb-0">
-                        {formatPrice(product.priceINR, product.priceUSD)}
-                      </span>
-                      <Link
-                        href={`/products/${product.id}`}
-                        className="btn btn-primary"
-                      >
-                        <FaShoppingCart className="me-2" />
-                        View Details
-                      </Link>
+                    <div className="detail-item">
+                      <span className="detail-label">Age Range</span>
+                      <span className="detail-value">{product.ageRange}</span>
                     </div>
+                  </div>
+                  
+                  <div className="product-footer">
+                    <div className="price-section">
+                      <div className="product-price">
+                        <span className="original-price">₹{Math.round(product.priceINR * 1.2).toLocaleString('en-IN')}</span>
+                        <span className="current-price">₹{product.priceINR.toLocaleString('en-IN')}</span>
+                      </div>
+                      <span className="gst-info">Including GST</span>
+                    </div>
+                    <Link
+                      href={`/products/${product.id}`}
+                      className="view-details-btn"
+                    >
+                      <FaShoppingCart />
+                      View Details
+                    </Link>
                   </div>
                 </div>
               </motion.div>
@@ -155,38 +183,90 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Additional content for testing sticky header */}
-      <section className="py-5 bg-light">
-        <div className="container">
-          <h2 className="text-center mb-5">About Our Silver Collection</h2>
-          <div className="row">
-            <div className="col-md-6">
-              <h3>Premium Quality</h3>
-              <p>Our silver jewelry is crafted from 925 sterling silver, ensuring durability and beauty that lasts a lifetime.</p>
+      {/* About Section */}
+      <section className="about-section">
+        <div className="section-container">
+          <div className="about-content">
+            <div className="about-text">
+              <h2 className="about-title">Crafting Dreams in Silver</h2>
+              <p className="about-description">
+                At Varam Silvers, we believe that every child deserves to feel like royalty. Our master craftsmen have been creating exquisite silver jewelry for over three decades, combining traditional techniques with modern elegance.
+              </p>
+              <div className="stats-grid">
+                <div className="stat-item">
+                  <div className="stat-number">30+</div>
+                  <small className="stat-label">Years of Excellence</small>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">10K+</div>
+                  <small className="stat-label">Happy Families</small>
+                </div>
+              </div>
             </div>
-            <div className="col-md-6">
-              <h3>Handcrafted with Love</h3>
-              <p>Each piece is carefully handcrafted by skilled artisans who take pride in creating beautiful jewelry for little ones.</p>
+            <div className="about-image">
+              <div className="image-frame">
+                <Image
+                  src="/images/homeslide4.jpg"
+                  alt="Crafting Process"
+                  width={500}
+                  height={400}
+                  className="about-img"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-5">
-        <div className="container">
-          <h2 className="text-center mb-5">Why Choose Varam Silvers?</h2>
-          <div className="row g-4">
-            <div className="col-md-4 text-center">
-              <h4>Hypoallergenic</h4>
-              <p>Safe for sensitive skin, perfect for children.</p>
+      {/* Why Choose Us Section */}
+      <section className="features-section">
+        <div className="section-container">
+          <div className="section-header">
+            <h2 className="section-title">Why Choose Varam Silvers?</h2>
+            <p className="section-subtitle">Excellence in every detail, love in every piece</p>
+          </div>
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="feature-icon">
+                <i className="fas fa-gem"></i>
+              </div>
+              <h4 className="feature-title">Premium 925 Sterling Silver</h4>
+              <p className="feature-description">Only the finest quality silver, hypoallergenic and safe for sensitive skin, ensuring your child&apos;s comfort and safety.</p>
             </div>
-            <div className="col-md-4 text-center">
-              <h4>Adjustable Sizes</h4>
-              <p>Designed to grow with your child.</p>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <i className="fas fa-heart"></i>
+              </div>
+              <h4 className="feature-title">Handcrafted with Love</h4>
+              <p className="feature-description">Each piece is meticulously crafted by skilled artisans who pour their heart and soul into creating jewelry that tells a story.</p>
             </div>
-            <div className="col-md-4 text-center">
-              <h4>Beautiful Designs</h4>
-              <p>Elegant and timeless pieces for every occasion.</p>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <i className="fas fa-expand-arrows-alt"></i>
+              </div>
+              <h4 className="feature-title">Adjustable & Growing</h4>
+              <p className="feature-description">Designed to grow with your child, our adjustable pieces ensure years of wear and precious memories.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <i className="fas fa-shield-alt"></i>
+              </div>
+              <h4 className="feature-title">Lifetime Warranty</h4>
+              <p className="feature-description">We stand behind our craftsmanship with a comprehensive warranty, ensuring your investment is protected.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <i className="fas fa-shipping-fast"></i>
+              </div>
+              <h4 className="feature-title">Free Worldwide Shipping</h4>
+              <p className="feature-description">Complimentary shipping on all orders, with premium packaging that makes every delivery feel special.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <i className="fas fa-star"></i>
+              </div>
+              <h4 className="feature-title">Timeless Designs</h4>
+              <p className="feature-description">Classic and elegant designs that never go out of style, creating heirlooms that can be passed down through generations.</p>
             </div>
           </div>
         </div>
