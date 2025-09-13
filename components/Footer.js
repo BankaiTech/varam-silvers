@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { FaFacebook, FaInstagram, FaTwitter, FaPinterest, FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaShieldAlt, FaTruck, FaAward } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaPinterest, FaEnvelope, FaPhone, FaWhatsapp, FaPaperPlane, FaShieldAlt, FaTruck, FaAward } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,6 +13,18 @@ const Footer = () => {
     // Handle newsletter subscription
     console.log('Newsletter subscription:', email);
     setEmail('');
+  };
+
+  const contactLinkStyle = {
+    color: '#008080',
+    textDecoration: 'none',
+    transition: 'color 0.2s ease',
+    fontWeight: '500'
+  };
+
+  const contactLinkHoverStyle = {
+    color: '#20b2aa',
+    textDecoration: 'underline'
   };
   
   return (
@@ -130,17 +142,29 @@ const Footer = () => {
               <ul className="contact-info">
                 <li className="contact-item">
                   <FaEnvelope className="contact-icon" size={16} />
-                  <span>info@varamsilvers.com</span>
+                  <a 
+                    href="mailto:varamsilvers@gmail.com?subject=Inquiry from Varam Silvers Website" 
+                    className="contact-link"
+                    style={contactLinkStyle}
+                    onMouseEnter={(e) => Object.assign(e.target.style, contactLinkHoverStyle)}
+                    onMouseLeave={(e) => Object.assign(e.target.style, contactLinkStyle)}
+                  >
+                    varamsilvers@gmail.com
+                  </a>
                 </li>
                 <li className="contact-item">
-                  <FaPhone className="contact-icon" size={16} />
-                  <span>+1 (555) 123-4567</span>
-                </li>
-                <li className="contact-item">
-                  <FaMapMarkerAlt className="contact-icon" size={16} />
-                  <div>
-                    123 Silver Street<br />Jewelry District<br />New York, NY 10001
-                  </div>
+                  <FaWhatsapp className="contact-icon" size={16} />
+                  <a 
+                    href="https://wa.me/919444885666?text=Hello! I would like to know more about Varam Silvers jewelry." 
+                    className="contact-link" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={contactLinkStyle}
+                    onMouseEnter={(e) => Object.assign(e.target.style, contactLinkHoverStyle)}
+                    onMouseLeave={(e) => Object.assign(e.target.style, contactLinkStyle)}
+                  >
+                    +91 94448 85666
+                  </a>
                 </li>
               </ul>
             </div>
@@ -161,6 +185,22 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      
+      <style jsx>{`
+        .footer .contact-icon {
+          color: #008080 !important;
+        }
+        
+        .footer .contact-link {
+          color: #008080 !important;
+          text-decoration: none !important;
+        }
+        
+        .footer .contact-link:hover {
+          color: #20b2aa !important;
+          text-decoration: underline !important;
+        }
+      `}</style>
     </>
   );
 };

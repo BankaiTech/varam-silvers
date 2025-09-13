@@ -6,12 +6,12 @@ import Link from 'next/link';
 import { FaHeart, FaShoppingCart, FaStar, FaTruck, FaShieldAlt, FaAward } from 'react-icons/fa';
 import { useCurrency } from '../../../context/CurrencyContext';
 import toast from 'react-hot-toast';
+import LoadingButton from '../../../components/LoadingButton';
 
 export default function ProductDetailPage({ params }) {
-  const { addToCart } = useCurrency();
+  const { addToCart, addToWishlist, removeFromWishlist, isInWishlist } = useCurrency();
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const [isInWishlist, setIsInWishlist] = useState(false);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
 
   // Unwrap params Promise
@@ -68,7 +68,7 @@ export default function ProductDetailPage({ params }) {
       duration: 3000,
       icon: '🛒',
       style: {
-        background: '#10b981',
+        background: '#008080',
         color: '#fff',
         borderRadius: '8px',
         padding: '12px 16px',
@@ -83,7 +83,35 @@ export default function ProductDetailPage({ params }) {
   };
 
   const toggleWishlist = () => {
-    setIsInWishlist(!isInWishlist);
+    if (isInWishlist(product.id)) {
+      removeFromWishlist(product.id);
+      toast.success('Removed from wishlist!', {
+        duration: 2000,
+        icon: '💔',
+        style: {
+          background: '#008080',
+          color: '#fff',
+          borderRadius: '8px',
+          padding: '12px 16px',
+          fontSize: '14px',
+          fontWeight: '500'
+        }
+      });
+    } else {
+      addToWishlist(product);
+      toast.success('Added to wishlist!', {
+        duration: 2000,
+        icon: '❤️',
+        style: {
+          background: '#008080',
+          color: '#fff',
+          borderRadius: '8px',
+          padding: '12px 16px',
+          fontSize: '14px',
+          fontWeight: '500'
+        }
+      });
+    }
   };
 
   return (
@@ -208,11 +236,11 @@ export default function ProductDetailPage({ params }) {
 
               <div className="action-buttons">
                 <button
-                  className={`wishlist-btn ${isInWishlist ? 'active' : ''}`}
+                  className={`wishlist-btn ${isInWishlist(product.id) ? 'active' : ''}`}
                   onClick={toggleWishlist}
                 >
                   <FaHeart />
-                  {isInWishlist ? 'In Wishlist' : 'Add to Wishlist'}
+                  <span>{isInWishlist(product.id) ? 'In Wishlist' : 'Add to Wishlist'}</span>
                 </button>
                 <button
                   className="add-to-cart-btn"
@@ -220,7 +248,7 @@ export default function ProductDetailPage({ params }) {
                   disabled={!product.inStock}
                 >
                   <FaShoppingCart />
-                  {isAddedToCart ? 'Go to Cart' : 'Add to Cart'}
+                  <span>{isAddedToCart ? 'Go to Cart' : 'Add to Cart'}</span>
                 </button>
               </div>
             </div>

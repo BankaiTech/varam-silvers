@@ -4,8 +4,9 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart, FaHeart } from 'react-icons/fa';
 import { useCurrency } from '../../context/CurrencyContext';
+import toast from 'react-hot-toast';
 
 const products = [
   {
@@ -101,7 +102,7 @@ const products = [
 ];
 
 export default function ProductsPage() {
-  const { showUSD } = useCurrency();
+  const { showUSD, addToWishlist, removeFromWishlist, isInWishlist } = useCurrency();
   const [sortBy, setSortBy] = useState('default');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -126,6 +127,39 @@ export default function ProductsPage() {
     }
     return 0;
   });
+
+  const handleToggleWishlist = (product) => {
+    if (isInWishlist(product.id)) {
+      removeFromWishlist(product.id);
+      toast.success('Removed from wishlist!', {
+        duration: 2000,
+        icon: '💔',
+        style: {
+          background: '#008080',
+          color: '#fff',
+          borderRadius: '8px',
+          padding: '12px 16px',
+          fontSize: '14px',
+          fontWeight: '500'
+        }
+      });
+    } else {
+      addToWishlist(product);
+      toast.success('Added to wishlist!', {
+        duration: 2000,
+        icon: '❤️',
+        style: {
+          background: '#008080',
+          color: '#fff',
+          borderRadius: '8px',
+          padding: '12px 16px',
+          fontSize: '14px',
+          fontWeight: '500'
+        }
+      });
+    }
+  };
+
 
   return (
     <main>
@@ -201,6 +235,13 @@ export default function ProductsPage() {
                       Out of Stock
                     </span>
                   )}
+                  <button
+                    className={`wishlist-btn ${isInWishlist(product.id) ? 'active' : ''}`}
+                    onClick={() => handleToggleWishlist(product)}
+                    aria-label={isInWishlist(product.id) ? 'Remove from wishlist' : 'Add to wishlist'}
+                  >
+                    <FaHeart />
+                  </button>
                 </div>
                 <div className="product-content">
                   <div className="product-category">
@@ -243,13 +284,14 @@ export default function ProductsPage() {
                       </div>
                       <span className="gst-info">Including GST</span>
                     </div>
-                    <Link
-                      href={`/products/${product.id}`}
-                      className={`view-details-btn ${!product.inStock ? 'disabled' : ''}`}
-                    >
-                      <FaShoppingCart />
-                      {product.inStock ? 'View Details' : 'Out of Stock'}
-                    </Link>
+                    <div className="product-actions">
+                      <Link
+                        href={`/products/${product.id}`}
+                        className="view-details-btn"
+                      >
+                        View Details
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </motion.div>

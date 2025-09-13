@@ -8,50 +8,15 @@ import { FaHeart, FaShoppingCart, FaTrash } from 'react-icons/fa';
 import { useCurrency } from '../../context/CurrencyContext';
 
 export default function WishlistPage() {
-  const { formatPrice } = useCurrency();
-  const [wishlist, setWishlist] = useState([
-    {
-      id: 1,
-      name: 'Princess Silver Anklet',
-      priceINR: 2499,
-      priceUSD: 29.99,
-      image: '/images/slide1.jpg',
-      description: 'Delicate sterling silver anklet adorned with tiny charms',
-      category: 'Anklets',
-      inStock: true,
-      rating: 4.8
-    },
-    {
-      id: 2,
-      name: 'Elegant Silver Bracelet',
-      priceINR: 1999,
-      priceUSD: 24.99,
-      image: '/images/slide2.jpg',
-      description: 'Adjustable silver bracelet with intricate detailing',
-      category: 'Bracelets',
-      inStock: true,
-      rating: 4.9
-    },
-    {
-      id: 3,
-      name: 'Dreamy Silver Necklace',
-      priceINR: 3499,
-      priceUSD: 42.99,
-      image: '/images/slide3.jpg',
-      description: 'Exquisite silver necklace featuring a delicate pendant',
-      category: 'Necklaces',
-      inStock: false,
-      rating: 4.7
-    }
-  ]);
+  const { formatPrice, wishlist, removeFromWishlist, addToCart } = useCurrency();
 
-  const removeFromWishlist = (id) => {
-    setWishlist(wishlist.filter(item => item.id !== id));
-  };
-
-  const addToCart = (product) => {
-    // Add to cart logic here
-    console.log('Added to cart:', product);
+  const handleAddToCart = (product) => {
+    const cartItem = {
+      ...product,
+      quantity: 1,
+      image: product.image
+    };
+    addToCart(cartItem);
   };
 
   if (wishlist.length === 0) {
@@ -142,7 +107,7 @@ export default function WishlistPage() {
                   </Link>
                   <button
                     className={`add-to-cart-btn ${!item.inStock ? 'disabled' : ''}`}
-                    onClick={() => addToCart(item)}
+                    onClick={() => handleAddToCart(item)}
                     disabled={!item.inStock}
                   >
                     <FaShoppingCart />

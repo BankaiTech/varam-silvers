@@ -2,9 +2,11 @@ import { Playfair_Display, Inter } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 import { CurrencyProvider } from '../context/CurrencyContext';
 import { AuthProvider } from '../context/AuthContext';
+import { LoadingProvider } from '../context/LoadingContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import PageLoader from '../components/PageLoader';
+import GlobalLoadingOverlay from '../components/GlobalLoadingOverlay';
 // import 'bootstrap/dist/css/bootstrap.min.css'; // Removed to fix navbar conflicts
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './globals.css';
@@ -38,11 +40,14 @@ export default function RootLayout({ children }) {
       <body className={`${playfair.variable} ${inter.variable}`}>
         <AuthProvider>
           <CurrencyProvider>
-            <PageLoader />
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-            <Toaster />
+            <LoadingProvider>
+              <PageLoader />
+              <GlobalLoadingOverlay />
+              <Navbar />
+              <main>{children}</main>
+              <Footer />
+              <Toaster />
+            </LoadingProvider>
           </CurrencyProvider>
         </AuthProvider>
       </body>

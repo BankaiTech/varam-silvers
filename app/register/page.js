@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaEye, FaEyeSlash, FaGoogle, FaFacebook } from 'react-icons/fa';
+import LoadingButton from '../../components/LoadingButton';
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -53,8 +54,31 @@ export default function RegisterPage() {
           </div>
 
           <form onSubmit={handleSubmit} className="auth-form">
-            <div className="form-row">
-              <div className="form-group">
+            <div 
+              className="form-row"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0',
+                width: '100%',
+                maxWidth: '100%',
+                overflow: 'hidden',
+                boxSizing: 'border-box',
+                margin: '0',
+                padding: '0'
+              }}
+            >
+              <div 
+                className="form-group"
+                style={{
+                  width: '100%',
+                  maxWidth: '100%',
+                  overflow: 'hidden',
+                  boxSizing: 'border-box',
+                  margin: '0 0 1rem 0',
+                  padding: '0'
+                }}
+              >
                 <label htmlFor="firstName" className="form-label">First Name</label>
                 <input
                   type="text"
@@ -65,9 +89,36 @@ export default function RegisterPage() {
                   className="form-input"
                   placeholder="First name"
                   required
+                  style={{
+                    width: '100%',
+                    maxWidth: '100%',
+                    boxSizing: 'border-box',
+                    margin: '0',
+                    padding: '0.75rem',
+                    border: '2px solid #e0f7f7',
+                    borderRadius: '8px',
+                    fontSize: '1rem',
+                    background: '#fff',
+                    display: 'block',
+                    position: 'relative',
+                    left: '0',
+                    right: '0',
+                    transform: 'none',
+                    overflow: 'hidden'
+                  }}
                 />
               </div>
-              <div className="form-group">
+              <div 
+                className="form-group"
+                style={{
+                  width: '100%',
+                  maxWidth: '100%',
+                  overflow: 'hidden',
+                  boxSizing: 'border-box',
+                  margin: '0 0 1rem 0',
+                  padding: '0'
+                }}
+              >
                 <label htmlFor="lastName" className="form-label">Last Name</label>
                 <input
                   type="text"
@@ -78,11 +129,38 @@ export default function RegisterPage() {
                   className="form-input"
                   placeholder="Last name"
                   required
+                  style={{
+                    width: '100%',
+                    maxWidth: '100%',
+                    boxSizing: 'border-box',
+                    margin: '0',
+                    padding: '0.75rem',
+                    border: '2px solid #e0f7f7',
+                    borderRadius: '8px',
+                    fontSize: '1rem',
+                    background: '#fff',
+                    display: 'block',
+                    position: 'relative',
+                    left: '0',
+                    right: '0',
+                    transform: 'none',
+                    overflow: 'hidden'
+                  }}
                 />
               </div>
             </div>
 
-            <div className="form-group">
+            <div 
+              className="form-group"
+              style={{
+                width: '100%',
+                maxWidth: '100%',
+                overflow: 'hidden',
+                boxSizing: 'border-box',
+                margin: '0 0 1rem 0',
+                padding: '0'
+              }}
+            >
               <label htmlFor="email" className="form-label">Email Address</label>
               <input
                 type="email"
@@ -93,10 +171,37 @@ export default function RegisterPage() {
                 className="form-input"
                 placeholder="Enter your email"
                 required
+                style={{
+                  width: '100%',
+                  maxWidth: '100%',
+                  boxSizing: 'border-box',
+                  margin: '0',
+                  padding: '0.75rem',
+                  border: '2px solid #e0f7f7',
+                  borderRadius: '8px',
+                  fontSize: '1rem',
+                  background: '#fff',
+                  display: 'block',
+                  position: 'relative',
+                  left: '0',
+                  right: '0',
+                  transform: 'none',
+                  overflow: 'hidden'
+                }}
               />
             </div>
 
-            <div className="form-group">
+            <div 
+              className="form-group"
+              style={{
+                width: '100%',
+                maxWidth: '100%',
+                overflow: 'hidden',
+                boxSizing: 'border-box',
+                margin: '0 0 1rem 0',
+                padding: '0'
+              }}
+            >
               <label htmlFor="phone" className="form-label">Phone Number</label>
               <input
                 type="tel"
@@ -107,12 +212,51 @@ export default function RegisterPage() {
                 className="form-input"
                 placeholder="Enter your phone number"
                 required
+                style={{
+                  width: '100%',
+                  maxWidth: '100%',
+                  boxSizing: 'border-box',
+                  margin: '0',
+                  padding: '0.75rem',
+                  border: '2px solid #e0f7f7',
+                  borderRadius: '8px',
+                  fontSize: '1rem',
+                  background: '#fff',
+                  display: 'block',
+                  position: 'relative',
+                  left: '0',
+                  right: '0',
+                  transform: 'none',
+                  overflow: 'hidden'
+                }}
               />
             </div>
 
-            <div className="form-group">
+            <div 
+              className="form-group"
+              style={{
+                width: '100%',
+                maxWidth: '100%',
+                overflow: 'hidden',
+                boxSizing: 'border-box',
+                margin: '0 0 1rem 0',
+                padding: '0'
+              }}
+            >
               <label htmlFor="password" className="form-label">Password</label>
-              <div className="password-input-container">
+              <div 
+                className="password-input-container"
+                style={{
+                  width: '100%',
+                  maxWidth: '100%',
+                  overflow: 'hidden',
+                  boxSizing: 'border-box',
+                  position: 'relative',
+                  display: 'block',
+                  margin: '0',
+                  padding: '0'
+                }}
+              >
                 <input
                   type={showPassword ? 'text' : 'password'}
                   id="password"
@@ -122,20 +266,78 @@ export default function RegisterPage() {
                   className="form-input"
                   placeholder="Create a password"
                   required
+                  style={{
+                    width: '100%',
+                    maxWidth: '100%',
+                    boxSizing: 'border-box',
+                    margin: '0',
+                    padding: '0.75rem 2rem 0.75rem 0.75rem',
+                    border: '2px solid #e0f7f7',
+                    borderRadius: '8px',
+                    fontSize: '1rem',
+                    background: '#fff',
+                    display: 'block',
+                    position: 'relative',
+                    left: '0',
+                    right: '0',
+                    transform: 'none',
+                    overflow: 'hidden'
+                  }}
                 />
                 <button
                   type="button"
                   className="password-toggle"
                   onClick={() => setShowPassword(!showPassword)}
+                  style={{
+                    position: 'absolute',
+                    right: '0.5rem',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    background: 'none',
+                    border: 'none',
+                    color: '#008080',
+                    cursor: 'pointer',
+                    padding: '0.25rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: '10',
+                    width: 'auto',
+                    height: 'auto',
+                    maxWidth: '1.5rem',
+                    margin: '0'
+                  }}
                 >
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </button>
               </div>
             </div>
 
-            <div className="form-group">
+            <div 
+              className="form-group"
+              style={{
+                width: '100%',
+                maxWidth: '100%',
+                overflow: 'hidden',
+                boxSizing: 'border-box',
+                margin: '0 0 1rem 0',
+                padding: '0'
+              }}
+            >
               <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
-              <div className="password-input-container">
+              <div 
+                className="password-input-container"
+                style={{
+                  width: '100%',
+                  maxWidth: '100%',
+                  overflow: 'hidden',
+                  boxSizing: 'border-box',
+                  position: 'relative',
+                  display: 'block',
+                  margin: '0',
+                  padding: '0'
+                }}
+              >
                 <input
                   type={showConfirmPassword ? 'text' : 'password'}
                   id="confirmPassword"
@@ -145,11 +347,47 @@ export default function RegisterPage() {
                   className="form-input"
                   placeholder="Confirm your password"
                   required
+                  style={{
+                    width: '100%',
+                    maxWidth: '100%',
+                    boxSizing: 'border-box',
+                    margin: '0',
+                    padding: '0.75rem 2rem 0.75rem 0.75rem',
+                    border: '2px solid #e0f7f7',
+                    borderRadius: '8px',
+                    fontSize: '1rem',
+                    background: '#fff',
+                    display: 'block',
+                    position: 'relative',
+                    left: '0',
+                    right: '0',
+                    transform: 'none',
+                    overflow: 'hidden'
+                  }}
                 />
                 <button
                   type="button"
                   className="password-toggle"
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                  style={{
+                    position: 'absolute',
+                    right: '0.5rem',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    background: 'none',
+                    border: 'none',
+                    color: '#008080',
+                    cursor: 'pointer',
+                    padding: '0.25rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: '10',
+                    width: 'auto',
+                    height: 'auto',
+                    maxWidth: '1.5rem',
+                    margin: '0'
+                  }}
                 >
                   {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
                 </button>
@@ -177,13 +415,15 @@ export default function RegisterPage() {
               </label>
             </div>
 
-            <button
+            <LoadingButton
               type="submit"
-              className={`auth-btn ${isLoading ? 'loading' : ''}`}
-              disabled={isLoading}
+              className="auth-btn w-full"
+              loading={isLoading}
+              loadingText="Creating Account..."
+              variant="primary"
             >
-              {isLoading ? 'Creating Account...' : 'Create Account'}
-            </button>
+              Create Account
+            </LoadingButton>
           </form>
 
           <div className="divider">
@@ -191,14 +431,14 @@ export default function RegisterPage() {
           </div>
 
           <div className="social-login">
-            <button className="social-btn google-btn">
+            <LoadingButton className="social-btn google-btn" variant="outline">
               <FaGoogle />
               Google
-            </button>
-            <button className="social-btn facebook-btn">
+            </LoadingButton>
+            <LoadingButton className="social-btn facebook-btn" variant="outline">
               <FaFacebook />
               Facebook
-            </button>
+            </LoadingButton>
           </div>
 
           <div className="auth-footer">

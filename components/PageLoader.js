@@ -53,6 +53,24 @@ export default function PageLoader() {
           width: 3rem;
           height: 3rem;
           border-width: 0.3em;
+          border-color: #008080;
+          border-top-color: transparent;
+          animation: spin 1s linear infinite;
+        }
+        
+        .page-loader-content p {
+          color: #008080;
+          font-weight: 500;
+          margin-top: 1rem;
+        }
+        
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
         }
         
         @keyframes fadeIn {
