@@ -71,7 +71,15 @@ export default function LoadingButton({
     >
       {isButtonLoading && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+          <div className="btn-loading-spinner">
+            <div className="ring-container">
+              <div className="ring-outer">
+                <div className="ring-inner">
+                  <div className="gem"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
       <span className={isButtonLoading ? 'opacity-0' : 'opacity-100 flex items-center justify-center gap-2'}>

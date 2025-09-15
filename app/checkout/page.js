@@ -289,10 +289,25 @@ export default function CheckoutPage() {
 
               <button
                 type="submit"
-                className={`checkout-btn ${isProcessing ? 'processing' : ''}`}
+                className={`checkout-btn ${isProcessing ? 'btn-loading' : ''}`}
                 disabled={isProcessing}
               >
-                {isProcessing ? 'Processing...' : 'Complete Order'}
+                {isProcessing ? (
+                  <>
+                    <div className="btn-loading-spinner">
+                      <div className="ring-container">
+                        <div className="ring-outer">
+                          <div className="ring-inner">
+                            <div className="gem"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    Processing...
+                  </>
+                ) : (
+                  'Complete Order'
+                )}
               </button>
             </form>
           </div>

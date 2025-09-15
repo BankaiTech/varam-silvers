@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FaShoppingCart, FaHeart } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
 import { useCurrency } from '../../context/CurrencyContext';
 import toast from 'react-hot-toast';
+import LoadingSpinner from '../../components/LoadingSpinner';
 
 const products = [
   {
@@ -105,6 +106,15 @@ export default function ProductsPage() {
   const { showUSD, addToWishlist, removeFromWishlist, isInWishlist } = useCurrency();
   const [sortBy, setSortBy] = useState('default');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simulate loading for products
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const categories = ['all', 'Anklets', 'Bracelets', 'Necklaces', 'Rings', 'Earrings', 'Sets'];
 
@@ -160,6 +170,20 @@ export default function ProductsPage() {
     }
   };
 
+
+  if (isLoading) {
+    return (
+      <main>
+        <div className="products-hero">
+          <div className="products-hero-container">
+            <div className="loading-spinner-container" style={{ minHeight: '60vh' }}>
+              <LoadingSpinner size="large" message="Loading products..." />
+            </div>
+          </div>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main>

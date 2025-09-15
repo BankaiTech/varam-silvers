@@ -1,21 +1,30 @@
 'use client';
 
-import { useState, use } from 'react';
+import React, { useState, use } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaHeart, FaShoppingCart, FaStar, FaTruck, FaShieldAlt, FaAward } from 'react-icons/fa';
 import { useCurrency } from '../../../context/CurrencyContext';
 import toast from 'react-hot-toast';
-import LoadingButton from '../../../components/LoadingButton';
+import LoadingSpinner from '../../../components/LoadingSpinner';
 
 export default function ProductDetailPage({ params }) {
   const { addToCart, addToWishlist, removeFromWishlist, isInWishlist } = useCurrency();
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Unwrap params Promise
   const resolvedParams = use(params);
+
+  // Simulate loading for product data
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Mock product data - in real app, fetch based on resolvedParams.id
   const product = {
@@ -113,6 +122,18 @@ export default function ProductDetailPage({ params }) {
       });
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="product-detail-page">
+        <div className="product-detail-container">
+          <div className="loading-spinner-container" style={{ minHeight: '60vh' }}>
+            <LoadingSpinner size="large" message="Loading product details..." />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="product-detail-page">

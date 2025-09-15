@@ -5048,4 +5048,682 @@ main.container {
 ::-moz-selection {
   background: var(--primary-gold);
   color: white;
+}
+
+/* ========================================
+   THEMED PAGE LOADER STYLES
+   ======================================== */
+
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(248, 250, 252, 0.98) 0%, 
+    rgba(241, 245, 249, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: loaderFadeIn 0.3s ease-out;
+}
+
+.page-loader-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Loading Icon - Silver Ring Animation */
+.loading-icon {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.ring-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: ringFloat 2s ease-in-out infinite;
+}
+
+.ring-outer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border: 3px solid transparent;
+  border-top: 3px solid var(--primary-silver);
+  border-right: 3px solid var(--primary-gold);
+  border-radius: 50%;
+  animation: ringRotate 1.5s linear infinite;
+}
+
+.ring-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 2px solid transparent;
+  border-bottom: 2px solid var(--primary-silver);
+  border-left: 2px solid var(--primary-gold);
+  border-radius: 50%;
+  animation: ringRotate 1s linear infinite reverse;
+}
+
+.gem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(45deg, 
+    var(--primary-gold) 0%, 
+    #ffd700 50%, 
+    var(--primary-silver) 100%);
+  border-radius: 50%;
+  animation: gemPulse 1.2s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* Loading Text */
+.loading-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.loading-text-main {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, 
+    var(--primary-gold) 0%, 
+    var(--primary-silver) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+.loading-dots {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.loading-dots span {
+  width: 6px;
+  height: 6px;
+  background: var(--primary-gold);
+  border-radius: 50%;
+  animation: dotBounce 1.4s ease-in-out infinite both;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0s;
+}
+
+/* Progress Bar */
+.loading-progress {
+  width: 200px;
+  height: 3px;
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, 
+    var(--primary-silver) 0%, 
+    var(--primary-gold) 50%, 
+    var(--primary-silver) 100%);
+  border-radius: 2px;
+  animation: progressFill 2s ease-in-out infinite;
+  position: relative;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.6) 50%, 
+    transparent 100%);
+  animation: progressShine 2s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes loaderFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(10px);
+  }
+}
+
+@keyframes ringFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes ringRotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes gemPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  }
+}
+
+@keyframes textGlow {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.3);
+  }
+}
+
+@keyframes dotBounce {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes progressFill {
+  0% {
+    width: 0%;
+    left: 0%;
+  }
+  50% {
+    width: 70%;
+    left: 0%;
+  }
+  100% {
+    width: 100%;
+    left: 0%;
+  }
+}
+
+@keyframes progressShine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .loading-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .ring-outer {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .ring-inner {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .gem {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .loading-text-main {
+    font-size: 1.2rem;
+  }
+  
+  .loading-progress {
+    width: 150px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .page-loader {
+    background: linear-gradient(135deg, 
+      rgba(15, 23, 42, 0.98) 0%, 
+      rgba(30, 41, 59, 0.95) 100%);
+  }
+  
+  .loading-progress {
+    background: rgba(71, 85, 105, 0.3);
+  }
+}
+
+/* ========================================
+   GLOBAL LOADING OVERLAY STYLES
+   ======================================== */
+
+.global-loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(248, 250, 252, 0.98) 0%, 
+    rgba(241, 245, 249, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: loaderFadeIn 0.3s ease-out;
+}
+
+.global-loading-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+}
+
+/* Reuse the same loading icon styles from page-loader */
+.global-loading-overlay .loading-icon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.global-loading-overlay .ring-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: ringFloat 2s ease-in-out infinite;
+}
+
+.global-loading-overlay .ring-outer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45px;
+  height: 45px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--primary-silver);
+  border-right: 2px solid var(--primary-gold);
+  border-radius: 50%;
+  animation: ringRotate 1.5s linear infinite;
+}
+
+.global-loading-overlay .ring-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid transparent;
+  border-bottom: 1.5px solid var(--primary-silver);
+  border-left: 1.5px solid var(--primary-gold);
+  border-radius: 50%;
+  animation: ringRotate 1s linear infinite reverse;
+}
+
+.global-loading-overlay .gem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(45deg, 
+    var(--primary-gold) 0%, 
+    #ffd700 50%, 
+    var(--primary-silver) 100%);
+  border-radius: 50%;
+  animation: gemPulse 1.2s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+.global-loading-overlay .loading-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.global-loading-overlay .loading-text-main {
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, 
+    var(--primary-gold) 0%, 
+    var(--primary-silver) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+.global-loading-overlay .loading-dots {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.global-loading-overlay .loading-dots span {
+  width: 4px;
+  height: 4px;
+  background: var(--primary-gold);
+  border-radius: 50%;
+  animation: dotBounce 1.4s ease-in-out infinite both;
+}
+
+.global-loading-overlay .loading-dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.global-loading-overlay .loading-dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+.global-loading-overlay .loading-dots span:nth-child(3) {
+  animation-delay: 0s;
+}
+
+.global-loading-overlay .loading-progress {
+  width: 150px;
+  height: 2px;
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 1px;
+  overflow: hidden;
+  position: relative;
+}
+
+.global-loading-overlay .progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, 
+    var(--primary-silver) 0%, 
+    var(--primary-gold) 50%, 
+    var(--primary-silver) 100%);
+  border-radius: 1px;
+  animation: progressFill 2s ease-in-out infinite;
+  position: relative;
+}
+
+.global-loading-overlay .progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.6) 50%, 
+    transparent 100%);
+  animation: progressShine 2s ease-in-out infinite;
+}
+
+/* ========================================
+   LOADING SPINNER COMPONENT STYLES
+   ======================================== */
+
+.loading-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.loading-spinner-icon {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+}
+
+.loading-spinner-icon.w-6 {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.loading-spinner-icon.w-8 {
+  width: 2rem;
+  height: 2rem;
+}
+
+.loading-spinner-icon.w-12 {
+  width: 3rem;
+  height: 3rem;
+}
+
+.loading-spinner-container .ring-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: ringFloat 2s ease-in-out infinite;
+}
+
+.loading-spinner-container .ring-outer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--primary-silver);
+  border-right: 2px solid var(--primary-gold);
+  border-radius: 50%;
+  animation: ringRotate 1.5s linear infinite;
+}
+
+.loading-spinner-container .ring-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  border: 1.5px solid transparent;
+  border-bottom: 1.5px solid var(--primary-silver);
+  border-left: 1.5px solid var(--primary-gold);
+  border-radius: 50%;
+  animation: ringRotate 1s linear infinite reverse;
+}
+
+.loading-spinner-container .gem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  height: 25%;
+  background: linear-gradient(45deg, 
+    var(--primary-gold) 0%, 
+    #ffd700 50%, 
+    var(--primary-silver) 100%);
+  border-radius: 50%;
+  animation: gemPulse 1.2s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
+}
+
+.loading-spinner-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0;
+  text-align: center;
+}
+
+/* Inline loading spinner for buttons */
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: ringRotate 1s linear infinite;
+}
+
+/* Button loading spinner */
+.btn-loading-spinner {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+}
+
+.btn-loading-spinner .ring-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: ringFloat 1.5s ease-in-out infinite;
+}
+
+.btn-loading-spinner .ring-outer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid transparent;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: ringRotate 1s linear infinite;
+}
+
+.btn-loading-spinner .ring-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  border: 1px solid transparent;
+  border-bottom: 1px solid currentColor;
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: ringRotate 0.8s linear infinite reverse;
+}
+
+.btn-loading-spinner .gem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  height: 20%;
+  background: currentColor;
+  border-radius: 50%;
+  animation: gemPulse 1s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+/* Skeleton loading for content */
+.skeleton {
+  background: linear-gradient(90deg, 
+    rgba(148, 163, 184, 0.1) 25%, 
+    rgba(148, 163, 184, 0.2) 50%, 
+    rgba(148, 163, 184, 0.1) 75%);
+  background-size: 200% 100%;
+  animation: skeletonLoading 1.5s infinite;
+  border-radius: 4px;
+}
+
+.skeleton-text {
+  height: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-text:last-child {
+  margin-bottom: 0;
+  width: 60%;
+}
+
+.skeleton-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.skeleton-card {
+  height: 200px;
+  border-radius: 8px;
+}
+
+@keyframes skeletonLoading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 } 

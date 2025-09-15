@@ -14,7 +14,7 @@ export default function PageLoader() {
     // Hide loading after a short delay to ensure smooth transition
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 300);
+    }, 800);
 
     return () => clearTimeout(timer);
   }, [pathname]);
@@ -24,73 +24,32 @@ export default function PageLoader() {
   return (
     <div className="page-loader">
       <div className="page-loader-content">
-        <div className="spinner-border text-primary" role="status">
-          <span className="visually-hidden">Loading...</span>
+        {/* Silver Ring Icon with Animation */}
+        <div className="loading-icon">
+          <div className="ring-container">
+            <div className="ring-outer">
+              <div className="ring-inner">
+                <div className="gem"></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <p className="mt-3 text-muted">Loading...</p>
+        
+        {/* Loading Text with Typing Animation */}
+        <div className="loading-text">
+          <span className="loading-text-main">Varam Silvers</span>
+          <div className="loading-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        
+        {/* Progress Bar */}
+        <div className="loading-progress">
+          <div className="progress-bar"></div>
+        </div>
       </div>
-      <style jsx>{`
-        .page-loader {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(5px);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 9999;
-          animation: fadeIn 0.2s ease-in-out;
-        }
-        
-        .page-loader-content {
-          text-align: center;
-        }
-        
-        .spinner-border {
-          width: 3rem;
-          height: 3rem;
-          border-width: 0.3em;
-          border-color: #008080;
-          border-top-color: transparent;
-          animation: spin 1s linear infinite;
-        }
-        
-        .page-loader-content p {
-          color: #008080;
-          font-weight: 500;
-          margin-top: 1rem;
-        }
-        
-        @keyframes spin {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-        
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-        
-        @keyframes fadeOut {
-          from {
-            opacity: 1;
-          }
-          to {
-            opacity: 0;
-          }
-        }
-      `}</style>
     </div>
   );
 }
