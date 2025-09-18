@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { FaCreditCard, FaTruck, FaShieldAlt } from 'react-icons/fa';
 import { useCurrency } from '../../context/CurrencyContext';
 
