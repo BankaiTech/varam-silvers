@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaWhatsapp } from 'react-icons/fa';
+import { FaEnvelope, FaClock, FaWhatsapp } from 'react-icons/fa';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -53,7 +53,7 @@ export default function ContactPage() {
         >
           <h1 className="contact-title">Get in Touch</h1>
           <p className="contact-subtitle">
-            We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            {"We'd love to hear from you. Send us a message and we'll respond as soon as possible."}
           </p>
         </motion.div>
 

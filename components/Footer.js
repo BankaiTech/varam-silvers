@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { FaFacebook, FaInstagram, FaTwitter, FaPinterest, FaEnvelope, FaPhone, FaWhatsapp, FaPaperPlane, FaShieldAlt, FaTruck, FaAward } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaPinterest, FaEnvelope, FaWhatsapp, FaPaperPlane, FaShieldAlt, FaTruck, FaAward } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

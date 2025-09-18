@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaChevronDown, FaSearch, FaQuestionCircle, FaShippingFast, FaShieldAlt, FaGem, FaHeart, FaClock, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { FaChevronDown, FaSearch, FaQuestionCircle, FaShippingFast, FaShieldAlt, FaGem, FaHeart, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 export default function FAQPage() {
   const [searchTerm, setSearchTerm] = useState('');
