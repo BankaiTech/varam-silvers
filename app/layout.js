@@ -27,10 +27,29 @@ export const metadata = {
   title: 'Varam Silvers - Luxury Silver Jewelry for Children',
   description: 'Discover our exquisite collection of handcrafted silver jewelry designed specifically for children. Premium quality, elegant designs, and timeless beauty.',
   keywords: 'silver jewelry, children jewelry, luxury jewelry, handcrafted, sterling silver',
+  icons: {
+    icon: '/images/Varam Silvers Logo.jpg',
+    shortcut: '/images/Varam Silvers Logo.jpg',
+    apple: '/images/Varam Silvers Logo.jpg',
+  },
   openGraph: {
     title: 'Varam Silvers - Luxury Silver Jewelry for Children',
     description: 'Discover our exquisite collection of handcrafted silver jewelry designed specifically for children.',
     type: 'website',
+    images: [
+      {
+        url: '/images/Varam Silvers Logo.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Varam Silvers - Kids Silver Jewelry',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Varam Silvers - Luxury Silver Jewelry for Children',
+    description: 'Discover our exquisite collection of handcrafted silver jewelry designed specifically for children.',
+    images: ['/images/Varam Silvers Logo.jpg'],
   },
 };
 

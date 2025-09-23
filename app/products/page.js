@@ -287,18 +287,6 @@ export default function ProductsPage() {
                     <span className="rating-text">({product.rating})</span>
                   </div>
                   
-                  <span className="wastage-info">Including {product.wastagePercentage}% wastage</span>
-
-                  <div className="product-details">
-                    <div className="detail-item">
-                      <span className="detail-label">Material</span>
-                      <span className="detail-value">{product.material}</span>
-                    </div>
-                    <div className="detail-item">
-                      <span className="detail-label">Age Range</span>
-                      <span className="detail-value">{product.ageRange}</span>
-                    </div>
-                  </div>
                   
                   <div className="product-footer">
                     <div className="price-section">

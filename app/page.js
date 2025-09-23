@@ -67,6 +67,18 @@ const featuredProducts = [
     material: '925 Sterling Silver',
     ageRange: '4-16 years'
   },
+  {
+    id: 4,
+    name: 'Royal Silver Earrings',
+    priceINR: 1899,
+    priceUSD: 22.99,
+    image: '/images/slide1.jpg',
+    description: 'Beautiful silver earrings with intricate designs, perfect for special occasions',
+    wastagePercentage: 9,
+    category: 'Earrings',
+    material: '925 Sterling Silver',
+    ageRange: '3-15 years'
+  },
 ];
 
 export default function HomePage() {
@@ -146,19 +158,6 @@ export default function HomePage() {
                   </div>
                   <h3 className="product-title">{product.name}</h3>
                   <p className="product-description">{product.description}</p>
-                  
-                  <span className="wastage-info">Including {product.wastagePercentage}% wastage</span>
-                  
-                  <div className="product-details">
-                    <div className="detail-item">
-                      <span className="detail-label">Material</span>
-                      <span className="detail-value">{product.material}</span>
-                    </div>
-                    <div className="detail-item">
-                      <span className="detail-label">Age Range</span>
-                      <span className="detail-value">{product.ageRange}</span>
-                    </div>
-                  </div>
                   
                   <div className="product-footer">
                     <div className="price-section">

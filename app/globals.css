@@ -1,37 +1,60 @@
 /* Tailwind CSS utilities are imported via Next.js */
 
 :root {
-  /* Modern Silver Jewelry Color Palette */
-  --primary-silver: #008080;
-  --secondary-silver: #e0f7f7;
-  --accent-silver: #a8a8a8;
-  --deep-silver: #8b8b8b;
-  --dark-slate: #2c3e50;
-  --medium-slate: #34495e;
-  --light-slate: #7f8c8d;
-  --muted-slate: #95a5a6;
-  --luxury-black: #1a1a1a;
-  --soft-white: #fafafa;
-  --warm-white: #f5f5f5;
-  --text-dark: #2c3e50;
-  --text-medium: #7f8c8d;
-  --text-light: #95a5a6;
-  --gradient-silver: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
-  --gradient-slate: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-  --gradient-light: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-  --shadow-luxury: 0 20px 40px rgba(0, 0, 0, 0.1);
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+  /* Varam Silvers Brand Color Palette - Based on Logo */
+  --primary-teal: #2D6A6A;        /* Deep teal from logo */
+  --secondary-teal: #4A8B8B;      /* Lighter teal variant */
+  --accent-teal: #6BA6A6;         /* Even lighter teal */
+  --light-teal: #8BC1C1;          /* Very light teal */
+  --pale-teal: #E8F4F4;           /* Pale teal for backgrounds */
   
-  /* Legacy gold colors for backward compatibility */
-  --primary-gold: #c0c0c0;
-  --secondary-gold: #e8e8e8;
-  --accent-gold: #a8a8a8;
-  --gradient-gold: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+  /* Silver and Metallic Colors */
+  --primary-silver: #C0C0C0;      /* Classic silver */
+  --secondary-silver: #E8E8E8;    /* Light silver */
+  --accent-silver: #A8A8A8;       /* Medium silver */
+  --deep-silver: #8B8B8B;         /* Dark silver */
+  --metallic-silver: #D3D3D3;     /* Metallic silver */
+  
+  /* Background Colors - Based on Logo Background */
+  --warm-beige: #F8F7F0;          /* Logo background color */
+  --soft-white: #FAFAFA;          /* Pure white */
+  --warm-white: #F5F5F5;          /* Warm white */
+  --cream: #FDFCF8;               /* Cream variant */
+  
+  /* Text Colors */
+  --text-dark: #2D6A6A;           /* Primary teal for text */
+  --text-medium: #4A8B8B;         /* Medium teal */
+  --text-light: #6BA6A6;          /* Light teal */
+  --text-muted: #8BC1C1;          /* Muted teal */
+  --text-secondary: #7F8C8D;      /* Secondary text */
+  
+  /* Dark Colors */
+  --dark-slate: #2C3E50;          /* Dark slate */
+  --medium-slate: #34495E;        /* Medium slate */
+  --light-slate: #7F8C8D;         /* Light slate */
+  --luxury-black: #1A1A1A;        /* Luxury black */
+  
+  /* Gradients */
+  --gradient-teal: linear-gradient(135deg, #2D6A6A 0%, #4A8B8B 100%);
+  --gradient-silver: linear-gradient(135deg, #C0C0C0 0%, #E8E8E8 100%);
+  --gradient-warm: linear-gradient(135deg, #F8F7F0 0%, #FAFAFA 100%);
+  --gradient-luxury: linear-gradient(135deg, #2D6A6A 0%, #C0C0C0 100%);
+  
+  /* Shadows */
+  --shadow-luxury: 0 20px 40px rgba(45, 106, 106, 0.15);
+  --shadow-soft: 0 10px 30px rgba(45, 106, 106, 0.08);
+  --shadow-teal: 0 8px 25px rgba(45, 106, 106, 0.12);
+  
+  /* Legacy compatibility - Updated to use teal theme */
+  --primary-gold: #2D6A6A;        /* Now using teal */
+  --secondary-gold: #4A8B8B;      /* Lighter teal */
+  --accent-gold: #6BA6A6;         /* Even lighter teal */
+  --gradient-gold: linear-gradient(135deg, #2D6A6A 0%, #4A8B8B 100%);
 }
 
 body {
   padding-top: 80px;
-  background-color: var(--soft-white);
+  background-color: var(--warm-beige);
   color: var(--text-dark);
   font-family: var(--font-inter), 'Inter', sans-serif;
   line-height: 1.6;
@@ -59,17 +82,17 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(248, 247, 240, 0.95) 0%, rgba(250, 250, 250, 0.95) 100%);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(192, 192, 192, 0.2);
+  border-bottom: 1px solid rgba(45, 106, 106, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(45, 106, 106, 0.05);
 }
 
 .silver-navbar.scrolled {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(192, 192, 192, 0.3);
+  background: linear-gradient(135deg, rgba(248, 247, 240, 0.98) 0%, rgba(250, 250, 250, 0.98) 100%);
+  box-shadow: var(--shadow-teal);
+  border-bottom: 1px solid rgba(45, 106, 106, 0.2);
 }
 
 .nav-container {
@@ -100,7 +123,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-playfair), 'Playfair Display', serif;
   font-size: 1.8rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #7f8c8d 100%);
+  background: var(--gradient-teal);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -119,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .brand-link:hover .brand-text {
-  background: linear-gradient(135deg, #34495e 0%, #2c3e50 50%, #95a5a6 100%);
+  background: var(--gradient-luxury);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -130,10 +153,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .brand-link:focus .brand-text {
-  background: linear-gradient(135deg, #34495e 0%, #2c3e50 50%, #95a5a6 100%);
+  background: var(--gradient-luxury);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Logo Image Styles */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.logo-image {
+  height: auto;
+  max-height: 50px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: brightness(1) contrast(1.1);
+}
+
+.brand-link:hover .logo-image {
+  filter: brightness(1.1) contrast(1.2);
+  transform: scale(1.02);
+}
+
+.brand-link:focus .logo-image {
+  filter: brightness(1.1) contrast(1.2);
+  transform: scale(1.02);
 }
 
 /* Navigation Links */
@@ -147,7 +197,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-link {
   position: relative;
   text-decoration: none;
-  color: #2c3e50;
+  color: var(--primary-teal);
   font-family: var(--font-inter), 'Inter', sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
@@ -163,12 +213,12 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #c0c0c0 0%, #a8a8a8 100%);
+  background: var(--gradient-teal);
   transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #34495e;
+  color: var(--secondary-teal);
 }
 
 .nav-link:hover::before {
@@ -177,7 +227,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link:focus {
   outline: none;
-  color: #34495e;
+  color: var(--secondary-teal);
 }
 
 .nav-link:focus::before {
@@ -245,11 +295,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(192, 192, 192, 0.1) 0%, rgba(192, 192, 192, 0.05) 100%);
-  color: #2c3e50;
+  background: linear-gradient(135deg, rgba(45, 106, 106, 0.1) 0%, rgba(45, 106, 106, 0.05) 100%);
+  color: var(--primary-teal);
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(192, 192, 192, 0.3);
+  border: 1px solid rgba(45, 106, 106, 0.2);
   overflow: visible;
   backdrop-filter: blur(10px);
 }
@@ -268,11 +318,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .action-btn:hover {
-  background: linear-gradient(135deg, rgba(192, 192, 192, 0.2) 0%, rgba(192, 192, 192, 0.1) 100%);
-  color: #34495e;
+  background: linear-gradient(135deg, rgba(45, 106, 106, 0.2) 0%, rgba(45, 106, 106, 0.1) 100%);
+  color: var(--secondary-teal);
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(192, 192, 192, 0.4);
-  border-color: rgba(192, 192, 192, 0.5);
+  box-shadow: var(--shadow-teal);
+  border-color: rgba(45, 106, 106, 0.3);
 }
 
 .action-btn:active {
@@ -281,8 +331,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .action-btn:focus {
   outline: none;
-  background: linear-gradient(135deg, rgba(192, 192, 192, 0.2) 0%, rgba(192, 192, 192, 0.1) 100%);
-  color: #34495e;
+  background: linear-gradient(135deg, rgba(45, 106, 106, 0.2) 0%, rgba(45, 106, 106, 0.1) 100%);
+  color: var(--secondary-teal);
 }
 
 .action-btn .badge {
@@ -336,26 +386,26 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  background: var(--gradient-teal);
   color: white;
   text-decoration: none;
   border-radius: 25px;
   font-size: 0.9rem;
   font-weight: 600;
   transition: all 0.3s ease;
-  border: 1px solid rgba(44, 62, 80, 0.2);
+  border: 1px solid rgba(45, 106, 106, 0.2);
 }
 
 .login-btn:hover {
-  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+  background: var(--gradient-luxury);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(44, 62, 80, 0.3);
+  box-shadow: var(--shadow-teal);
   color: white;
 }
 
 .login-btn:focus {
   outline: none;
-  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+  background: var(--gradient-luxury);
   color: white;
 }
 
@@ -365,7 +415,7 @@ h1, h2, h3, h4, h5, h6 {
   background: none;
   border: none;
   font-size: 1.3rem;
-  color: #2c3e50;
+  color: var(--primary-teal);
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 8px;
@@ -373,14 +423,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-toggle:hover {
-  background: rgba(192, 192, 192, 0.1);
-  color: #34495e;
+  background: rgba(45, 106, 106, 0.1);
+  color: var(--secondary-teal);
 }
 
 .mobile-toggle:focus {
   outline: none;
-  background: rgba(192, 192, 192, 0.1);
-  color: #34495e;
+  background: rgba(45, 106, 106, 0.1);
+  color: var(--secondary-teal);
 }
 
 /* Mobile Menu */
@@ -798,14 +848,14 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-playfair), 'Playfair Display', serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--dark-slate);
+  color: var(--primary-teal);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 .features-section .section-title {
   font-size: 3.5rem;
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #7f8c8d 100%);
+  background: var(--gradient-luxury);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -821,7 +871,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+  background: var(--gradient-silver);
   border-radius: 2px;
 }
 
@@ -847,7 +897,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .featured-products-section .section-title {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 30%, #c0c0c0 60%, #e8e8e8 100%);
+  background: var(--gradient-luxury);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -867,7 +917,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(-50%);
   width: 100px;
   height: 3px;
-  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+  background: var(--gradient-silver);
   border-radius: 2px;
   animation: shimmer 2s ease-in-out infinite;
 }
@@ -924,41 +974,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   margin-top: 2rem;
+  justify-items: center;
 }
 
-.product-card {
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(192, 192, 192, 0.2);
-}
+/* Old product card styles removed - using new luxury design below */
 
-.product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-}
-
-.product-image-container {
-  position: relative;
-  height: 300px;
-  overflow: hidden;
-}
-
-.product-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.product-card:hover .product-image {
-  transform: scale(1.05);
-}
+/* Old product image styles removed - using new luxury design below */
 
 .product-overlay {
   position: absolute;
@@ -997,13 +1021,9 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.05);
 }
 
-.product-content {
-  padding: 1.5rem;
-}
+/* Old product content styles removed - using new luxury design below */
 
-.product-category {
-  margin-bottom: 0.75rem;
-}
+/* Old product category styles removed - using new luxury design below */
 
 .category-badge {
   display: inline-block;
@@ -1015,20 +1035,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-.product-title {
-  font-family: var(--font-playfair), 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--dark-slate);
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
-}
+/* Old product title styles removed - using new luxury design below */
 
-.product-description {
-  color: var(--light-slate);
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
+/* Old product description styles removed - using new luxury design below */
 
 .product-details {
   display: flex;
@@ -1061,30 +1070,33 @@ h1, h2, h3, h4, h5, h6 {
 .view-details-btn {
   display: flex !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 0.4rem !important;
-  padding: 0.6rem 1.2rem !important;
-  background: var(--gradient-slate) !important;
+  padding: 0.5rem 1rem !important;
+  background: var(--gradient-teal) !important;
   color: #ffffff !important;
   text-decoration: none !important;
-  border-radius: 8px !important;
+  border-radius: 6px !important;
   font-weight: 600 !important;
-  font-size: 0.85rem !important;
+  font-size: 0.8rem !important;
   transition: all 0.3s ease !important;
   white-space: nowrap !important;
-  border: 1px solid #2c3e50 !important;
-  justify-content: center !important;
+  border: 1px solid var(--primary-teal) !important;
   flex-shrink: 0 !important;
-  box-shadow: 0 2px 4px rgba(44, 62, 80, 0.2) !important;
+  box-shadow: 0 2px 4px rgba(45, 106, 106, 0.2) !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
+  width: auto !important;
+  min-width: 140px !important;
+  margin: 0 auto !important;
 }
 
 .view-details-btn:hover {
-  background: var(--gradient-silver) !important;
-  color: var(--dark-slate) !important;
+  background: var(--gradient-luxury) !important;
+  color: #ffffff !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 4px 8px rgba(44, 62, 80, 0.3) !important;
-  border-color: var(--primary-silver) !important;
+  box-shadow: var(--shadow-teal) !important;
+  border-color: var(--primary-teal) !important;
 }
 
 /* Product Actions Container - removed as not used */
@@ -1311,8 +1323,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .products-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
   
   .about-content {
@@ -1893,9 +1905,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .quantity-btn:hover {
-  background: var(--primary-silver);
+  background: #2D6A6A;
   color: white;
-  border-color: var(--primary-silver);
+  border-color: #2D6A6A;
 }
 
 .quantity-input {
@@ -2260,9 +2272,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .category-btn.active {
-  background: var(--gradient-slate);
+  background: var(--gradient-teal);
   color: white;
-  border-color: var(--dark-slate);
+  border-color: var(--primary-teal);
+  box-shadow: 0 2px 8px rgba(45, 106, 106, 0.3);
 }
 
 .sort-section {
@@ -2290,19 +2303,20 @@ h1, h2, h3, h4, h5, h6 {
 /* Luxury Jewelry Products Grid */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
   margin-bottom: 4rem;
   padding: 2rem 0;
+  justify-items: center;
 }
 
 /* Luxury Jewelry Product Card Design */
 .product-card {
   background: #ffffff;
-  border-radius: 16px;
+  border-radius: 12px;
   box-shadow: 
-    0 2px 12px rgba(0, 0, 0, 0.08),
-    0 1px 3px rgba(0, 0, 0, 0.1);
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -2310,6 +2324,8 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   height: 100%;
+  max-width: 280px;
+  margin: 0 auto;
 }
 
 .product-card::before {
@@ -2366,10 +2382,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Luxury Jewelry Image Container */
 .product-image-container {
   position: relative;
-  height: 280px;
+  height: 200px;
   overflow: hidden;
   background: #fafafa;
-  border-radius: 16px 16px 0 0;
+  border-radius: 12px 12px 0 0;
   flex-shrink: 0;
 }
 
@@ -2438,25 +2454,26 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Luxury Jewelry Product Content */
 .product-content {
-  padding: 1.5rem;
+  padding: 0.75rem;
   position: relative;
   z-index: 2;
   background: #ffffff;
   flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
 .product-category {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.15rem;
 }
 
 .category-badge {
   display: inline-block;
-  padding: 0.25rem 0.6rem;
+  padding: 0.2rem 0.5rem;
   background: #f3f4f6;
   color: #6b7280;
-  border-radius: 12px;
+  border-radius: 10px;
   font-size: 0.6rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -2466,19 +2483,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .product-title {
   font-family: var(--font-playfair), 'Playfair Display', serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #1f2937;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   line-height: 1.3;
   letter-spacing: -0.01em;
 }
 
 .product-description {
   color: #6b7280;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -2490,9 +2507,9 @@ h1, h2, h3, h4, h5, h6 {
 .product-rating {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  margin-bottom: 0.5rem;
-  padding: 0.3rem 0;
+  gap: 0.3rem;
+  margin-bottom: 0.25rem;
+  padding: 0.2rem 0;
 }
 
 .rating-stars {
@@ -2522,47 +2539,19 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Wastage info styles - using product detail page specific styles */
 
-/* Luxury Jewelry Product Details */
-.product-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: #f9fafb;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-}
+/* Luxury Jewelry Product Details - Removed as not used */
 
-.detail-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  padding: 0.3rem 0;
-}
+/* Detail item styles removed as not used */
 
-.detail-label {
-  font-size: 0.65rem;
-  color: #6b7280;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.detail-value {
-  font-size: 0.8rem;
-  color: #1f2937;
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-}
+/* Detail label and value styles removed as not used */
 
 /* Single Line Footer Layout */
 .product-footer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 0 0 0;
+  gap: 0.5rem;
+  padding: 0.5rem 0 0 0;
   border-top: 1px solid #e5e7eb;
   margin-top: auto;
 }
@@ -2570,7 +2559,8 @@ h1, h2, h3, h4, h5, h6 {
 .price-section {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.15rem;
+  align-items: center;
   flex: 1;
 }
 
@@ -2663,20 +2653,22 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .products-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
   
   .product-footer {
     flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.5rem;
   }
   
   .view-details-btn {
     justify-content: center;
-    padding: 0.6rem 1.2rem;
-    align-self: stretch;
+    padding: 0.5rem 1rem;
+    width: auto;
+    min-width: 140px;
+    margin: 0 auto;
     margin-top: 0;
   }
   
@@ -2700,22 +2692,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 480px) {
-  .products-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
   .product-details {
     grid-template-columns: 1fr;
     padding: 0.8rem;
   }
   
   .product-content {
-    padding: 1rem;
+    padding: 0.75rem;
   }
   
   .product-image-container {
-    height: 220px;
+    height: 180px;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
   
   .category-buttons {
@@ -3455,7 +3447,8 @@ h1, h2, h3, h4, h5, h6 {
 .product-header {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .product-category {
@@ -3527,15 +3520,22 @@ h1, h2, h3, h4, h5, h6 {
 /* Wastage info styles - using product detail page specific styles */
 
 .product-description {
-  color: var(--light-slate);
-  font-size: 1rem;
+  color: #6b7280;
+  font-size: 0.95rem;
   line-height: 1.6;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 6px;
+  border-left: 3px solid #e5e7eb;
 }
 
 .product-features {
-  background: rgba(192, 192, 192, 0.05);
-  padding: 1.5rem;
-  border-radius: 15px;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #2D6A6A;
+  margin: 0.5rem 0;
 }
 
 .product-features h3 {
@@ -3601,16 +3601,16 @@ h1, h2, h3, h4, h5, h6 {
   background: white;
   border: 1px solid rgba(192, 192, 192, 0.3);
   border-radius: 50%;
-  color: var(--dark-slate);
+  color: #2D6A6A;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .quantity-btn:hover {
-  background: var(--primary-silver);
+  background: #2D6A6A;
   color: white;
-  border-color: var(--primary-silver);
+  border-color: #2D6A6A;
 }
 
 .quantity-input {
@@ -3627,7 +3627,11 @@ h1, h2, h3, h4, h5, h6 {
 .action-buttons {
   display: flex;
   gap: 0.75rem;
-  margin-top: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #2D6A6A;
 }
 
 /* Product detail page wishlist button - smaller size */
@@ -3639,8 +3643,8 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.4rem;
   padding: 0.6rem 1rem;
   background: transparent;
-  color: var(--primary-silver);
-  border: 1px solid var(--primary-silver);
+  color: #2D6A6A;
+  border: 1px solid #2D6A6A;
   border-radius: 6px;
   font-weight: 500;
   font-size: 0.85rem;
@@ -3649,7 +3653,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .action-buttons .wishlist-btn:hover {
-  background: var(--primary-silver);
+  background: #2D6A6A;
   color: white;
 }
 
@@ -3666,7 +3670,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   gap: 0.4rem;
   padding: 0.6rem 1rem;
-  background: var(--gradient-slate);
+  background: linear-gradient(135deg, #2D6A6A 0%, #4A8B8B 100%);
   color: white;
   border: none;
   border-radius: 6px;
@@ -3677,67 +3681,80 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .action-buttons .add-to-cart-btn:hover {
-  background: var(--gradient-silver);
-  color: var(--dark-slate);
+  background: linear-gradient(135deg, #2D6A6A 0%, #C0C0C0 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45, 106, 106, 0.3);
 }
 
-/* Product Detail Page Price Structure */
+/* Product Detail Page Price Structure - Integrated Design */
 .product-detail-page .product-price {
-  margin: 1.5rem 0;
+  margin: 0.75rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #2D6A6A;
 }
 
 .product-detail-page .price-section {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
-  margin-bottom: 0.5rem;
+  gap: 0.5rem;
+  margin-bottom: 0;
 }
 
 .product-detail-page .product-price-line {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.2rem;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0;
+  flex-wrap: wrap;
 }
 
 .product-detail-page .original-price {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
   color: #9ca3af;
   text-decoration: line-through;
 }
 
 .product-detail-page .current-price {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: #374151;
+  color: #2D6A6A;
 }
 
 .product-detail-page .gst-info {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: #6b7280;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.product-detail-page .wastage-info {
-  font-size: 0.7rem;
-  color: #6b7280;
-  font-weight: 500;
-  background: rgba(192, 192, 192, 0.1);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  background: rgba(45, 106, 106, 0.1);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-top: 0.3rem;
+}
+
+.product-detail-page .wastage-info {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 400;
+  background: rgba(45, 106, 106, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-top: 0;
 }
 
 .product-specifications {
-  background: rgba(192, 192, 192, 0.05);
-  padding: 1.5rem;
-  border-radius: 15px;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #2D6A6A;
+  margin: 0.5rem 0;
 }
 
 .product-specifications h3 {
@@ -4433,7 +4450,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  background: var(--gradient-gold);
+  background: var(--gradient-teal);
   color: white;
   border: none;
   border-radius: 50px;
@@ -4460,8 +4477,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-content .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
-  background: linear-gradient(135deg, #E6C547 0%, #C9A96E 100%);
+  box-shadow: var(--shadow-teal);
+  background: var(--gradient-luxury);
 }
 
 /* Featured Products Section */

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useCurrency } from '../context/CurrencyContext';
 import { FaShoppingCart, FaUser, FaSearch, FaHeart, FaBars, FaTimes } from 'react-icons/fa';
 
@@ -28,8 +29,16 @@ export default function Navbar() {
           {/* Brand Logo */}
           <div className="nav-brand">
             <Link href="/" className="brand-link">
-              <span className="brand-text">Varam Silvers</span>
-              <span className="brand-accent">✨</span>
+              <div className="brand-logo">
+                <Image 
+                  src="/images/Varam Silvers Logo.jpg" 
+                  alt="Varam Silvers - Kids Silver Jewelry" 
+                  width={120} 
+                  height={40}
+                  className="logo-image"
+                  priority
+                />
+              </div>
             </Link>
           </div>
           
