@@ -16,14 +16,14 @@ const Footer = () => {
   };
 
   const contactLinkStyle = {
-    color: '#008080',
+    color: '#ffffffb3',
     textDecoration: 'none',
     transition: 'color 0.2s ease',
     fontWeight: '500'
   };
 
   const contactLinkHoverStyle = {
-    color: '#20b2aa',
+    color: 'rgba(255, 255, 255, 0.8)',
     textDecoration: 'underline'
   };
   
@@ -188,16 +188,16 @@ const Footer = () => {
       
       <style jsx>{`
         .footer .contact-icon {
-          color: #008080 !important;
+          color: white !important;
         }
         
         .footer .contact-link {
-          color: #008080 !important;
+          color: white !important;
           text-decoration: none !important;
         }
         
         .footer .contact-link:hover {
-          color: #20b2aa !important;
+          color: rgba(255, 255, 255, 0.8) !important;
           text-decoration: underline !important;
         }
       `}</style>

@@ -1,12 +1,12 @@
 /* Tailwind CSS utilities are imported via Next.js */
 
 :root {
-  /* Varam Silvers Brand Color Palette - Based on Logo */
-  --primary-teal: #2D6A6A;        /* Deep teal from logo */
-  --secondary-teal: #4A8B8B;      /* Lighter teal variant */
-  --accent-teal: #6BA6A6;         /* Even lighter teal */
-  --light-teal: #8BC1C1;          /* Very light teal */
-  --pale-teal: #E8F4F4;           /* Pale teal for backgrounds */
+  /* Varam Silvers Brand Color Palette - Updated Teal Theme */
+  --primary-teal: #008080;        /* Main teal theme */
+  --secondary-teal: #20b2aa;      /* Lighter teal variant */
+  --accent-teal: #40e0d0;         /* Even lighter teal */
+  --light-teal: #7fffd4;          /* Very light teal */
+  --pale-teal: #e0f7f7;           /* Pale teal for backgrounds */
   
   /* Silver and Metallic Colors */
   --primary-silver: #C0C0C0;      /* Classic silver */
@@ -35,21 +35,21 @@
   --luxury-black: #1A1A1A;        /* Luxury black */
   
   /* Gradients */
-  --gradient-teal: linear-gradient(135deg, #2D6A6A 0%, #4A8B8B 100%);
+  --gradient-teal: linear-gradient(135deg, #008080 0%, #20b2aa 100%);
   --gradient-silver: linear-gradient(135deg, #C0C0C0 0%, #E8E8E8 100%);
   --gradient-warm: linear-gradient(135deg, #F8F7F0 0%, #FAFAFA 100%);
-  --gradient-luxury: linear-gradient(135deg, #2D6A6A 0%, #C0C0C0 100%);
+  --gradient-luxury: linear-gradient(135deg, #008080 0%, #C0C0C0 100%);
   
   /* Shadows */
-  --shadow-luxury: 0 20px 40px rgba(45, 106, 106, 0.15);
-  --shadow-soft: 0 10px 30px rgba(45, 106, 106, 0.08);
-  --shadow-teal: 0 8px 25px rgba(45, 106, 106, 0.12);
+  --shadow-luxury: 0 20px 40px rgba(0, 128, 128, 0.15);
+  --shadow-soft: 0 10px 30px rgba(0, 128, 128, 0.08);
+  --shadow-teal: 0 8px 25px rgba(0, 128, 128, 0.12);
   
   /* Legacy compatibility - Updated to use teal theme */
-  --primary-gold: #2D6A6A;        /* Now using teal */
-  --secondary-gold: #4A8B8B;      /* Lighter teal */
+  --primary-gold: #008080;        /* Now using teal */
+  --secondary-gold: #20b2aa;      /* Lighter teal */
   --accent-gold: #6BA6A6;         /* Even lighter teal */
-  --gradient-gold: linear-gradient(135deg, #2D6A6A 0%, #4A8B8B 100%);
+  --gradient-gold: linear-gradient(135deg, #008080 0%, #20b2aa 100%);
 }
 
 body {
@@ -1176,7 +1176,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Features Section - Why Choose Varam Silvers */
 .features-section {
-  padding: 3rem 0;
+  padding: 1rem 0;
   background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
   position: relative;
   overflow: hidden;
@@ -1409,7 +1409,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Newsletter Section */
 .newsletter-section {
   padding: 2rem 0;
-  background: linear-gradient(135deg, var(--luxury-black) 0%, #2c2c2c 100%);
+  background: linear-gradient(135deg, var(--primary-teal) 0%, var(--secondary-teal) 100%);
 }
 
 .newsletter-container {
@@ -1538,7 +1538,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer */
 .footer {
-  background: var(--luxury-black);
+  background: linear-gradient(135deg, var(--primary-teal) 0%, var(--secondary-teal) 100%);
   color: white;
   padding: 3rem 0 0;
 }
@@ -1646,13 +1646,29 @@ h1, h2, h3, h4, h5, h6 {
   align-items: flex-start;
   gap: 0.75rem;
   margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: white;
 }
 
 .contact-icon {
-  color: var(--primary-silver);
+  color: white;
   margin-top: 0.2rem;
   flex-shrink: 0;
+}
+
+/* Footer Contact Links - Make them white like other footer links */
+.footer .contact-link {
+  color: #ffffffb3 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+}
+
+.footer .contact-link:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-decoration: underline !important;
+}
+
+.footer .contact-icon {
+  color: white !important;
 }
 
 .footer-copyright {
@@ -2305,7 +2321,7 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   padding: 2rem 0;
   justify-items: center;
 }
@@ -2324,7 +2340,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-width: 280px;
+  max-width: 320px;
   margin: 0 auto;
 }
 
@@ -2486,6 +2502,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.1rem;
   font-weight: 600;
   color: #1f2937;
+  margin-top: 2px;
   margin-bottom: 0.25rem;
   line-height: 1.3;
   letter-spacing: -0.01em;
@@ -2493,14 +2510,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .product-description {
   color: #6b7280;
-  font-size: 0.8rem;
-  line-height: 1.4;
-  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-weight: 400;
+  margin: 4px;
+  min-height: 0.05rem; /* 3 lines * 1.5 line-height * 0.9rem */
 }
 
 /* Luxury Jewelry Rating System */
@@ -2593,7 +2612,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.1rem;
 }
 
-/* Conflicting view-details-btn rules removed - using better styling below */
 
 .view-details-btn.disabled {
   background: #d1d5db;
@@ -3170,7 +3188,6 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1rem;
 }
 
-/* Conflicting view-details-btn rule removed - using main styling above */
 
 .add-to-cart-btn {
   flex: 1;
@@ -3477,7 +3494,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-.product-title {
+/* Product Detail Page Title */
+.product-detail-page .product-title {
   font-family: var(--font-playfair), 'Playfair Display', serif;
   font-size: 2.2rem;
   font-weight: 700;
@@ -3513,13 +3531,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
 }
 
-/* Conflicting product-price rule removed */
-
-/* Conflicting current-price rule removed */
 
 /* Wastage info styles - using product detail page specific styles */
 
-.product-description {
+/* Product Detail Page Description */
+.product-detail-page .product-description {
   color: #6b7280;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -4203,22 +4219,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Newsletter Section */
-.newsletter-section {
-  position: relative;
-  overflow: hidden;
-}
-
-.newsletter-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  opacity: 0.3;
-}
 
 .newsletter-form .form-control {
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -4263,43 +4263,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2rem;
 }
 
-/* Enhanced Footer Styles */
-.footer {
-  position: relative;
-  overflow: hidden;
-}
-
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--gradient-gold);
-}
-
-.footer-links li a {
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.footer-links li a:hover {
-  color: var(--primary-gold) !important;
-  transform: translateX(5px);
-}
-
-.contact-info li {
-  transition: all 0.3s ease;
-}
-
-.contact-info li:hover {
-  transform: translateX(3px);
-}
-
-.contact-info li:hover .text-white-50 {
-  color: white !important;
-}
 
 .social-icon {
   width: 40px;
@@ -4647,22 +4610,6 @@ footer {
   opacity: 1 !important;
 }
 
-.contact-info li {
-  transition: all 0.3s ease;
-}
-
-.contact-info li:hover {
-  transform: translateX(3px);
-}
-
-.contact-info li:hover span,
-.contact-info li:hover div {
-  opacity: 1 !important;
-}
-
-.contact-info li:hover svg {
-  opacity: 0.75 !important;
-}
 
 /* Animation Classes */
 .fade-in {
@@ -4746,63 +4693,7 @@ footer {
   border-color: var(--primary-color);
 }
 
-/* Cart Item hover effects - using main definition above */
 
-/* Enhanced Footer Styles */
-.footer-links li a {
-  position: relative;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.footer-links li a:hover {
-  transform: translateX(8px);
-  opacity: 1 !important;
-}
-
-.hover-lift {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-3px);
-  opacity: 1 !important;
-}
-
-.contact-info li {
-  transition: all 0.3s ease;
-}
-
-.contact-info li:hover {
-  transform: translateX(5px);
-}
-
-.contact-info li:hover span,
-.contact-info li:hover div {
-  opacity: 1 !important;
-}
-
-.contact-info li:hover svg {
-  opacity: 1 !important;
-}
-
-.social-icon {
-  transition: all 0.3s ease;
-}
-
-.contact-info li {
-  transition: all 0.3s ease;
-}
-
-.contact-info li:hover .text-gray-500 {
-  color: #9ca3af !important;
-}
-
-.contact-info li:hover .text-gray-300 {
-  color: #ffffff !important;
-}
-
-/* Cart Quantity Controls - Cleaned up */
 
 /* Currency Toggle and Sort Dropdown Styles */
 .btn-outline-dark {
