@@ -33,8 +33,8 @@ export default function Navbar() {
                 <Image 
                   src="/images/Varam Silvers Logo.jpg" 
                   alt="Varam Silvers - Kids Silver Jewelry" 
-                  width={120} 
-                  height={40}
+                  width={180} 
+                  height={60}
                   className="logo-image"
                   priority
                 />

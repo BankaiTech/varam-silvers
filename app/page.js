@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FaShoppingCart } from 'react-icons/fa';
 
 const heroImages = [
   {
@@ -135,48 +134,44 @@ export default function HomePage() {
           </div>
           <div className="products-grid">
             {featuredProducts.map((product) => (
-              <motion.div
+              <Link
                 key={product.id}
-                className="product-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-                viewport={{ once: true }}
+                href={`/products/${product.id}`}
+                className="product-card-link"
               >
-                <div className="product-image-container">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    width={400}
-                    height={400}
-                    className="product-image"
-                  />
-                </div>
-                <div className="product-content">
-                  <div className="product-category">
-                    <span className="category-badge">{product.category}</span>
+                <motion.div
+                  className="product-card"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="product-image-container">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      width={400}
+                      height={400}
+                      className="product-image"
+                    />
                   </div>
-                  <h3 className="product-title">{product.name}</h3>
-                  <p className="product-description">{product.description}</p>
-                  
-                  <div className="product-footer">
-                    <div className="price-section">
+                  <div className="product-content">
+                    <div className="product-category">
+                      <span className="category-badge">{product.category}</span>
+                    </div>
+                    <h3 className="product-title">{product.name}</h3>
+                    <p className="product-description">{product.description}</p>
+                    
+                    <div className="product-price-section">
                       <div className="product-price">
                         <span className="original-price">₹{Math.round(product.priceINR * 1.2).toLocaleString('en-IN')}</span>
                         <span className="current-price">₹{product.priceINR.toLocaleString('en-IN')}</span>
+                        <span className="gst-info">Including GST</span>
                       </div>
-                      <span className="gst-info">Including GST</span>
                     </div>
-                    <Link
-                      href={`/products/${product.id}`}
-                      className="view-details-btn"
-                    >
-                      <FaShoppingCart />
-                      View Details
-                    </Link>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>

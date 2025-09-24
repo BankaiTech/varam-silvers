@@ -77,8 +77,8 @@ export default function ProductDetailPage({ params }) {
       duration: 3000,
       icon: '🛒',
       style: {
-        background: '#008080',
-        color: '#fff',
+        background: 'var(--primary-teal)',
+        color: 'var(--soft-white)',
         borderRadius: '8px',
         padding: '12px 16px',
         fontSize: '14px',
@@ -98,8 +98,8 @@ export default function ProductDetailPage({ params }) {
         duration: 2000,
         icon: '💔',
         style: {
-          background: '#008080',
-          color: '#fff',
+          background: 'var(--primary-teal)',
+          color: 'var(--soft-white)',
           borderRadius: '8px',
           padding: '12px 16px',
           fontSize: '14px',
@@ -112,8 +112,8 @@ export default function ProductDetailPage({ params }) {
         duration: 2000,
         icon: '❤️',
         style: {
-          background: '#008080',
-          color: '#fff',
+          background: 'var(--primary-teal)',
+          color: 'var(--soft-white)',
           borderRadius: '8px',
           padding: '12px 16px',
           fontSize: '14px',
@@ -176,6 +176,19 @@ export default function ProductDetailPage({ params }) {
                 </button>
               ))}
             </div>
+            
+            {/* Specifications moved under images */}
+            <div className="product-specifications">
+              <h3>Specifications:</h3>
+              <div className="specs-grid">
+                {Object.entries(product.specifications).map(([key, value]) => (
+                  <div key={key} className="spec-item">
+                    <span className="spec-label">{key}:</span>
+                    <span className="spec-value">{value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Product Info */}
@@ -186,20 +199,6 @@ export default function ProductDetailPage({ params }) {
                 {product.isNew && <span className="new-badge">New</span>}
               </div>
               <h1 className="product-title">{product.name}</h1>
-              
-              <div className="product-rating">
-                <div className="rating-stars">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar
-                      key={i}
-                      className={`star ${i < Math.floor(product.rating) ? 'filled' : 'empty'}`}
-                    />
-                  ))}
-                </div>
-                <span className="rating-text">
-                  {product.rating} ({product.reviews} reviews)
-                </span>
-              </div>
             </div>
 
             <div className="product-price">
@@ -207,11 +206,26 @@ export default function ProductDetailPage({ params }) {
                 <div className="product-price-line">
                   <span className="original-price">₹{Math.round(product.priceINR * 1.2).toLocaleString('en-IN')}</span>
                   <span className="current-price">₹{product.priceINR.toLocaleString('en-IN')}</span>
+                  <div className="product-rating">
+                    <div className="rating-stars">
+                      {[...Array(5)].map((_, i) => (
+                        <FaStar
+                          key={i}
+                          className={`star ${i < Math.floor(product.rating) ? 'filled' : 'empty'}`}
+                        />
+                      ))}
+                    </div>
+                    <span className="rating-text">
+                      {product.rating} ({product.reviews} reviews)
+                    </span>
+                  </div>
+                </div>
+                <div className="price-details">
+                  <span className="gst-info">Including GST</span>
                   <span className="wastage-info">
                     Including {product.wastagePercentage}% wastage
                   </span>
                 </div>
-                <span className="gst-info">Including GST</span>
               </div>
             </div>
 
@@ -271,18 +285,6 @@ export default function ProductDetailPage({ params }) {
                   <FaShoppingCart />
                   <span>{isAddedToCart ? 'Go to Cart' : 'Add to Cart'}</span>
                 </button>
-              </div>
-            </div>
-
-            <div className="product-specifications">
-              <h3>Specifications:</h3>
-              <div className="specs-grid">
-                {Object.entries(product.specifications).map(([key, value]) => (
-                  <div key={key} className="spec-item">
-                    <span className="spec-label">{key}:</span>
-                    <span className="spec-value">{value}</span>
-                  </div>
-                ))}
               </div>
             </div>
 

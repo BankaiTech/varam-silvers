@@ -234,79 +234,76 @@ export default function ProductsPage() {
 
           <div className="products-grid">
             {sortedProducts.map((product) => (
-              <motion.div
+              <Link
                 key={product.id}
-                className="product-card"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
+                href={`/products/${product.id}`}
+                className="product-card-link"
               >
-                <div className="product-image-container">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    width={400}
-                    height={400}
-                    className="product-image"
-                  />
-                  {product.isNew && (
-                    <span className="product-badge new-badge">
-                      New
-                    </span>
-                  )}
-                  {!product.inStock && (
-                    <span className="product-badge out-of-stock-badge">
-                      Out of Stock
-                    </span>
-                  )}
-                  <button
-                    className={`wishlist-btn ${isInWishlist(product.id) ? 'active' : ''}`}
-                    onClick={() => handleToggleWishlist(product)}
-                    aria-label={isInWishlist(product.id) ? 'Remove from wishlist' : 'Add to wishlist'}
-                  >
-                    <FaHeart />
-                  </button>
-                </div>
-                <div className="product-content">
-                  <div className="product-category">
-                    <span className="category-badge">{product.category}</span>
+                <motion.div
+                  className="product-card"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="product-image-container">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      width={400}
+                      height={400}
+                      className="product-image"
+                    />
+                    {product.isNew && (
+                      <span className="product-badge new-badge">
+                        New
+                      </span>
+                    )}
+                    {!product.inStock && (
+                      <span className="product-badge out-of-stock-badge">
+                        Out of Stock
+                      </span>
+                    )}
+                    <button
+                      className={`wishlist-btn ${isInWishlist(product.id) ? 'active' : ''}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleToggleWishlist(product);
+                      }}
+                      aria-label={isInWishlist(product.id) ? 'Remove from wishlist' : 'Add to wishlist'}
+                    >
+                      <FaHeart />
+                    </button>
                   </div>
-                  <h3 className="product-title">{product.name}</h3>
-                  <p className="product-description">{product.description}</p>
-                  
-                  {/* Rating */}
-                  <div className="product-rating">
-                    <div className="rating-stars">
-                      {[...Array(5)].map((_, i) => (
-                        <i
-                          key={i}
-                          className={`fas fa-star ${i < Math.floor(product.rating) ? 'star-filled' : 'star-empty'}`}
-                        />
-                      ))}
+                  <div className="product-content">
+                    <div className="product-category">
+                      <span className="category-badge">{product.category}</span>
                     </div>
-                    <span className="rating-text">({product.rating})</span>
-                  </div>
-                  
-                  
-                  <div className="product-footer">
-                    <div className="price-section">
+                    <h3 className="product-title">{product.name}</h3>
+                    <p className="product-description">{product.description}</p>
+                    
+                    {/* Rating */}
+                    <div className="product-rating">
+                      <div className="rating-stars">
+                        {[...Array(5)].map((_, i) => (
+                          <i
+                            key={i}
+                            className={`fas fa-star ${i < Math.floor(product.rating) ? 'star-filled' : 'star-empty'}`}
+                          />
+                        ))}
+                      </div>
+                      <span className="rating-text">({product.rating})</span>
+                    </div>
+                    
+                    <div className="product-price-section">
                       <div className="product-price">
                         <span className="original-price">₹{Math.round(product.priceINR * 1.2).toLocaleString('en-IN')}</span>
                         <span className="current-price">₹{product.priceINR.toLocaleString('en-IN')}</span>
+                        <span className="gst-info">Including GST</span>
                       </div>
-                      <span className="gst-info">Including GST</span>
-                    </div>
-                    <div className="product-actions">
-                      <Link
-                        href={`/products/${product.id}`}
-                        className="view-details-btn"
-                      >
-                        View Details
-                      </Link>
                     </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </div>
 
