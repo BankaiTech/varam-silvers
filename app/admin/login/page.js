@@ -54,7 +54,7 @@ export default function AdminLogin() {
           <div className="admin-login-header">
             <div className="admin-logo">
               <Image 
-                src="/images/Varam Silvers Logo.png" 
+                src="/images/varam_silvers_logo.png" 
                 alt="Varam Silvers Admin" 
                 width={80} 
                 height={40}

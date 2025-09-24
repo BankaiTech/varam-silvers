@@ -4,6 +4,16 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
+// Mock products data
+const mockProducts = [
+  { id: 1, name: 'Silver Chain', price: 1200, stock: 15, category: 'Chains', status: 'Active', description: 'Beautiful silver chain for children' },
+  { id: 2, name: 'Gold Ring', price: 2500, stock: 3, category: 'Rings', status: 'Low Stock', description: 'Elegant gold ring with gemstone' },
+  { id: 3, name: 'Pearl Earrings', price: 1800, stock: 22, category: 'Earrings', status: 'Active', description: 'Classic pearl earrings for special occasions' },
+  { id: 4, name: 'Diamond Pendant', price: 4500, stock: 0, category: 'Pendants', status: 'Out of Stock', description: 'Luxury diamond pendant necklace' },
+  { id: 5, name: 'Silver Bracelet', price: 1500, stock: 8, category: 'Bracelets', status: 'Active', description: 'Delicate silver bracelet for kids' },
+  { id: 6, name: 'Ruby Ring', price: 3200, stock: 5, category: 'Rings', status: 'Low Stock', description: 'Stunning ruby ring with silver setting' }
+];
+
 export default function ProductManagement() {
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState([]);
@@ -11,16 +21,6 @@ export default function ProductManagement() {
   const [editingProduct, setEditingProduct] = useState(null);
   const [adminEmail, setAdminEmail] = useState('');
   const router = useRouter();
-
-  // Mock products data
-  const mockProducts = [
-    { id: 1, name: 'Silver Chain', price: 1200, stock: 15, category: 'Chains', status: 'Active', description: 'Beautiful silver chain for children' },
-    { id: 2, name: 'Gold Ring', price: 2500, stock: 3, category: 'Rings', status: 'Low Stock', description: 'Elegant gold ring with gemstone' },
-    { id: 3, name: 'Pearl Earrings', price: 1800, stock: 22, category: 'Earrings', status: 'Active', description: 'Classic pearl earrings for special occasions' },
-    { id: 4, name: 'Diamond Pendant', price: 4500, stock: 0, category: 'Pendants', status: 'Out of Stock', description: 'Luxury diamond pendant necklace' },
-    { id: 5, name: 'Silver Bracelet', price: 1500, stock: 8, category: 'Bracelets', status: 'Active', description: 'Delicate silver bracelet for kids' },
-    { id: 6, name: 'Ruby Ring', price: 3200, stock: 5, category: 'Rings', status: 'Low Stock', description: 'Stunning ruby ring with silver setting' }
-  ];
 
   useEffect(() => {
     // Check admin authentication
@@ -99,7 +99,7 @@ export default function ProductManagement() {
       <div className="admin-sidebar">
         <div className="admin-sidebar-header">
           <Image 
-            src="/images/Varam Silvers Logo.png" 
+            src="/images/varam_silvers_logo.png" 
             alt="Varam Silvers" 
             width={60} 
             height={40}

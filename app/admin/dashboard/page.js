@@ -9,7 +9,7 @@ export default function AdminDashboard() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [showOrderModal, setShowOrderModal] = useState(false);
-  const [adminEmail, setAdminEmail] = useState('');
+  const [, setAdminEmail] = useState('');
   const router = useRouter();
 
   // Mock data with today's data
@@ -118,7 +118,7 @@ export default function AdminDashboard() {
       <div className="admin-sidebar">
         <div className="admin-sidebar-header">
           <Image 
-            src="/images/Varam Silvers Logo.png" 
+            src="/images/varam_silvers_logo.png" 
             alt="Varam Silvers" 
             width={60} 
             height={40}
@@ -156,7 +156,7 @@ export default function AdminDashboard() {
         <div className="admin-header">
           <div className="header-left">
             <h1>Dashboard</h1>
-            <p className="header-subtitle">Welcome back! Here's what's happening with your business today.</p>
+            <p className="header-subtitle">Welcome back! Here&apos;s what&apos;s happening with your business today.</p>
           </div>
           <div className="admin-header-actions">
             <div className="search-box">
@@ -183,7 +183,7 @@ export default function AdminDashboard() {
             <div className="stat-card revenue-card">
               <div className="stat-icon">💰</div>
               <div className="stat-content">
-                <h3>Today's Revenue</h3>
+                <h3>Today&apos;s Revenue</h3>
                 <p className="stat-value">₹{dashboardData.stats.todayRevenue.toLocaleString()}</p>
                 <span className="stat-change positive">+12.5% from yesterday</span>
               </div>
@@ -192,7 +192,7 @@ export default function AdminDashboard() {
             <div className="stat-card orders-card">
               <div className="stat-icon">📦</div>
               <div className="stat-content">
-                <h3>Today's Orders</h3>
+                <h3>Today&apos;s Orders</h3>
                 <p className="stat-value">{dashboardData.stats.todayOrders}</p>
                 <span className="stat-change positive">+3 from yesterday</span>
               </div>

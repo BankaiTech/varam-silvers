@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google';
+import './admin-styles.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -10,7 +11,6 @@ export const metadata = {
 export default function AdminLayout({ children }) {
   return (
     <div className={inter.className}>
-      <link rel="stylesheet" href="/admin/admin-styles.css" />
       <script src="/admin/admin-script.js" defer></script>
       {children}
     </div>

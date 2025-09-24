@@ -27,18 +27,27 @@ export const metadata = {
   title: 'Varam Silvers - Luxury Silver Jewelry for Children',
   description: 'Discover our exquisite collection of handcrafted silver jewelry designed specifically for children. Premium quality, elegant designs, and timeless beauty.',
   keywords: 'silver jewelry, children jewelry, luxury jewelry, handcrafted, sterling silver',
+  metadataBase: new URL('https://varamsilvers.com'),
+  manifest: '/manifest.json',
   icons: {
-    icon: '/images/Varam Silvers Logo.png',
-    shortcut: '/images/Varam Silvers Logo.png',
-    apple: '/images/Varam Silvers Logo.png',
+    icon: [
+      { url: '/images/varam_silvers_logo.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/varam_silvers_logo.png', sizes: '16x16', type: 'image/png' },
+    ],
+    shortcut: '/images/varam_silvers_logo.png',
+    apple: [
+      { url: '/images/varam_silvers_logo.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   openGraph: {
     title: 'Varam Silvers - Luxury Silver Jewelry for Children',
     description: 'Discover our exquisite collection of handcrafted silver jewelry designed specifically for children.',
     type: 'website',
+    url: 'https://varamsilvers.com',
+    siteName: 'Varam Silvers',
     images: [
       {
-        url: '/images/Varam Silvers Logo.png',
+        url: '/images/varam_silvers_logo.png',
         width: 1200,
         height: 630,
         alt: 'Varam Silvers - Kids Silver Jewelry',
@@ -49,7 +58,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Varam Silvers - Luxury Silver Jewelry for Children',
     description: 'Discover our exquisite collection of handcrafted silver jewelry designed specifically for children.',
-    images: ['/images/Varam Silvers Logo.png'],
+    images: ['/images/varam_silvers_logo.png'],
   },
 };
 
