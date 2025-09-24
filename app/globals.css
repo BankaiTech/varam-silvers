@@ -1,5 +1,26 @@
 /* Varam Silvers Global Styles */
 
+/* Hide scrollbar for all browsers */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* WebKit browsers (Chrome, Safari, Edge) */
+}
+
+/* Ensure body and html also hide scrollbars */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* WebKit browsers */
+}
+
 :root {
   /* Varam Silvers Brand Color Palette - Updated Teal Theme */
   --primary-teal: #008080;        /* Main teal theme */
@@ -111,6 +132,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Brand */
 .nav-brand {
   flex-shrink: 0;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .brand-link {
@@ -168,19 +194,49 @@ h1, h2, h3, h4, h5, h6 {
 .brand-logo {
   display: flex;
   align-items: center;
-  height: 70px;
-  background: transparent;
-  border: none;
-  outline: none;
+  height: 80px;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .logo-image {
   height: auto;
-  max-height: 70px;
+  max-height: 80px;
   width: auto;
-  max-width: 220px;
+  max-width: 250px;
   object-fit: contain;
   background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+/* Override Next.js Image component default styles */
+.brand-logo img,
+.logo-image img {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+/* Nuclear option - override ALL possible background styles */
+.nav-brand *,
+.brand-link *,
+.brand-logo *,
+.logo-image * {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
@@ -669,12 +725,12 @@ h1, h2, h3, h4, h5, h6 {
   
   /* Mobile Logo Styles */
   .brand-logo {
-    height: 60px;
+    height: 70px;
   }
   
   .logo-image {
-    max-height: 60px;
-    max-width: 180px;
+    max-height: 70px;
+    max-width: 200px;
   }
   
   .login-btn {

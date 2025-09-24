@@ -31,10 +31,10 @@ export default function Navbar() {
             <Link href="/" className="brand-link">
               <div className="brand-logo">
                 <Image 
-                  src="/images/Varam Silvers Logo.jpg" 
+                  src="/images/Varam Silvers Logo.png" 
                   alt="Varam Silvers - Kids Silver Jewelry" 
-                  width={180} 
-                  height={60}
+                  width={200} 
+                  height={70}
                   className="logo-image"
                   priority
                 />

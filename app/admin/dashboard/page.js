@@ -94,7 +94,7 @@ export default function AdminDashboard() {
       <div className="admin-sidebar">
         <div className="admin-sidebar-header">
           <Image 
-            src="/images/Varam Silvers Logo.jpg" 
+            src="/images/Varam Silvers Logo.png" 
             alt="Varam Silvers" 
             width={60} 
             height={40}
