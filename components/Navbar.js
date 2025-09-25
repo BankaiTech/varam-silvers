@@ -5,10 +5,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useCurrency } from '../context/CurrencyContext';
 import { FaShoppingCart, FaUser, FaSearch, FaHeart, FaBars, FaTimes } from 'react-icons/fa';
+import AuthModal from './AuthModal';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { getCartCount, getWishlistCount } = useCurrency();
 
   useEffect(() => {
@@ -20,6 +23,20 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Check for existing login session
+    const userSession = localStorage.getItem('userSession');
+    const adminSession = localStorage.getItem('adminSession');
+    setIsLoggedIn(!!(userSession || adminSession));
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('userSession');
+    localStorage.removeItem('adminSession');
+    setIsLoggedIn(false);
+    window.location.reload();
+  };
 
   return (
     <>
@@ -80,10 +97,17 @@ export default function Navbar() {
               <FaShoppingCart />
               <span className="badge">{getCartCount()}</span>
             </Link>
-            <Link href="/login" className="login-btn">
-              <FaUser />
-              <span>Login</span>
-            </Link>
+            {isLoggedIn ? (
+              <button onClick={handleLogout} className="login-btn">
+                <FaUser />
+                <span>Logout</span>
+              </button>
+            ) : (
+              <button onClick={() => setIsAuthModalOpen(true)} className="login-btn">
+                <FaUser />
+                <span>Login</span>
+              </button>
+            )}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -137,10 +161,17 @@ export default function Navbar() {
                 <FaShoppingCart />
                 <span>Cart ({getCartCount()})</span>
               </Link>
-              <Link href="/login" className="mobile-login-btn" onClick={() => setIsMenuOpen(false)}>
-                <FaUser />
-                <span>Login</span>
-              </Link>
+              {isLoggedIn ? (
+                <button onClick={() => { handleLogout(); setIsMenuOpen(false); }} className="mobile-login-btn">
+                  <FaUser />
+                  <span>Logout</span>
+                </button>
+              ) : (
+                <button onClick={() => { setIsAuthModalOpen(true); setIsMenuOpen(false); }} className="mobile-login-btn">
+                  <FaUser />
+                  <span>Login</span>
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -150,6 +181,12 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="mobile-overlay" onClick={() => setIsMenuOpen(false)}></div>
       )}
+
+      {/* Auth Modal */}
+      <AuthModal 
+        isOpen={isAuthModalOpen} 
+        onClose={() => setIsAuthModalOpen(false)} 
+      />
     </>
   );
 } 

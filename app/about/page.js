@@ -59,7 +59,7 @@ export default function AboutPage() {
                   Our founder, Mr. Praveen, a passionate craftsman with a vision for excellence, believed that every child deserves to feel special and loved. This belief became the cornerstone of our company, driving us to create jewelry that not only looks beautiful but also tells a story of love, care, and modern craftsmanship.
                 </p>
                 <p>
-                  Today, Varam Silvers is a family-owned business that combines traditional silver working techniques with contemporary design, ensuring that each piece is both timeless and relevant for today's children and families.
+                  Today, Varam Silvers is a family-owned business that combines traditional silver working techniques with contemporary design, ensuring that each piece is both timeless and relevant for today&apos;s children and families.
                 </p>
               </motion.div>
             </div>
@@ -177,7 +177,7 @@ export default function AboutPage() {
               </div>
               <h3 className="benefit-title">Natural & Pure</h3>
               <p className="benefit-description">
-                Silver is a natural element found in the earth, making it an eco-friendly choice. It's also antimicrobial, helping to keep your child's skin clean and healthy.
+                Silver is a natural element found in the earth, making it an eco-friendly choice. It&apos;s also antimicrobial, helping to keep your child&apos;s skin clean and healthy.
               </p>
             </motion.div>
 
@@ -261,7 +261,7 @@ export default function AboutPage() {
               </div>
               <h3 className="value-title">Love & Care</h3>
               <p className="value-description">
-                We infuse every piece with love and care, understanding that jewelry for children is more than an accessory—it's a symbol of love and protection.
+                We infuse every piece with love and care, understanding that jewelry for children is more than an accessory—it&apos;s a symbol of love and protection.
               </p>
             </motion.div>
 
