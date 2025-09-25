@@ -71,7 +71,7 @@ const Footer = () => {
             <div className="trust-item">
               <FaTruck className="trust-icon" />
               <h6 className="trust-title">Free Shipping</h6>
-              <small className="trust-subtitle">Worldwide Delivery</small>
+              <small className="trust-subtitle">India Only</small>
             </div>
             <div className="trust-item">
               <FaAward className="trust-icon" />

@@ -28,7 +28,6 @@ export const metadata = {
   description: 'Discover our exquisite collection of handcrafted silver jewelry designed specifically for children. Premium quality, elegant designs, and timeless beauty.',
   keywords: 'silver jewelry, children jewelry, luxury jewelry, handcrafted, sterling silver',
   metadataBase: new URL('https://varamsilvers.com'),
-  manifest: '/manifest.json',
   icons: {
     icon: [
       { url: '/images/varam_silvers_logo.png', sizes: '32x32', type: 'image/png' },

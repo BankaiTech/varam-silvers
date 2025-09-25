@@ -291,7 +291,7 @@ export default function ProductDetailPage({ params }) {
             <div className="trust-indicators">
               <div className="trust-item">
                 <FaTruck />
-                <span>Free Shipping</span>
+                <span>Free Shipping in India</span>
               </div>
               <div className="trust-item">
                 <FaShieldAlt />

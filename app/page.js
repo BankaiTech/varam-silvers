@@ -252,8 +252,8 @@ export default function HomePage() {
               <div className="feature-icon">
                 <i className="fas fa-shipping-fast"></i>
               </div>
-              <h4 className="feature-title">Free Worldwide Shipping</h4>
-              <p className="feature-description">Complimentary shipping on all orders, with premium packaging that makes every delivery feel special.</p>
+              <h4 className="feature-title">Free Shipping in India</h4>
+              <p className="feature-description">Complimentary shipping on all orders within India, with premium packaging that makes every delivery feel special.</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">

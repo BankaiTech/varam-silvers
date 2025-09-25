@@ -9,18 +9,23 @@ import { useCurrency } from '../../context/CurrencyContext';
 export default function CartPage() {
   const { cart, removeFromCart, updateCartItemQuantity, getCartTotal } = useCurrency();
   
-  // Calculate tax and totals
-  const subtotal = getCartTotal(); // Total of all items (price × quantity)
+  // Calculate tax and totals - GST is inclusive in the price
+  const subtotal = getCartTotal(); // Total of all items (price × quantity) - this already includes GST
   const taxRate = 0.18; // 18% GST
   
-  // Calculate GST as one-time cost per item (not multiplied by quantity)
-  // This means if you have 3 of the same item, GST is calculated only once for that item
+  // Calculate GST amount from the inclusive price
+  // Formula: GST = (Price × Tax Rate) / (1 + Tax Rate)
   const gstAmount = cart.reduce((total, item) => {
-    const itemGST = item.priceINR * taxRate; // GST per individual item
-    return total + itemGST; // Add GST only once per item, not per quantity
+    const itemTotal = item.priceINR * item.quantity;
+    const itemGST = (itemTotal * taxRate) / (1 + taxRate);
+    return total + itemGST;
   }, 0);
   
-  const total = subtotal + gstAmount;
+  // Subtotal before tax (excluding GST)
+  const subtotalBeforeTax = subtotal - gstAmount;
+  
+  // Total is the same as subtotal since GST is inclusive
+  const total = subtotal;
 
   if (cart.length === 0) {
     return (
@@ -107,15 +112,15 @@ export default function CartPage() {
                 <h5 className="summary-title">Order Summary</h5>
                 <div className="summary-details">
                   <div className="summary-row">
-                    <span>Subtotal (Before Tax)</span>
-                    <span>₹{subtotal.toLocaleString('en-IN')}</span>
+                    <span>Subtotal (Excluding GST)</span>
+                    <span>₹{subtotalBeforeTax.toLocaleString('en-IN')}</span>
                   </div>
                   <div className="summary-row">
-                    <span>GST (18%)</span>
+                    <span>GST (18% Inclusive)</span>
                     <span>₹{gstAmount.toLocaleString('en-IN')}</span>
                   </div>
                   <div className="summary-row total-row">
-                    <span>Total (After Tax)</span>
+                    <span>Total (Including GST)</span>
                     <span>₹{total.toLocaleString('en-IN')}</span>
                   </div>
                 </div>

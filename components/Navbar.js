@@ -33,8 +33,8 @@ export default function Navbar() {
                 <Image 
                   src="/images/varam_silvers_logo.png" 
                   alt="Varam Silvers - Kids Silver Jewelry" 
-                  width={200} 
-                  height={70}
+                  width={250} 
+                  height={85}
                   className="logo-image"
                   priority
                 />
@@ -47,7 +47,7 @@ export default function Navbar() {
             <Link href="/products" className="nav-link">
               <span>Collections</span>
             </Link>
-            <Link href="#about" className="nav-link">
+            <Link href="/about" className="nav-link">
               <span>About</span>
             </Link>
             <Link href="/faq" className="nav-link">
@@ -116,7 +116,7 @@ export default function Navbar() {
               <Link href="/products" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
                 Collections
               </Link>
-              <Link href="#about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
                 About Us
               </Link>
               <Link href="/faq" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>

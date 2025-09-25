@@ -35,7 +35,7 @@ export default function AdminDashboard() {
         ],
         shipping: {
           address: '123 Main St, Mumbai, Maharashtra 400001',
-          method: 'Standard Shipping'
+          method: 'Standard Shipping (India)'
         }
       },
       { 
@@ -51,7 +51,7 @@ export default function AdminDashboard() {
         ],
         shipping: {
           address: '456 Park Ave, Delhi, Delhi 110001',
-          method: 'Express Shipping'
+          method: 'Express Shipping (India)'
         }
       },
       { 
@@ -67,7 +67,7 @@ export default function AdminDashboard() {
         ],
         shipping: {
           address: '789 Garden Rd, Bangalore, Karnataka 560001',
-          method: 'Standard Shipping'
+          method: 'Standard Shipping (India)'
         }
       }
     ]

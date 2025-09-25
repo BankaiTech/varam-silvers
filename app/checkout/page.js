@@ -46,7 +46,7 @@ export default function CheckoutPage() {
   };
 
   const subtotal = getCartTotal();
-  const shipping = 100; // Fixed shipping cost
+  const shipping = 0; // Free shipping in India
   const tax = subtotal * 0.18; // 18% GST
   const total = subtotal + shipping + tax;
 
@@ -97,11 +97,11 @@ export default function CheckoutPage() {
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="email" className="form-label">Email</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
                       onChange={handleChange}
                       className="form-input"
                       required
@@ -116,8 +116,8 @@ export default function CheckoutPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="form-input"
-                      required
-                    />
+                    required
+                  />
                   </div>
                 </div>
 
@@ -171,8 +171,8 @@ export default function CheckoutPage() {
                       required
                     />
                   </div>
+                  </div>
                 </div>
-              </div>
 
               {/* Payment Information */}
               <div className="form-section">
@@ -218,46 +218,46 @@ export default function CheckoutPage() {
                   <div className="card-details">
                     <div className="form-group">
                       <label htmlFor="cardNumber" className="form-label">Card Number</label>
-                      <input
-                        type="text"
-                        id="cardNumber"
-                        name="cardNumber"
-                        value={formData.cardNumber}
+                  <input
+                    type="text"
+                    id="cardNumber"
+                    name="cardNumber"
+                    value={formData.cardNumber}
                         onChange={handleChange}
                         className="form-input"
                         placeholder="1234 5678 9012 3456"
-                        required
-                      />
-                    </div>
+                    required
+                  />
+                </div>
 
                     <div className="form-row">
                       <div className="form-group">
                         <label htmlFor="expiryDate" className="form-label">Expiry Date</label>
-                        <input
-                          type="text"
-                          id="expiryDate"
-                          name="expiryDate"
+                    <input
+                      type="text"
+                      id="expiryDate"
+                      name="expiryDate"
                           value={formData.expiryDate}
                           onChange={handleChange}
                           className="form-input"
-                          placeholder="MM/YY"
-                          required
-                        />
-                      </div>
+                      placeholder="MM/YY"
+                      required
+                    />
+                  </div>
                       <div className="form-group">
                         <label htmlFor="cvv" className="form-label">CVV</label>
-                        <input
-                          type="text"
-                          id="cvv"
-                          name="cvv"
-                          value={formData.cvv}
+                    <input
+                      type="text"
+                      id="cvv"
+                      name="cvv"
+                      value={formData.cvv}
                           onChange={handleChange}
                           className="form-input"
                           placeholder="123"
-                          required
-                        />
-                      </div>
-                    </div>
+                      required
+                    />
+                  </div>
+                </div>
 
                     <div className="form-group">
                       <label htmlFor="cardName" className="form-label">Name on Card</label>
@@ -307,9 +307,9 @@ export default function CheckoutPage() {
                 ) : (
                   'Complete Order'
                 )}
-              </button>
-            </form>
-          </div>
+                </button>
+              </form>
+        </div>
 
           <div className="checkout-summary">
             <div className="summary-card">
@@ -321,7 +321,7 @@ export default function CheckoutPage() {
               </div>
               
               <div className="summary-row">
-                <span>Shipping</span>
+                <span>Shipping (India Only)</span>
                 <span>{formatPrice(shipping, shipping / 83)}</span>
               </div>
               
@@ -345,4 +345,4 @@ export default function CheckoutPage() {
       </div>
     </div>
   );
-}
+} 

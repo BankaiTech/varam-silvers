@@ -81,12 +81,12 @@ export default function FAQPage() {
         {
           id: 'shipping-time',
           question: 'How long does shipping take?',
-          answer: 'We offer free worldwide shipping with delivery times of 5-7 business days for domestic orders and 10-15 business days for international orders. Express shipping options are available for faster delivery.'
+          answer: 'We offer free shipping within India with delivery times of 5-7 business days. International shipping is available at additional cost with delivery times of 10-15 business days. Express shipping options are available for faster delivery.'
         },
         {
           id: 'shipping-cost',
           question: 'What are your shipping costs?',
-          answer: 'We provide free shipping on all orders worldwide. No minimum order value required. Express shipping is available for an additional fee if you need faster delivery.'
+          answer: 'We provide free shipping on all orders within India. No minimum order value required. International shipping is available at additional cost. Express shipping is available for an additional fee if you need faster delivery.'
         },
         {
           id: 'tracking',
@@ -96,7 +96,7 @@ export default function FAQPage() {
         {
           id: 'international',
           question: 'Do you ship internationally?',
-          answer: 'Yes, we ship to over 50 countries worldwide. International orders may be subject to customs duties and taxes, which are the responsibility of the customer.'
+          answer: 'Yes, we ship internationally to select countries. International orders may be subject to customs duties and taxes, which are the responsibility of the customer. Please contact us for international shipping rates.'
         }
       ]
     },
