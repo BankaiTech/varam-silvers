@@ -121,7 +121,13 @@ dist
 
 # Gatsby files
 .cache/
-public
+# Only ignore specific public files, not the entire public directory
+/public/sw.js
+/public/workbox-*.js
+/public/worker-*.js
+/public/sw.js.map
+/public/workbox-*.js.map
+/public/worker-*.js.map
 
 # Storybook build outputs
 .out
@@ -184,10 +190,4 @@ dist/
 # Image optimization cache
 .next/cache/
 
-# PWA files
-**/public/sw.js
-**/public/workbox-*.js
-**/public/worker-*.js
-**/public/sw.js.map
-**/public/workbox-*.js.map
-**/public/worker-*.js.map
+# PWA files (already handled above)
