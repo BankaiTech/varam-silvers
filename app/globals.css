@@ -624,7 +624,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 12px;
   font-weight: 600;
   transition: all 0.3s ease;
-  border: 1px solid rgba(44, 62, 80, 0.2);
+  border: 1px solid rgba(44, 62, 80, 0.2); 
   cursor: pointer;
 }
 
@@ -3474,6 +3474,18 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   border: 1px solid #e2e8f0;
+}
+
+.product-price-section .material-info {
+  font-size: 0.7rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  background: linear-gradient(135deg, #C0C0C0, #E8E8E8);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #C0C0C0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Single Line Footer Layout */

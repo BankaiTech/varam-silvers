@@ -12,14 +12,21 @@ import LoadingSpinner from '../../components/LoadingSpinner';
 const products = [
   {
     id: 1,
-    name: 'Princess Silver Anklet',
-    priceINR: 2499,
-    priceUSD: 29.99,
+    name: 'Princess Anklet',
+    prices: {
+      silver: { priceINR: 2499, priceUSD: 29.99 },
+      gold: { priceINR: 8999, priceUSD: 107.99 },
+      roseGold: { priceINR: 6999, priceUSD: 83.99 }
+    },
     image: '/images/slide1.jpg',
-    description: 'Delicate sterling silver anklet adorned with tiny charms, perfect for your little princess',
+    description: 'Delicate anklet adorned with tiny charms, perfect for your little princess',
     wastagePercentage: 8,
     category: 'Anklets',
-    material: '925 Sterling Silver',
+    materials: {
+      silver: '925 Sterling Silver',
+      gold: '18K Gold',
+      roseGold: '18K Rose Gold'
+    },
     ageRange: '2-12 years',
     inStock: true,
     isNew: true,
@@ -27,14 +34,21 @@ const products = [
   },
   {
     id: 2,
-    name: 'Elegant Silver Bracelet',
-    priceINR: 1999,
-    priceUSD: 24.99,
+    name: 'Elegant Bracelet',
+    prices: {
+      silver: { priceINR: 1999, priceUSD: 24.99 },
+      gold: { priceINR: 7999, priceUSD: 95.99 },
+      roseGold: { priceINR: 5999, priceUSD: 71.99 }
+    },
     image: '/images/slide2.jpg',
-    description: 'Adjustable silver bracelet with intricate detailing, designed to grow with your child',
+    description: 'Adjustable bracelet with intricate detailing, designed to grow with your child',
     wastagePercentage: 10,
     category: 'Bracelets',
-    material: '925 Sterling Silver',
+    materials: {
+      silver: '925 Sterling Silver',
+      gold: '18K Gold',
+      roseGold: '18K Rose Gold'
+    },
     ageRange: '3-14 years',
     inStock: true,
     isNew: false,
@@ -42,14 +56,21 @@ const products = [
   },
   {
     id: 3,
-    name: 'Dreamy Silver Necklace',
-    priceINR: 3499,
-    priceUSD: 42.99,
+    name: 'Dreamy Necklace',
+    prices: {
+      silver: { priceINR: 3499, priceUSD: 42.99 },
+      gold: { priceINR: 12999, priceUSD: 155.99 },
+      roseGold: { priceINR: 9999, priceUSD: 119.99 }
+    },
     image: '/images/slide3.jpg',
-    description: 'Exquisite silver necklace featuring a delicate pendant, creating magical moments',
+    description: 'Exquisite necklace featuring a delicate pendant, creating magical moments',
     wastagePercentage: 12,
     category: 'Necklaces',
-    material: '925 Sterling Silver',
+    materials: {
+      silver: '925 Sterling Silver',
+      gold: '18K Gold',
+      roseGold: '18K Rose Gold'
+    },
     ageRange: '4-16 years',
     inStock: true,
     isNew: true,
@@ -57,14 +78,21 @@ const products = [
   },
   {
     id: 4,
-    name: 'Royal Silver Ring',
-    priceINR: 1799,
-    priceUSD: 21.99,
+    name: 'Royal Ring',
+    prices: {
+      silver: { priceINR: 1799, priceUSD: 21.99 },
+      gold: { priceINR: 6999, priceUSD: 83.99 },
+      roseGold: { priceINR: 5499, priceUSD: 65.99 }
+    },
     image: '/images/slide1.jpg',
-    description: 'Beautiful silver ring with adjustable sizing, perfect for little fingers',
+    description: 'Beautiful ring with adjustable sizing, perfect for little fingers',
     wastagePercentage: 6,
     category: 'Rings',
-    material: '925 Sterling Silver',
+    materials: {
+      silver: '925 Sterling Silver',
+      gold: '18K Gold',
+      roseGold: '18K Rose Gold'
+    },
     ageRange: '3-12 years',
     inStock: false,
     isNew: false,
@@ -72,14 +100,21 @@ const products = [
   },
   {
     id: 5,
-    name: 'Fairy Silver Earrings',
-    priceINR: 1299,
-    priceUSD: 15.99,
+    name: 'Fairy Earrings',
+    prices: {
+      silver: { priceINR: 1299, priceUSD: 15.99 },
+      gold: { priceINR: 4999, priceUSD: 59.99 },
+      roseGold: { priceINR: 3999, priceUSD: 47.99 }
+    },
     image: '/images/slide2.jpg',
-    description: 'Hypoallergenic silver earrings designed for sensitive skin',
+    description: 'Hypoallergenic earrings designed for sensitive skin',
     wastagePercentage: 5,
     category: 'Earrings',
-    material: '925 Sterling Silver',
+    materials: {
+      silver: '925 Sterling Silver',
+      gold: '18K Gold',
+      roseGold: '18K Rose Gold'
+    },
     ageRange: '2-10 years',
     inStock: true,
     isNew: true,
@@ -87,14 +122,21 @@ const products = [
   },
   {
     id: 6,
-    name: 'Angel Silver Set',
-    priceINR: 4999,
-    priceUSD: 59.99,
+    name: 'Angel Set',
+    prices: {
+      silver: { priceINR: 4999, priceUSD: 59.99 },
+      gold: { priceINR: 19999, priceUSD: 239.99 },
+      roseGold: { priceINR: 14999, priceUSD: 179.99 }
+    },
     image: '/images/slide3.jpg',
     description: 'Complete jewelry set including necklace, bracelet, and earrings',
     wastagePercentage: 15,
     category: 'Sets',
-    material: '925 Sterling Silver',
+    materials: {
+      silver: '925 Sterling Silver',
+      gold: '18K Gold',
+      roseGold: '18K Rose Gold'
+    },
     ageRange: '4-14 years',
     inStock: true,
     isNew: false,
@@ -296,9 +338,10 @@ export default function ProductsPage() {
                     
                     <div className="product-price-section">
                       <div className="product-price">
-                        <span className="original-price">₹{Math.round(product.priceINR * 1.2).toLocaleString('en-IN')}</span>
-                        <span className="current-price">₹{product.priceINR.toLocaleString('en-IN')}</span>
+                        <span className="original-price">₹{Math.round(product.prices.silver.priceINR * 1.2).toLocaleString('en-IN')}</span>
+                        <span className="current-price">₹{product.prices.silver.priceINR.toLocaleString('en-IN')}</span>
                         <span className="gst-info">Including GST</span>
+                        <span className="material-info">Silver</span>
                       </div>
                     </div>
                   </div>

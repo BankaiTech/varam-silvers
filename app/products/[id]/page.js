@@ -7,6 +7,7 @@ import { FaHeart, FaShoppingCart, FaStar, FaTruck, FaShieldAlt, FaAward } from '
 import { useCurrency } from '../../../context/CurrencyContext';
 import toast from 'react-hot-toast';
 import LoadingSpinner from '../../../components/LoadingSpinner';
+import PriceTabs from '../../../components/PriceTabs';
 
 export default function ProductDetailPage({ params }) {
   const { addToCart, addToWishlist, removeFromWishlist, isInWishlist } = useCurrency();
@@ -14,6 +15,7 @@ export default function ProductDetailPage({ params }) {
   const [quantity, setQuantity] = useState(1);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedMaterial, setSelectedMaterial] = useState('silver');
 
   // Unwrap params Promise
   const resolvedParams = use(params);
@@ -29,14 +31,21 @@ export default function ProductDetailPage({ params }) {
   // Mock product data - in real app, fetch based on resolvedParams.id
   const product = {
     id: resolvedParams.id,
-    name: 'Princess Silver Anklet',
-    priceINR: 2499,
-    priceUSD: 29.99,
+    name: 'Princess Anklet',
+    prices: {
+      silver: { priceINR: 2499, priceUSD: 29.99 },
+      gold: { priceINR: 8999, priceUSD: 107.99 },
+      roseGold: { priceINR: 6999, priceUSD: 83.99 }
+    },
     images: ['/images/slide1.jpg', '/images/slide2.jpg', '/images/slide3.jpg'],
-    description: 'Delicate sterling silver anklet adorned with tiny charms, perfect for your little princess. This beautiful piece is crafted with love and attention to detail.',
-    longDescription: 'Our Princess Silver Anklet is a timeless piece that combines elegance with durability. Made from 925 sterling silver, it features delicate charms that sparkle with every step. The adjustable design ensures a perfect fit as your child grows.',
+    description: 'Delicate anklet adorned with tiny charms, perfect for your little princess. This beautiful piece is crafted with love and attention to detail.',
+    longDescription: 'Our Princess Anklet is a timeless piece that combines elegance with durability. Available in multiple materials, it features delicate charms that sparkle with every step. The adjustable design ensures a perfect fit as your child grows.',
     category: 'Anklets',
-    material: '925 Sterling Silver',
+    materials: {
+      silver: '925 Sterling Silver',
+      gold: '18K Gold',
+      roseGold: '18K Rose Gold'
+    },
     ageRange: '2-12 years',
     wastagePercentage: 8,
     inStock: true,
@@ -44,15 +53,15 @@ export default function ProductDetailPage({ params }) {
     rating: 4.8,
     reviews: 127,
     features: [
-      'Hypoallergenic sterling silver',
+      'Hypoallergenic materials',
       'Adjustable sizing',
       'Delicate charm details',
       'Tarnish resistant coating',
       'Comes with gift box'
     ],
     specifications: {
-      'Material': '925 Sterling Silver',
-      'Weight': '8.5 grams',
+      'Materials Available': 'Silver, Gold, Rose Gold',
+      'Weight': '8.5 grams (Silver)',
       'Length': 'Adjustable 6-8 inches',
       'Finish': 'Polished',
       'Care': 'Clean with soft cloth'
@@ -67,13 +76,17 @@ export default function ProductDetailPage({ params }) {
 
     const cartItem = {
       ...product,
+      selectedMaterial: selectedMaterial,
+      priceINR: product.prices[selectedMaterial].priceINR,
+      priceUSD: product.prices[selectedMaterial].priceUSD,
+      material: product.materials[selectedMaterial],
       quantity: quantity,
       image: product.images[0]
     };
 
     addToCart(cartItem);
     setIsAddedToCart(true);
-    toast.success(`${product.name} added to cart!`, {
+    toast.success(`${product.name} (${product.materials[selectedMaterial]}) added to cart!`, {
       duration: 3000,
       icon: '🛒',
       style: {
@@ -201,33 +214,25 @@ export default function ProductDetailPage({ params }) {
               <h1 className="product-title">{product.name}</h1>
             </div>
 
-            <div className="product-price">
-              <div className="price-section">
-                <div className="product-price-line">
-                  <span className="original-price">₹{Math.round(product.priceINR * 1.2).toLocaleString('en-IN')}</span>
-                  <span className="current-price">₹{product.priceINR.toLocaleString('en-IN')}</span>
-                  <div className="product-rating">
-                    <div className="rating-stars">
-                      {[...Array(5)].map((_, i) => (
-                        <FaStar
-                          key={i}
-                          className={`star ${i < Math.floor(product.rating) ? 'filled' : 'empty'}`}
-                        />
-                      ))}
-                    </div>
-                    <span className="rating-text">
-                      {product.rating} ({product.reviews} reviews)
-                    </span>
-                  </div>
-                </div>
-                <div className="price-details">
-                  <span className="gst-info">Including GST</span>
-                  <span className="wastage-info">
-                    Including {product.wastagePercentage}% wastage
-                  </span>
-                </div>
+            <div className="product-rating">
+              <div className="rating-stars">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar
+                    key={i}
+                    className={`star ${i < Math.floor(product.rating) ? 'filled' : 'empty'}`}
+                  />
+                ))}
               </div>
+              <span className="rating-text">
+                {product.rating} ({product.reviews} reviews)
+              </span>
             </div>
+
+            <PriceTabs 
+              product={product} 
+              onMaterialSelect={setSelectedMaterial}
+              selectedMaterial={selectedMaterial}
+            />
 
             <div className="product-description">
               <p>{product.description}</p>
