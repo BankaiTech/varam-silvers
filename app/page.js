@@ -41,7 +41,7 @@ const featuredProducts = [
     image: '/images/Butterfly Feet Chain Rose Gold.jpg',
     description: 'Beautiful butterfly-themed anklet chain with delicate butterfly charms, perfect for your little princess',
     wastagePercentage: 8,
-    category: 'Anklets',
+    category: 'Chains',
     materials: {
       silver: '925 Sterling Silver',
       gold: '18K Gold',
@@ -79,7 +79,7 @@ const featuredProducts = [
     image: '/images/Panda Chain Silver.jpg',
     description: 'Adorable panda-themed chain with cute panda charms, bringing joy and playfulness to your child',
     wastagePercentage: 12,
-    category: 'Necklaces',
+    category: 'Chains',
     materials: {
       silver: '925 Sterling Silver',
       gold: '18K Gold',
@@ -89,16 +89,16 @@ const featuredProducts = [
   },
   {
     id: 4,
-    name: 'Yellow Car Chain',
+    name: 'Unicorn Chain',
     prices: {
       silver: { priceINR: 1299, priceUSD: 15.99 },
       gold: { priceINR: 4999, priceUSD: 59.99 },
       roseGold: { priceINR: 3999, priceUSD: 47.99 }
     },
-    image: '/images/Yellow Car Silver.jpg',
-    description: 'Fun car-themed chain with vibrant yellow car charm, perfect for little car enthusiasts',
+    image: '/images/Unicorn Chain Rose Gold.jpg',
+    description: 'Magical unicorn-themed chain with enchanting unicorn charm, bringing dreams to life',
     wastagePercentage: 5,
-    category: 'Earrings',
+    category: 'Chains',
     materials: {
       silver: '925 Sterling Silver',
       gold: '18K Gold',
@@ -140,12 +140,12 @@ export default function HomePage() {
             />
             <div className="hero-overlay">
               <div className="hero-container">
-                <div className="hero-content">
+              <div className="hero-content">
                   <h1 className="hero-title">{slide.title}</h1>
                   <p className="hero-subtitle">{slide.subtitle}</p>
                   <Link href={slide.link} className="hero-btn">
-                    {slide.cta}
-                  </Link>
+                  {slide.cta}
+                </Link>
                 </div>
               </div>
             </div>
@@ -169,41 +169,32 @@ export default function HomePage() {
               >
                 <motion.div
                   className="product-card"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  viewport={{ once: true }}
-                >
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                viewport={{ once: true }}
+              >
                   <div className="product-image-container">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      width={400}
-                      height={400}
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={400}
+                    height={400}
                       className="product-image"
                     />
                   </div>
                   <div className="product-content">
-                    <div className="product-category">
-                      <span className="category-badge">{product.category}</span>
-                    </div>
                     <h3 className="product-title">{product.name}</h3>
                     <p className="product-description">{product.description}</p>
                     
                     <div className="product-price-section">
                       <div className="product-price">
                         <span className="original-price">₹{Math.round(product.prices.silver.priceINR * 1.2).toLocaleString('en-IN')}</span>
-                        <span className="current-price">₹{product.prices.silver.priceINR.toLocaleString('en-IN')}</span>
-                        <span className="gst-info">Including GST</span>
-                        <div className="material-variants">
-                          <span className="material-info silver">Silver</span>
-                          <span className="material-info gold">Gold</span>
-                          <span className="material-info rose-gold">Rose Gold</span>
-                        </div>
+                        <span className="current-price">₹{product.prices.silver.priceINR.toLocaleString('en-IN')} (Incl. {product.wastagePercentage}% wastage)</span>
                       </div>
                     </div>
                   </div>
-                </motion.div>
+              </motion.div>
               </Link>
             ))}
           </div>

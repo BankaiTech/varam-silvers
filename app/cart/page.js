@@ -116,11 +116,11 @@ export default function CartPage() {
                     <span>₹{subtotalBeforeTax.toLocaleString('en-IN')}</span>
                   </div>
                   <div className="summary-row">
-                    <span>GST (18% Inclusive)</span>
+                    <span>GST (3%)</span>
                     <span>₹{gstAmount.toLocaleString('en-IN')}</span>
                   </div>
                   <div className="summary-row total-row">
-                    <span>Total (Including GST)</span>
+                    <span>Total Amount</span>
                     <span>₹{total.toLocaleString('en-IN')}</span>
                   </div>
                 </div>

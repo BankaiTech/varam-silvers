@@ -3297,10 +3297,25 @@ h1, h2, h3, h4, h5, h6 {
 .product-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   transition: all 0.3s ease;
   position: relative;
   z-index: 2;
+}
+
+/* Material-specific backgrounds for product images */
+.product-image[src*="Silver"] {
+  background: linear-gradient(135deg, #f1f3f4 0%, #e8eaed 100%);
+}
+
+.product-image[src*="Gold"] {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+}
+
+.product-image[src*="Rose Gold"] {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
 }
 
 .product-card:hover .product-image {
@@ -3401,14 +3416,14 @@ h1, h2, h3, h4, h5, h6 {
   color: #6b7280;
   font-size: 0.9rem;
   line-height: 1.5;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-weight: 400;
-  margin: 4px;
+  margin: 4px 4px 0.4rem 4px;
   min-height: 0.05rem; /* 3 lines * 1.5 line-height * 0.9rem */
 }
 
@@ -3417,8 +3432,8 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  margin-bottom: 0.25rem;
-  padding: 0.2rem 0;
+  margin-bottom: 0.15rem;
+  padding: 0.1rem 0;
 }
 
 .rating-stars {
@@ -3456,7 +3471,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Product Price Section */
 .product-price-section {
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .product-price-section .product-price {
@@ -4427,8 +4442,10 @@ button.social-btn span:not(.social-icon-text) {
 
 .product-main-image {
   width: 100%;
-  height: 500px;
-  object-fit: cover;
+  height: 600px;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
 }
 
 .image-thumbnails {
@@ -4452,7 +4469,9 @@ button.social-btn span:not(.social-icon-text) {
 .thumbnail-image {
   width: 80px;
   height: 80px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
 }
 
 .product-info {

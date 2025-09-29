@@ -21,7 +21,7 @@ const products = [
     image: '/images/Butterfly Feet Chain Silver.jpg',
     description: 'Beautiful butterfly-themed anklet chain with delicate butterfly charms, perfect for your little princess',
     wastagePercentage: 8,
-    category: 'Anklets',
+    category: 'Chains',
     materials: {
       silver: '925 Sterling Silver',
       gold: '18K Gold',
@@ -43,7 +43,7 @@ const products = [
     image: '/images/Eye Chain Silver.jpg',
     description: 'Elegant eye-shaped chain with protective symbolism, designed to ward off evil and bring good luck',
     wastagePercentage: 10,
-    category: 'Bracelets',
+    category: 'Chains',
     materials: {
       silver: '925 Sterling Silver',
       gold: '18K Gold',
@@ -56,16 +56,16 @@ const products = [
   },
   {
     id: 3,
-    name: 'Dreamy Necklace',
+    name: 'Panda Chain',
     prices: {
       silver: { priceINR: 3499, priceUSD: 42.99 },
       gold: { priceINR: 12999, priceUSD: 155.99 },
       roseGold: { priceINR: 9999, priceUSD: 119.99 }
     },
-    image: '/images/Tiger Chain Silver.jpg',
-    description: 'Exquisite necklace featuring a delicate pendant, creating magical moments',
+    image: '/images/Panda Chain Silver.jpg',
+    description: 'Adorable panda-themed chain with cute panda charms, bringing joy and playfulness to your child',
     wastagePercentage: 12,
-    category: 'Necklaces',
+    category: 'Chains',
     materials: {
       silver: '925 Sterling Silver',
       gold: '18K Gold',
@@ -87,14 +87,14 @@ const products = [
     image: '/images/Tiger Chain Silver.jpg',
     description: 'Bold tiger-themed chain with fierce tiger charm, perfect for brave little ones',
     wastagePercentage: 6,
-    category: 'Rings',
+    category: 'Chains',
     materials: {
       silver: '925 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
     ageRange: '3-12 years',
-    inStock: false,
+    inStock: true,
     isNew: false,
     rating: 4.6
   },
@@ -109,7 +109,7 @@ const products = [
     image: '/images/Unicorn Chain Rose Gold.jpg',
     description: 'Magical unicorn-themed chain with enchanting unicorn charm, bringing dreams to life',
     wastagePercentage: 5,
-    category: 'Earrings',
+    category: 'Chains',
     materials: {
       silver: '925 Sterling Silver',
       gold: '18K Gold',
@@ -122,6 +122,28 @@ const products = [
   },
   {
     id: 6,
+    name: 'Yellow Car Chain',
+    prices: {
+      silver: { priceINR: 1299, priceUSD: 15.99 },
+      gold: { priceINR: 4999, priceUSD: 59.99 },
+      roseGold: { priceINR: 3999, priceUSD: 47.99 }
+    },
+    image: '/images/Yellow Car Silver.jpg',
+    description: 'Fun car-themed chain with vibrant yellow car charm, perfect for little car enthusiasts',
+    wastagePercentage: 5,
+    category: 'Chains',
+    materials: {
+      silver: '925 Sterling Silver',
+      gold: '18K Gold',
+      roseGold: '18K Rose Gold'
+    },
+    ageRange: '2-10 years',
+    inStock: true,
+    isNew: true,
+    rating: 4.8
+  },
+  {
+    id: 7,
     name: 'White Flower Chain',
     prices: {
       silver: { priceINR: 4999, priceUSD: 59.99 },
@@ -131,7 +153,7 @@ const products = [
     image: '/images/White Flower Chain Silver.jpg',
     description: 'Elegant white flower-themed chain with delicate floral charms, symbolizing purity and grace',
     wastagePercentage: 15,
-    category: 'Sets',
+    category: 'Chains',
     materials: {
       silver: '925 Sterling Silver',
       gold: '18K Gold',
@@ -158,7 +180,7 @@ export default function ProductsPage() {
     return () => clearTimeout(timer);
   }, []);
 
-  const categories = ['all', 'Anklets', 'Bracelets', 'Necklaces', 'Rings', 'Earrings', 'Sets'];
+  const categories = ['all', 'Chains'];
 
   const filteredProducts = products.filter(product => 
     selectedCategory === 'all' || product.category === selectedCategory
@@ -317,9 +339,6 @@ export default function ProductsPage() {
                     </button>
                   </div>
                   <div className="product-content">
-                    <div className="product-category">
-                      <span className="category-badge">{product.category}</span>
-                    </div>
                     <h3 className="product-title">{product.name}</h3>
                     <p className="product-description">{product.description}</p>
                     
@@ -339,13 +358,7 @@ export default function ProductsPage() {
                     <div className="product-price-section">
                       <div className="product-price">
                         <span className="original-price">₹{Math.round(product.prices.silver.priceINR * 1.2).toLocaleString('en-IN')}</span>
-                        <span className="current-price">₹{product.prices.silver.priceINR.toLocaleString('en-IN')}</span>
-                        <span className="gst-info">Including GST</span>
-                        <div className="material-variants">
-                          <span className="material-info silver">Silver</span>
-                          <span className="material-info gold">Gold</span>
-                          <span className="material-info rose-gold">Rose Gold</span>
-                        </div>
+                        <span className="current-price">₹{product.prices.silver.priceINR.toLocaleString('en-IN')} (Incl. {product.wastagePercentage}% wastage)</span>
                       </div>
                     </div>
                   </div>

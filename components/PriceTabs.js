@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 
 export default function PriceTabs({ product, onMaterialSelect, selectedMaterial = 'silver' }) {
   const [activeTab, setActiveTab] = useState(selectedMaterial);
@@ -89,9 +88,27 @@ export default function PriceTabs({ product, onMaterialSelect, selectedMaterial 
             </span>
           </div>
           <div className="price-item">
-            <span className="price-label">Current Price:</span>
+            <span className="price-label">Current Price (Incl. {product.wastagePercentage}% wastage):</span>
             <span className="price-value current">
               {formatPrice(product.prices[activeTab].priceINR, product.prices[activeTab].priceUSD)}
+            </span>
+          </div>
+          <div className="price-item">
+            <span className="price-label">GST (3%):</span>
+            <span className="price-value gst">
+              {formatPrice(
+                Math.round(product.prices[activeTab].priceINR * 0.03),
+                Math.round(product.prices[activeTab].priceUSD * 0.03)
+              )}
+            </span>
+          </div>
+          <div className="price-item">
+            <span className="price-label">Total Amount:</span>
+            <span className="price-value total">
+              {formatPrice(
+                Math.round(product.prices[activeTab].priceINR * 1.03),
+                Math.round(product.prices[activeTab].priceUSD * 1.03)
+              )}
             </span>
           </div>
           <div className="price-item">
@@ -102,10 +119,6 @@ export default function PriceTabs({ product, onMaterialSelect, selectedMaterial 
                 Math.round(product.prices[activeTab].priceUSD * 0.2)
               )}
             </span>
-          </div>
-          <div className="price-item">
-            <span className="price-label">Including:</span>
-            <span className="price-value">GST + {product.wastagePercentage}% wastage</span>
           </div>
         </div>
       </div>
@@ -285,6 +298,20 @@ export default function PriceTabs({ product, onMaterialSelect, selectedMaterial 
         .price-value.savings {
           color: #28a745;
           font-weight: 600;
+        }
+
+        .price-value.gst {
+          color: #007bff;
+          font-weight: 500;
+        }
+
+        .price-value.total {
+          color: #1a1a1a;
+          font-weight: 700;
+          font-size: 1rem;
+          border-top: 1px solid #e9ecef;
+          padding-top: 0.5rem;
+          margin-top: 0.5rem;
         }
 
         @media (max-width: 768px) {
