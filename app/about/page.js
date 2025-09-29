@@ -72,7 +72,7 @@ export default function AboutPage() {
             >
               <div className="image-frame">
                 <Image
-                  src="/images/homeslide4.jpg"
+                  src="/images/Girl with Butterfly Feet Chain.png"
                   alt="Varam Silvers Crafting Process"
                   width={500}
                   height={400}

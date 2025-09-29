@@ -28,18 +28,84 @@ export default function ProductDetailPage({ params }) {
     return () => clearTimeout(timer);
   }, []);
 
+  // Get product data based on ID
+  const getProductById = (id) => {
+    const productMap = {
+      '1': {
+        name: 'Butterfly Feet Chain',
+        images: [
+          '/images/Butterfly Feet Chain Silver.jpg', 
+          '/images/Butterfly Feet Chain Gold.jpg', 
+          '/images/Butterfly Feet Chain Rose Gold.jpg'
+        ]
+      },
+      '2': {
+        name: 'Eye Chain',
+        images: [
+          '/images/Eye Chain Silver.jpg', 
+          '/images/Eye Chain Gold.jpg', 
+          '/images/Eye Chain Rose Gold.jpg'
+        ]
+      },
+      '3': {
+        name: 'Panda Chain',
+        images: [
+          '/images/Panda Chain Silver.jpg', 
+          '/images/Panda Chain Gold.jpg', 
+          '/images/Panda Chain Rose Gold.jpg'
+        ]
+      },
+      '4': {
+        name: 'Yellow Car Chain',
+        images: [
+          '/images/Yellow Car Silver.jpg', 
+          '/images/Yellow Car Gold.jpg', 
+          '/images/Yellow Car Rose Gold.jpg'
+        ]
+      },
+      '5': {
+        name: 'Unicorn Chain',
+        images: [
+          '/images/Unicorn Chain Silver.jpg', 
+          '/images/Unicorn Chain Gold.jpg', 
+          '/images/Unicorn Chain Rose Gold.jpg'
+        ]
+      },
+      '6': {
+        name: 'White Flower Chain',
+        images: [
+          '/images/White Flower Chain Silver.jpg', 
+          '/images/White Flower Chain Gold.jpg', 
+          '/images/White Flower Chain Rose Gold.jpg'
+        ]
+      },
+      '7': {
+        name: 'Tiger Chain',
+        images: [
+          '/images/Tiger Chain Silver.jpg', 
+          '/images/Tiger Chain Gold.jpg', 
+          '/images/Tiger Chain Rose Gold.jpg'
+        ]
+      }
+    };
+    
+    return productMap[id] || productMap['1']; // Default to first product
+  };
+
+  const productData = getProductById(resolvedParams.id);
+
   // Mock product data - in real app, fetch based on resolvedParams.id
   const product = {
     id: resolvedParams.id,
-    name: 'Princess Anklet',
+    name: productData.name,
     prices: {
       silver: { priceINR: 2499, priceUSD: 29.99 },
       gold: { priceINR: 8999, priceUSD: 107.99 },
       roseGold: { priceINR: 6999, priceUSD: 83.99 }
     },
-    images: ['/images/slide1.jpg', '/images/slide2.jpg', '/images/slide3.jpg'],
-    description: 'Delicate anklet adorned with tiny charms, perfect for your little princess. This beautiful piece is crafted with love and attention to detail.',
-    longDescription: 'Our Princess Anklet is a timeless piece that combines elegance with durability. Available in multiple materials, it features delicate charms that sparkle with every step. The adjustable design ensures a perfect fit as your child grows.',
+    images: productData.images,
+    description: `Beautiful ${productData.name.toLowerCase()} with intricate detailing, perfect for your little one. This beautiful piece is crafted with love and attention to detail.`,
+    longDescription: `Our ${productData.name} is a timeless piece that combines elegance with durability. Available in multiple materials including 925 sterling silver, 18K gold, and 18K rose gold. The adjustable design ensures a perfect fit as your child grows.`,
     category: 'Anklets',
     materials: {
       silver: '925 Sterling Silver',

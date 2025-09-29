@@ -7,21 +7,21 @@ import { motion } from 'framer-motion';
 
 const heroImages = [
   {
-    src: '/images/homeslide1.png',
+    src: '/images/Unicorn Chain Rose Gold.jpg',
     title: 'Timeless Elegance for Little Princesses',
     subtitle: 'Discover our exquisite collection of handcrafted silver jewelry, where every piece is designed to celebrate the precious moments of childhood',
     cta: 'Explore Collection',
     link: '/products'
   },
   {
-    src: '/images/homeslide2.jpg',
+    src: '/images/Eye Chain Rose Gold.jpg',
     title: 'Crafted with Love & Precision',
     subtitle: 'Each piece tells a story of tradition, quality, and the pure joy of childhood. Made with 925 sterling silver and endless care',
     cta: 'Shop Now',
     link: '/products'
   },
   {
-    src: '/images/homeslide3.jpg',
+    src: '/images/Boy with Eye Chain.png',
     title: 'Where Dreams Meet Silver',
     subtitle: 'Premium quality jewelry that grows with your child, creating memories that will last a lifetime',
     cta: 'View Collection',
@@ -32,14 +32,14 @@ const heroImages = [
 const featuredProducts = [
   {
     id: 1,
-    name: 'Princess Anklet',
+    name: 'Butterfly Feet Chain',
     prices: {
       silver: { priceINR: 2499, priceUSD: 29.99 },
       gold: { priceINR: 8999, priceUSD: 107.99 },
       roseGold: { priceINR: 6999, priceUSD: 83.99 }
     },
-    image: '/images/slide1.jpg',
-    description: 'Delicate anklet adorned with tiny charms, perfect for your little princess',
+    image: '/images/Butterfly Feet Chain Rose Gold.jpg',
+    description: 'Beautiful butterfly-themed anklet chain with delicate butterfly charms, perfect for your little princess',
     wastagePercentage: 8,
     category: 'Anklets',
     materials: {
@@ -51,16 +51,16 @@ const featuredProducts = [
   },
   {
     id: 2,
-    name: 'Elegant Bracelet',
+    name: 'Eye Chain',
     prices: {
       silver: { priceINR: 1999, priceUSD: 24.99 },
       gold: { priceINR: 7999, priceUSD: 95.99 },
       roseGold: { priceINR: 5999, priceUSD: 71.99 }
     },
-    image: '/images/slide2.jpg',
-    description: 'Adjustable bracelet with intricate detailing, designed to grow with your child',
+    image: '/images/Eye Chain Silver.jpg',
+    description: 'Elegant eye-shaped chain with protective symbolism, designed to ward off evil and bring good luck',
     wastagePercentage: 10,
-    category: 'Bracelets',
+    category: 'Chains',
     materials: {
       silver: '925 Sterling Silver',
       gold: '18K Gold',
@@ -70,14 +70,14 @@ const featuredProducts = [
   },
   {
     id: 3,
-    name: 'Dreamy Necklace',
+    name: 'Panda Chain',
     prices: {
       silver: { priceINR: 3499, priceUSD: 42.99 },
       gold: { priceINR: 12999, priceUSD: 155.99 },
       roseGold: { priceINR: 9999, priceUSD: 119.99 }
     },
-    image: '/images/slide3.jpg',
-    description: 'Exquisite necklace featuring a delicate pendant, creating magical moments',
+    image: '/images/Panda Chain Silver.jpg',
+    description: 'Adorable panda-themed chain with cute panda charms, bringing joy and playfulness to your child',
     wastagePercentage: 12,
     category: 'Necklaces',
     materials: {
@@ -89,14 +89,14 @@ const featuredProducts = [
   },
   {
     id: 4,
-    name: 'Fairy Earrings',
+    name: 'Yellow Car Chain',
     prices: {
       silver: { priceINR: 1299, priceUSD: 15.99 },
       gold: { priceINR: 4999, priceUSD: 59.99 },
       roseGold: { priceINR: 3999, priceUSD: 47.99 }
     },
-    image: '/images/slide1.jpg',
-    description: 'Hypoallergenic earrings designed for sensitive skin',
+    image: '/images/Yellow Car Silver.jpg',
+    description: 'Fun car-themed chain with vibrant yellow car charm, perfect for little car enthusiasts',
     wastagePercentage: 5,
     category: 'Earrings',
     materials: {
@@ -195,7 +195,11 @@ export default function HomePage() {
                         <span className="original-price">₹{Math.round(product.prices.silver.priceINR * 1.2).toLocaleString('en-IN')}</span>
                         <span className="current-price">₹{product.prices.silver.priceINR.toLocaleString('en-IN')}</span>
                         <span className="gst-info">Including GST</span>
-                        <span className="material-info">Silver</span>
+                        <div className="material-variants">
+                          <span className="material-info silver">Silver</span>
+                          <span className="material-info gold">Gold</span>
+                          <span className="material-info rose-gold">Rose Gold</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -229,7 +233,7 @@ export default function HomePage() {
             <div className="about-image">
               <div className="image-frame">
                 <Image
-                  src="/images/homeslide4.jpg"
+                  src="/images/Boy with Tiger Chain.png"
                   alt="Crafting Process"
                   width={500}
                   height={400}

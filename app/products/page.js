@@ -12,14 +12,14 @@ import LoadingSpinner from '../../components/LoadingSpinner';
 const products = [
   {
     id: 1,
-    name: 'Princess Anklet',
+    name: 'Butterfly Feet Chain',
     prices: {
       silver: { priceINR: 2499, priceUSD: 29.99 },
       gold: { priceINR: 8999, priceUSD: 107.99 },
       roseGold: { priceINR: 6999, priceUSD: 83.99 }
     },
-    image: '/images/slide1.jpg',
-    description: 'Delicate anklet adorned with tiny charms, perfect for your little princess',
+    image: '/images/Butterfly Feet Chain Silver.jpg',
+    description: 'Beautiful butterfly-themed anklet chain with delicate butterfly charms, perfect for your little princess',
     wastagePercentage: 8,
     category: 'Anklets',
     materials: {
@@ -34,14 +34,14 @@ const products = [
   },
   {
     id: 2,
-    name: 'Elegant Bracelet',
+    name: 'Eye Chain',
     prices: {
       silver: { priceINR: 1999, priceUSD: 24.99 },
       gold: { priceINR: 7999, priceUSD: 95.99 },
       roseGold: { priceINR: 5999, priceUSD: 71.99 }
     },
-    image: '/images/slide2.jpg',
-    description: 'Adjustable bracelet with intricate detailing, designed to grow with your child',
+    image: '/images/Eye Chain Silver.jpg',
+    description: 'Elegant eye-shaped chain with protective symbolism, designed to ward off evil and bring good luck',
     wastagePercentage: 10,
     category: 'Bracelets',
     materials: {
@@ -62,7 +62,7 @@ const products = [
       gold: { priceINR: 12999, priceUSD: 155.99 },
       roseGold: { priceINR: 9999, priceUSD: 119.99 }
     },
-    image: '/images/slide3.jpg',
+    image: '/images/Tiger Chain Silver.jpg',
     description: 'Exquisite necklace featuring a delicate pendant, creating magical moments',
     wastagePercentage: 12,
     category: 'Necklaces',
@@ -78,14 +78,14 @@ const products = [
   },
   {
     id: 4,
-    name: 'Royal Ring',
+    name: 'Tiger Chain',
     prices: {
       silver: { priceINR: 1799, priceUSD: 21.99 },
       gold: { priceINR: 6999, priceUSD: 83.99 },
       roseGold: { priceINR: 5499, priceUSD: 65.99 }
     },
-    image: '/images/slide1.jpg',
-    description: 'Beautiful ring with adjustable sizing, perfect for little fingers',
+    image: '/images/Tiger Chain Silver.jpg',
+    description: 'Bold tiger-themed chain with fierce tiger charm, perfect for brave little ones',
     wastagePercentage: 6,
     category: 'Rings',
     materials: {
@@ -100,14 +100,14 @@ const products = [
   },
   {
     id: 5,
-    name: 'Fairy Earrings',
+    name: 'Unicorn Chain',
     prices: {
       silver: { priceINR: 1299, priceUSD: 15.99 },
       gold: { priceINR: 4999, priceUSD: 59.99 },
       roseGold: { priceINR: 3999, priceUSD: 47.99 }
     },
-    image: '/images/slide2.jpg',
-    description: 'Hypoallergenic earrings designed for sensitive skin',
+    image: '/images/Unicorn Chain Rose Gold.jpg',
+    description: 'Magical unicorn-themed chain with enchanting unicorn charm, bringing dreams to life',
     wastagePercentage: 5,
     category: 'Earrings',
     materials: {
@@ -122,14 +122,14 @@ const products = [
   },
   {
     id: 6,
-    name: 'Angel Set',
+    name: 'White Flower Chain',
     prices: {
       silver: { priceINR: 4999, priceUSD: 59.99 },
       gold: { priceINR: 19999, priceUSD: 239.99 },
       roseGold: { priceINR: 14999, priceUSD: 179.99 }
     },
-    image: '/images/slide3.jpg',
-    description: 'Complete jewelry set including necklace, bracelet, and earrings',
+    image: '/images/White Flower Chain Silver.jpg',
+    description: 'Elegant white flower-themed chain with delicate floral charms, symbolizing purity and grace',
     wastagePercentage: 15,
     category: 'Sets',
     materials: {
@@ -341,7 +341,11 @@ export default function ProductsPage() {
                         <span className="original-price">₹{Math.round(product.prices.silver.priceINR * 1.2).toLocaleString('en-IN')}</span>
                         <span className="current-price">₹{product.prices.silver.priceINR.toLocaleString('en-IN')}</span>
                         <span className="gst-info">Including GST</span>
-                        <span className="material-info">Silver</span>
+                        <div className="material-variants">
+                          <span className="material-info silver">Silver</span>
+                          <span className="material-info gold">Gold</span>
+                          <span className="material-info rose-gold">Rose Gold</span>
+                        </div>
                       </div>
                     </div>
                   </div>
