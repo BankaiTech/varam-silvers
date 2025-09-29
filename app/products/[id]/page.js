@@ -268,6 +268,16 @@ export default function ProductDetailPage({ params }) {
                 ))}
               </div>
             </div>
+
+            {/* Key Features moved under specifications */}
+            <div className="product-features">
+              <h3>Key Features:</h3>
+              <ul>
+                {product.features.map((feature, index) => (
+                  <li key={index}>{feature}</li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Product Info */}
@@ -302,15 +312,6 @@ export default function ProductDetailPage({ params }) {
 
             <div className="product-description">
               <p>{product.description}</p>
-            </div>
-
-            <div className="product-features">
-              <h3>Key Features:</h3>
-              <ul>
-                {product.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
             </div>
 
             <div className="product-actions">
