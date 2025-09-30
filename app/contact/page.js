@@ -24,12 +24,30 @@ export default function ContactPage() {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulate form submission
+    // Create WhatsApp message with form data
+    const whatsappMessage = `Hello Varam Silvers!
+
+Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+Thank you!`;
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // Open WhatsApp with the message
+    const whatsappUrl = `https://wa.me/919444885666?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+    
+    // Reset form and loading state
     setTimeout(() => {
       setIsLoading(false);
-      alert('Thank you for your message! We will get back to you soon.');
       setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 2000);
+    }, 1000);
   };
 
   const handleEmailClick = () => {
@@ -175,10 +193,13 @@ export default function ContactPage() {
                   {isLoading ? (
                     <>
                       <div className="btn-spinner"></div>
-                      Sending Message...
+                      Opening WhatsApp...
                     </>
                   ) : (
-                    'Send Message'
+                    <>
+                      <FaWhatsapp />
+                      Send via WhatsApp
+                    </>
                   )}
                 </button>
               </form>

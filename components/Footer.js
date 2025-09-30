@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { FaFacebook, FaInstagram, FaTwitter, FaPinterest, FaEnvelope, FaWhatsapp, FaShieldAlt, FaTruck, FaAward } from 'react-icons/fa';
+import { FaInstagram, FaEnvelope, FaWhatsapp, FaShieldAlt, FaTruck, FaAward } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -59,42 +59,26 @@ const Footer = () => {
                 Creating timeless memories with exquisite silver jewelry for children. Each piece is handcrafted with love, precision, and the finest 925 sterling silver.
               </p>
               <div className="social-links">
-                <a href="#" className="social-icon">
-                  <FaFacebook size={20} />
-                </a>
-                <a href="#" className="social-icon">
+                <a href="https://www.instagram.com/varamsilvers/" target="_blank" rel="noopener noreferrer" className="social-icon">
                   <FaInstagram size={20} />
-                </a>
-                <a href="#" className="social-icon">
-                  <FaTwitter size={20} />
-                </a>
-                <a href="#" className="social-icon">
-                  <FaPinterest size={20} />
                 </a>
               </div>
             </div>
 
-            {/* Quick Links */}
+            {/* Collections */}
             <div className="footer-section">
               <h5 className="footer-title">Collections</h5>
               <ul className="footer-links">
-                <li><Link href="/products?category=anklets">Anklets</Link></li>
-                <li><Link href="/products?category=bracelets">Bracelets</Link></li>
-                <li><Link href="/products?category=necklaces">Necklaces</Link></li>
-                <li><Link href="/products?category=rings">Rings</Link></li>
-                <li><Link href="/products">View All</Link></li>
+                <li><Link href="/products?category=chains">Chains</Link></li>
               </ul>
             </div>
 
-            {/* Customer Service */}
+            {/* Support */}
             <div className="footer-section">
               <h5 className="footer-title">Support</h5>
               <ul className="footer-links">
-                <li><Link href="#faq">FAQ</Link></li>
-                <li><Link href="#returns">Returns & Exchanges</Link></li>
-                <li><Link href="#shipping">Shipping Info</Link></li>
-                <li><Link href="#size-guide">Size Guide</Link></li>
-                <li><Link href="#care">Care Instructions</Link></li>
+                <li><Link href="/faq">FAQ</Link></li>
+                <li><Link href="/return-exchange">Return & Exchange</Link></li>
               </ul>
             </div>
 
@@ -137,11 +121,6 @@ const Footer = () => {
             <div className="copyright-content">
               <div className="copyright-text">
                 <p>© {currentYear} Varam Silvers. All rights reserved.</p>
-              </div>
-              <div className="copyright-links">
-                <Link href="#privacy">Privacy Policy</Link>
-                <Link href="#terms">Terms of Service</Link>
-                <Link href="#cookies">Cookie Policy</Link>
               </div>
             </div>
           </div>

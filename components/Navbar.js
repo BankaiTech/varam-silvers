@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCurrency } from '../context/CurrencyContext';
-import { FaShoppingCart, FaUser, FaSearch, FaHeart, FaBars, FaTimes } from 'react-icons/fa';
+import { FaShoppingCart, FaUser, FaHeart, FaBars, FaTimes } from 'react-icons/fa';
 import AuthModal from './AuthModal';
+import ProductSearch from './ProductSearch';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -77,14 +78,7 @@ export default function Navbar() {
 
           {/* Search Bar */}
           <div className="nav-search">
-            <div className="search-wrapper">
-              <FaSearch className="search-icon" />
-              <input 
-                type="text" 
-                placeholder="Search silver jewelry..." 
-                className="search-input"
-              />
-            </div>
+            <ProductSearch />
           </div>
 
           {/* Action Buttons */}
@@ -133,14 +127,7 @@ export default function Navbar() {
           <div className="mobile-content">
             {/* Mobile Search */}
             <div className="mobile-search">
-              <div className="mobile-search-wrapper">
-                <FaSearch className="mobile-search-icon" />
-                <input 
-                  type="text" 
-                  placeholder="Search silver jewelry..." 
-                  className="mobile-search-input"
-                />
-              </div>
+              <ProductSearch isMobile={true} />
             </div>
             
             {/* Mobile Navigation */}

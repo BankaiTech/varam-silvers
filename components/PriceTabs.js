@@ -9,17 +9,20 @@ export default function PriceTabs({ product, onMaterialSelect, selectedMaterial 
     {
       key: 'silver',
       name: 'Silver',
-      color: '#C0C0C0'
-    },
-    {
-      key: 'gold',
-      name: 'Gold',
-      color: '#FFD700'
+      color: '#C0C0C0',
+      description: '925 Sterling Silver'
     },
     {
       key: 'roseGold',
       name: 'Rose Gold',
-      color: '#E8B4B8'
+      color: '#E8B4B8',
+      description: '18K Rose Gold Plated'
+    },
+    {
+      key: 'gold',
+      name: 'Gold',
+      color: '#FFD700',
+      description: '18K Gold Plated'
     }
   ];
 
@@ -53,7 +56,7 @@ export default function PriceTabs({ product, onMaterialSelect, selectedMaterial 
           >
             <div className="tab-content">
               <span className="tab-name">{material.name}</span>
-              <span className="tab-material">{product.materials[material.key]}</span>
+              <span className="tab-material">{material.description}</span>
             </div>
             <div className="tab-price">
               <span className="price-current">
