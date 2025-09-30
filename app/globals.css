@@ -2025,7 +2025,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 128, 128, 0.1);
   position: relative;
-  height: 300px;
+  height: 500px;
 }
 
 .image-frame::before {
@@ -2041,7 +2041,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .story-img {
   width: 100%;
-  height: 300px;
+  height: 500px;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -2310,11 +2310,11 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .story-img {
-    height: 250px;
+    height: 400px;
   }
   
   .image-frame {
-    height: 250px;
+    height: 400px;
   }
   
   .benefits-grid {
@@ -4866,7 +4866,7 @@ button.social-btn span:not(.social-icon-text) {
 
 .trust-indicators {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
   padding: 1.5rem;
   background: rgba(192, 192, 192, 0.05);
@@ -5749,7 +5749,6 @@ main.container {
 .mobile-login-btn.disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  pointer-events: none;
   background: #f5f5f5;
   color: #999;
   border: 1px solid #ddd;
@@ -5761,6 +5760,506 @@ main.container {
   color: #999;
   transform: none;
   box-shadow: none;
+}
+
+/* Disabled Cart Button Styles */
+.cart-btn.disabled,
+.mobile-action-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f5f5f5;
+  color: #999;
+  border: 1px solid #ddd;
+}
+
+.cart-btn.disabled:hover,
+.mobile-action-btn.disabled:hover {
+  background: #f5f5f5;
+  color: #999;
+  transform: none;
+  box-shadow: none;
+}
+
+/* WhatsApp Button Styles */
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.whatsapp-btn:hover {
+  background: #20BA5A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn svg {
+  flex-shrink: 0;
+}
+
+/* WhatsApp Button Mobile Responsive */
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .whatsapp-btn span {
+    text-align: center;
+  }
+}
+
+/* Wishlist WhatsApp Button Styles */
+.wishlist-whatsapp-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.wishlist-whatsapp-btn:hover {
+  background: #20BA5A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.wishlist-whatsapp-btn svg {
+  flex-shrink: 0;
+}
+
+/* Wishlist WhatsApp Button Mobile Responsive */
+@media (max-width: 768px) {
+  .wishlist-whatsapp-btn {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .wishlist-whatsapp-btn span {
+    text-align: center;
+  }
+}
+
+/* Individual Wishlist Item WhatsApp Button */
+.whatsapp-query-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 0.85rem;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.whatsapp-query-btn:hover {
+  background: #20BA5A;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-query-btn svg {
+  flex-shrink: 0;
+}
+
+/* Wishlist Item Actions Styling */
+.wishlist-item-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.view-details-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--primary-teal);
+  border: 1px solid var(--primary-teal);
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.view-details-btn:hover {
+  background: var(--primary-teal);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 128, 128, 0.3);
+}
+
+/* Mobile Responsive for Wishlist Item Actions */
+@media (max-width: 768px) {
+  .wishlist-item-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .view-details-btn,
+  .whatsapp-query-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Wishlist Item Image Styling */
+.wishlist-item-image {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+}
+
+.wishlist-item-image .item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+
+.remove-wishlist-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #dc3545;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.remove-wishlist-btn:hover {
+  background: #dc3545;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Mobile Responsive for Wishlist Item Image */
+@media (max-width: 768px) {
+  .wishlist-item-image {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* New Wishlist Layout - E-commerce Style */
+.wishlist-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.wishlist-item-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.wishlist-item-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #d1d5db;
+}
+
+.wishlist-item-image {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  margin-right: 1.5rem;
+}
+
+.wishlist-product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #f8f9fa;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.product-image-link:hover .wishlist-product-image {
+  transform: scale(1.05);
+}
+
+.wishlist-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.wishlist-badge.new-badge {
+  background: #10b981;
+  color: white;
+}
+
+.wishlist-badge.out-of-stock-badge {
+  background: #ef4444;
+  color: white;
+}
+
+.wishlist-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.wishlist-product-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.product-name-link:hover .wishlist-product-name {
+  color: var(--primary-teal);
+}
+
+.wishlist-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.material-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.material-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.material-value {
+  font-size: 0.875rem;
+  color: #374151;
+  font-weight: 600;
+  background: #f0f8ff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid #e0f2fe;
+}
+
+.wishlist-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 0.125rem;
+}
+
+.rating-stars i {
+  font-size: 0.875rem;
+}
+
+.star-filled {
+  color: #fbbf24;
+}
+
+.star-empty {
+  color: #d1d5db;
+}
+
+.rating-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.wishlist-pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.original-price {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.current-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.discount-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #059669;
+  background: #d1fae5;
+  padding: 0.125rem 0.5rem;
+  border-radius: 4px;
+}
+
+.wastage-info {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.wishlist-item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+}
+
+.whatsapp-query-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+  min-width: 100px;
+  justify-content: center;
+}
+
+.whatsapp-query-btn:hover {
+  background: #20BA5A;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-query-btn svg {
+  flex-shrink: 0;
+}
+
+.remove-wishlist-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #6b7280;
+  transition: all 0.3s ease;
+}
+
+.remove-wishlist-btn:hover {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+  transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .wishlist-item-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+  
+  .wishlist-item-image {
+    width: 100%;
+    height: 200px;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .wishlist-item-actions {
+    justify-content: center;
+    min-width: auto;
+    margin-top: 1rem;
+  }
+  
+  .remove-wishlist-btn {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wishlist-item-card {
+    padding: 0.75rem;
+  }
+  
+  .wishlist-item-image {
+    height: 180px;
+  }
+  
+  .wishlist-product-name {
+    font-size: 1rem;
+  }
+  
+  .current-price {
+    font-size: 1rem;
+  }
 }
 
 /* Toast Notification */

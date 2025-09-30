@@ -24,6 +24,9 @@ export function CurrencyProvider({ children }) {
   }, [cart, wishlist]);
 
   const formatPrice = (priceINR) => {
+    if (!priceINR || isNaN(priceINR)) {
+      return '₹0';
+    }
     return `₹${priceINR.toLocaleString()}`;
   };
 

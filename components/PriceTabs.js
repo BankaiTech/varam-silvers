@@ -88,27 +88,15 @@ export default function PriceTabs({ product, onMaterialSelect, selectedMaterial 
             </span>
           </div>
           <div className="price-item">
-            <span className="price-label">Current Price (Incl. {product.wastagePercentage}% wastage):</span>
+            <span className="price-label">Current Price (Incl. {product.wastagePercentage}% wastage & shipping):</span>
             <span className="price-value current">
               {formatPrice(product.prices[activeTab].priceINR, product.prices[activeTab].priceUSD)}
             </span>
           </div>
           <div className="price-item">
-            <span className="price-label">GST (3%):</span>
-            <span className="price-value gst">
-              {formatPrice(
-                Math.round(product.prices[activeTab].priceINR * 0.03),
-                Math.round(product.prices[activeTab].priceUSD * 0.03)
-              )}
-            </span>
-          </div>
-          <div className="price-item">
             <span className="price-label">Total Amount:</span>
             <span className="price-value total">
-              {formatPrice(
-                Math.round(product.prices[activeTab].priceINR * 1.03),
-                Math.round(product.prices[activeTab].priceUSD * 1.03)
-              )}
+              {formatPrice(product.prices[activeTab].priceINR, product.prices[activeTab].priceUSD)}
             </span>
           </div>
           <div className="price-item">

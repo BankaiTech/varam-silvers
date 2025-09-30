@@ -7,21 +7,21 @@ import { motion } from 'framer-motion';
 
 const heroImages = [
   {
-    src: '/images/Baby with Unicorn Chain.png',
+    src: '/images/Unicorn Chain Rose Gold.jpg',
     title: 'Timeless Elegance for Little Princesses',
     subtitle: 'Discover our exquisite collection of handcrafted silver jewelry, where every piece is designed to celebrate the precious moments of childhood',
     cta: 'Explore Collection',
     link: '/products'
   },
   {
-    src: '/images/Baby with White Flower Chain.png',
+    src: '/images/Eye Chain Rose Gold.jpg',
     title: 'Crafted with Love & Precision',
     subtitle: 'Each piece tells a story of tradition, quality, and the pure joy of childhood. Made with 925 sterling silver and endless care',
     cta: 'Shop Now',
     link: '/products'
   },
   {
-    src: '/images/Baby with Panda Chain.png',
+    src: '/images/Boy with Eye Chain.png',
     title: 'Where Dreams Meet Silver',
     subtitle: 'Premium quality jewelry that grows with your child, creating memories that will last a lifetime',
     cta: 'View Collection',

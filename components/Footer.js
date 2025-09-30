@@ -1,19 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
-import { FaFacebook, FaInstagram, FaTwitter, FaPinterest, FaEnvelope, FaWhatsapp, FaPaperPlane, FaShieldAlt, FaTruck, FaAward } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaPinterest, FaEnvelope, FaWhatsapp, FaShieldAlt, FaTruck, FaAward } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const [email, setEmail] = useState('');
-  
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    // Handle newsletter subscription
-    console.log('Newsletter subscription:', email);
-    setEmail('');
-  };
 
   const contactLinkStyle = {
     color: '#ffffffb3',
@@ -29,35 +20,6 @@ const Footer = () => {
   
   return (
     <>
-      {/* Newsletter Section */}
-      <section className="newsletter-section">
-        <div className="newsletter-container">
-          <div className="newsletter-content">
-            <div className="newsletter-text">
-              <h3 className="newsletter-title">Stay Updated with Our Latest Collections</h3>
-              <p className="newsletter-subtitle">Be the first to know about new arrivals, exclusive offers, and special events.</p>
-            </div>
-            <div className="newsletter-form-container">
-              <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
-                <div className="newsletter-input-group">
-                  <input
-                    type="email"
-                    className="newsletter-input"
-                    placeholder="Enter your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                  <button className="newsletter-btn" type="submit">
-                    <FaPaperPlane />
-                    Subscribe
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Trust Indicators */}
       <section className="trust-section">

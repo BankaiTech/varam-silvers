@@ -47,8 +47,7 @@ export default function CheckoutPage() {
 
   const subtotal = getCartTotal();
   const shipping = 0; // Free shipping in India
-  const tax = subtotal * 0.18; // 18% GST
-  const total = subtotal + shipping + tax;
+  const total = subtotal + shipping;
 
   return (
     <div className="checkout-page">
@@ -325,10 +324,6 @@ export default function CheckoutPage() {
                 <span>{formatPrice(shipping)}</span>
               </div>
               
-              <div className="summary-row">
-                <span>Tax (GST 18%)</span>
-                <span>{formatPrice(tax)}</span>
-              </div>
               
               <div className="summary-total">
                 <span>Total</span>

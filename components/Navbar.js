@@ -93,10 +93,14 @@ export default function Navbar() {
               <FaHeart />
               <span className="badge">{getWishlistCount()}</span>
             </Link>
-            <Link href="/cart" className="action-btn cart-btn">
+            <button 
+              className="action-btn cart-btn disabled" 
+              disabled 
+              title="Cart feature coming soon!"
+            >
               <FaShoppingCart />
               <span className="badge">{getCartCount()}</span>
-            </Link>
+            </button>
             {isLoggedIn ? (
               <button onClick={handleLogout} className="login-btn">
                 <FaUser />
@@ -105,7 +109,7 @@ export default function Navbar() {
             ) : (
               <button 
                 className="login-btn disabled" 
-                disabled 
+                onClick={(e) => e.preventDefault()}
                 title="Login feature coming soon!"
               >
                 <FaUser />
@@ -161,10 +165,14 @@ export default function Navbar() {
                 <FaHeart />
                 <span>Wishlist ({getWishlistCount()})</span>
               </Link>
-              <Link href="/cart" className="mobile-action-btn" onClick={() => setIsMenuOpen(false)}>
+              <button 
+                className="mobile-action-btn disabled" 
+                disabled 
+                title="Cart feature coming soon!"
+              >
                 <FaShoppingCart />
                 <span>Cart ({getCartCount()})</span>
-              </Link>
+              </button>
               {isLoggedIn ? (
                 <button onClick={() => { handleLogout(); setIsMenuOpen(false); }} className="mobile-login-btn">
                   <FaUser />
@@ -173,7 +181,7 @@ export default function Navbar() {
               ) : (
                 <button 
                   className="mobile-login-btn disabled" 
-                  disabled 
+                  onClick={(e) => e.preventDefault()}
                   title="Login feature coming soon!"
                 >
                   <FaUser />
