@@ -14,11 +14,11 @@ const products = [
     id: 1,
     name: 'Butterfly Feet Chain',
     prices: {
-      silver: { priceINR: 2499, priceUSD: 29.99 },
-      gold: { priceINR: 8999, priceUSD: 107.99 },
-      roseGold: { priceINR: 6999, priceUSD: 83.99 }
+      silver: { priceINR: 2499 },
+      gold: { priceINR: 8999 },
+      roseGold: { priceINR: 6999 }
     },
-    image: '/images/Butterfly Feet Chain Silver.jpg',
+    image: '/images/Butterfly Feet Chain Silver - Card.png',
     description: 'Beautiful butterfly-themed anklet chain with delicate butterfly charms, perfect for your little princess',
     wastagePercentage: 8,
     category: 'Chains',
@@ -36,9 +36,9 @@ const products = [
     id: 2,
     name: 'Eye Chain',
     prices: {
-      silver: { priceINR: 1999, priceUSD: 24.99 },
-      gold: { priceINR: 7999, priceUSD: 95.99 },
-      roseGold: { priceINR: 5999, priceUSD: 71.99 }
+      silver: { priceINR: 1999 },
+      gold: { priceINR: 7999 },
+      roseGold: { priceINR: 5999 }
     },
     image: '/images/Eye Chain Silver.jpg',
     description: 'Elegant eye-shaped chain with protective symbolism, designed to ward off evil and bring good luck',
@@ -58,11 +58,11 @@ const products = [
     id: 3,
     name: 'Panda Chain',
     prices: {
-      silver: { priceINR: 3499, priceUSD: 42.99 },
-      gold: { priceINR: 12999, priceUSD: 155.99 },
-      roseGold: { priceINR: 9999, priceUSD: 119.99 }
+      silver: { priceINR: 3499 },
+      gold: { priceINR: 12999 },
+      roseGold: { priceINR: 9999 }
     },
-    image: '/images/Panda Chain Silver.jpg',
+    image: '/images/Panda Chain Silver - Card.png',
     description: 'Adorable panda-themed chain with cute panda charms, bringing joy and playfulness to your child',
     wastagePercentage: 12,
     category: 'Chains',
@@ -80,9 +80,9 @@ const products = [
     id: 4,
     name: 'Tiger Chain',
     prices: {
-      silver: { priceINR: 1799, priceUSD: 21.99 },
-      gold: { priceINR: 6999, priceUSD: 83.99 },
-      roseGold: { priceINR: 5499, priceUSD: 65.99 }
+      silver: { priceINR: 1799 },
+      gold: { priceINR: 6999 },
+      roseGold: { priceINR: 5499 }
     },
     image: '/images/Tiger Chain Silver.jpg',
     description: 'Bold tiger-themed chain with fierce tiger charm, perfect for brave little ones',
@@ -102,11 +102,11 @@ const products = [
     id: 5,
     name: 'Unicorn Chain',
     prices: {
-      silver: { priceINR: 1299, priceUSD: 15.99 },
-      gold: { priceINR: 4999, priceUSD: 59.99 },
-      roseGold: { priceINR: 3999, priceUSD: 47.99 }
+      silver: { priceINR: 1299 },
+      gold: { priceINR: 4999 },
+      roseGold: { priceINR: 3999 }
     },
-    image: '/images/Unicorn Chain Rose Gold.jpg',
+    image: '/images/Unicorn Chain Rose Gold - Card.png',
     description: 'Magical unicorn-themed chain with enchanting unicorn charm, bringing dreams to life',
     wastagePercentage: 5,
     category: 'Chains',
@@ -124,9 +124,9 @@ const products = [
     id: 6,
     name: 'Yellow Car Chain',
     prices: {
-      silver: { priceINR: 1299, priceUSD: 15.99 },
-      gold: { priceINR: 4999, priceUSD: 59.99 },
-      roseGold: { priceINR: 3999, priceUSD: 47.99 }
+      silver: { priceINR: 1299 },
+      gold: { priceINR: 4999 },
+      roseGold: { priceINR: 3999 }
     },
     image: '/images/Yellow Car Silver.jpg',
     description: 'Fun car-themed chain with vibrant yellow car charm, perfect for little car enthusiasts',
@@ -146,9 +146,9 @@ const products = [
     id: 7,
     name: 'White Flower Chain',
     prices: {
-      silver: { priceINR: 4999, priceUSD: 59.99 },
-      gold: { priceINR: 19999, priceUSD: 239.99 },
-      roseGold: { priceINR: 14999, priceUSD: 179.99 }
+      silver: { priceINR: 4999 },
+      gold: { priceINR: 19999 },
+      roseGold: { priceINR: 14999 }
     },
     image: '/images/White Flower Chain Silver.jpg',
     description: 'Elegant white flower-themed chain with delicate floral charms, symbolizing purity and grace',
@@ -167,7 +167,7 @@ const products = [
 ];
 
 export default function ProductsPage() {
-  const { showUSD, addToWishlist, removeFromWishlist, isInWishlist } = useCurrency();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useCurrency();
   const [sortBy, setSortBy] = useState('default');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [isLoading, setIsLoading] = useState(true);
@@ -188,10 +188,10 @@ export default function ProductsPage() {
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
     if (sortBy === 'price-asc') {
-      return showUSD ? a.priceUSD - b.priceUSD : a.priceINR - b.priceINR;
+      return a.priceINR - b.priceINR;
     }
     if (sortBy === 'price-desc') {
-      return showUSD ? b.priceUSD - a.priceUSD : b.priceINR - a.priceINR;
+      return b.priceINR - a.priceINR;
     }
     if (sortBy === 'rating') {
       return b.rating - a.rating;
@@ -281,51 +281,51 @@ export default function ProductsPage() {
                 </div>
               </div>
               <div className="sort-section">
-                <select
+          <select
                   className="sort-select"
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                >
-                  <option value="default">Sort by</option>
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+          >
+            <option value="default">Sort by</option>
                   <option value="new">Newest First</option>
                   <option value="rating">Highest Rated</option>
-                  <option value="price-asc">Price: Low to High</option>
-                  <option value="price-desc">Price: High to Low</option>
-                </select>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
               </div>
             </div>
-          </div>
+        </div>
 
           <div className="products-grid">
-            {sortedProducts.map((product) => (
+          {sortedProducts.map((product) => (
               <Link
                 key={product.id}
                 href={`/products/${product.id}`}
                 className="product-card-link"
               >
-                <motion.div
+            <motion.div
                   className="product-card"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
                   <div className="product-image-container">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      width={400}
-                      height={400}
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={400}
+                  height={400}
                       className="product-image"
                     />
                     {product.isNew && (
                       <span className="product-badge new-badge">
                         New
-                      </span>
+                    </span>
                     )}
                     {!product.inStock && (
                       <span className="product-badge out-of-stock-badge">
                         Out of Stock
-                      </span>
+                    </span>
                     )}
                     <button
                       className={`wishlist-btn ${isInWishlist(product.id) ? 'active' : ''}`}
@@ -359,10 +359,10 @@ export default function ProductsPage() {
                       <div className="product-price">
                         <span className="original-price">₹{Math.round(product.prices.silver.priceINR * 1.2).toLocaleString('en-IN')}</span>
                         <span className="current-price">₹{product.prices.silver.priceINR.toLocaleString('en-IN')} (Incl. {product.wastagePercentage}% wastage)</span>
-                      </div>
-                    </div>
                   </div>
-                </motion.div>
+                </div>
+              </div>
+            </motion.div>
               </Link>
             ))}
           </div>

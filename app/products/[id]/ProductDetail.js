@@ -17,7 +17,6 @@ export default function ProductDetail({ product }) {
       id: product.id,
       name: product.name,
       priceINR: product.priceINR,
-      priceUSD: product.priceUSD,
       image: product.image,
       quantity: quantity
     });
@@ -84,7 +83,7 @@ export default function ProductDetail({ product }) {
         {/* Product Info */}
         <div className="col-md-6">
           <h1 className="card-title mb-3">{product.name}</h1>
-          <h2 className="h3 mb-3 text-primary">{formatPrice(product.priceINR, product.priceUSD)}</h2>
+          <h2 className="h3 mb-3 text-primary">{formatPrice(product.priceINR)}</h2>
           <div className="mb-3">
             <span className="badge me-2">Wastage: {product.specifications.wastage}</span>
             <span className="badge">Purity: {product.specifications.purity}</span>

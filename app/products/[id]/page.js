@@ -99,9 +99,9 @@ export default function ProductDetailPage({ params }) {
     id: resolvedParams.id,
     name: productData.name,
     prices: {
-      silver: { priceINR: 2499, priceUSD: 29.99 },
-      gold: { priceINR: 8999, priceUSD: 107.99 },
-      roseGold: { priceINR: 6999, priceUSD: 83.99 }
+      silver: { priceINR: 2499 },
+      gold: { priceINR: 8999 },
+      roseGold: { priceINR: 6999 }
     },
     images: productData.images,
     description: `Beautiful ${productData.name.toLowerCase()} with intricate detailing, perfect for your little one. This beautiful piece is crafted with love and attention to detail.`,
@@ -144,7 +144,6 @@ export default function ProductDetailPage({ params }) {
       ...product,
       selectedMaterial: selectedMaterial,
       priceINR: product.prices[selectedMaterial].priceINR,
-      priceUSD: product.prices[selectedMaterial].priceUSD,
       material: product.materials[selectedMaterial],
       quantity: quantity,
       image: product.images[0]

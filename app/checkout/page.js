@@ -317,22 +317,22 @@ export default function CheckoutPage() {
               
               <div className="summary-row">
                 <span>Subtotal</span>
-                <span>{formatPrice(subtotal, subtotal / 83)}</span>
+                <span>{formatPrice(subtotal)}</span>
               </div>
               
               <div className="summary-row">
                 <span>Shipping (India Only)</span>
-                <span>{formatPrice(shipping, shipping / 83)}</span>
+                <span>{formatPrice(shipping)}</span>
               </div>
               
               <div className="summary-row">
                 <span>Tax (GST 18%)</span>
-                <span>{formatPrice(tax, tax / 83)}</span>
+                <span>{formatPrice(tax)}</span>
               </div>
               
               <div className="summary-total">
                 <span>Total</span>
-                <span>{formatPrice(total, total / 83)}</span>
+                <span>{formatPrice(total)}</span>
               </div>
 
               <div className="security-badge">

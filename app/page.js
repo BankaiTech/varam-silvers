@@ -7,21 +7,21 @@ import { motion } from 'framer-motion';
 
 const heroImages = [
   {
-    src: '/images/Unicorn Chain Rose Gold.jpg',
+    src: '/images/Baby with Unicorn Chain.png',
     title: 'Timeless Elegance for Little Princesses',
     subtitle: 'Discover our exquisite collection of handcrafted silver jewelry, where every piece is designed to celebrate the precious moments of childhood',
     cta: 'Explore Collection',
     link: '/products'
   },
   {
-    src: '/images/Eye Chain Rose Gold.jpg',
+    src: '/images/Baby with White Flower Chain.png',
     title: 'Crafted with Love & Precision',
     subtitle: 'Each piece tells a story of tradition, quality, and the pure joy of childhood. Made with 925 sterling silver and endless care',
     cta: 'Shop Now',
     link: '/products'
   },
   {
-    src: '/images/Boy with Eye Chain.png',
+    src: '/images/Baby with Panda Chain.png',
     title: 'Where Dreams Meet Silver',
     subtitle: 'Premium quality jewelry that grows with your child, creating memories that will last a lifetime',
     cta: 'View Collection',
@@ -34,11 +34,11 @@ const featuredProducts = [
     id: 1,
     name: 'Butterfly Feet Chain',
     prices: {
-      silver: { priceINR: 2499, priceUSD: 29.99 },
-      gold: { priceINR: 8999, priceUSD: 107.99 },
-      roseGold: { priceINR: 6999, priceUSD: 83.99 }
+      silver: { priceINR: 2499 },
+      gold: { priceINR: 8999 },
+      roseGold: { priceINR: 6999 }
     },
-    image: '/images/Butterfly Feet Chain Rose Gold.jpg',
+    image: '/images/Butterfly Feet Chain Rose Gold - Card.png',
     description: 'Beautiful butterfly-themed anklet chain with delicate butterfly charms, perfect for your little princess',
     wastagePercentage: 8,
     category: 'Chains',
@@ -53,9 +53,9 @@ const featuredProducts = [
     id: 2,
     name: 'Eye Chain',
     prices: {
-      silver: { priceINR: 1999, priceUSD: 24.99 },
-      gold: { priceINR: 7999, priceUSD: 95.99 },
-      roseGold: { priceINR: 5999, priceUSD: 71.99 }
+      silver: { priceINR: 1999 },
+      gold: { priceINR: 7999 },
+      roseGold: { priceINR: 5999 }
     },
     image: '/images/Eye Chain Silver.jpg',
     description: 'Elegant eye-shaped chain with protective symbolism, designed to ward off evil and bring good luck',
@@ -72,11 +72,11 @@ const featuredProducts = [
     id: 3,
     name: 'Panda Chain',
     prices: {
-      silver: { priceINR: 3499, priceUSD: 42.99 },
-      gold: { priceINR: 12999, priceUSD: 155.99 },
-      roseGold: { priceINR: 9999, priceUSD: 119.99 }
+      silver: { priceINR: 3499 },
+      gold: { priceINR: 12999 },
+      roseGold: { priceINR: 9999 }
     },
-    image: '/images/Panda Chain Silver.jpg',
+    image: '/images/Panda Chain Silver - Card.png',
     description: 'Adorable panda-themed chain with cute panda charms, bringing joy and playfulness to your child',
     wastagePercentage: 12,
     category: 'Chains',
@@ -91,11 +91,11 @@ const featuredProducts = [
     id: 4,
     name: 'Unicorn Chain',
     prices: {
-      silver: { priceINR: 1299, priceUSD: 15.99 },
-      gold: { priceINR: 4999, priceUSD: 59.99 },
-      roseGold: { priceINR: 3999, priceUSD: 47.99 }
+      silver: { priceINR: 1299 },
+      gold: { priceINR: 4999 },
+      roseGold: { priceINR: 3999 }
     },
-    image: '/images/Unicorn Chain Rose Gold.jpg',
+    image: '/images/Unicorn Chain Rose Gold - Card.png',
     description: 'Magical unicorn-themed chain with enchanting unicorn charm, bringing dreams to life',
     wastagePercentage: 5,
     category: 'Chains',
@@ -224,7 +224,7 @@ export default function HomePage() {
             <div className="about-image">
               <div className="image-frame">
                 <Image
-                  src="/images/Boy with Tiger Chain.png"
+                  src="/images/Baby with White Flower Chain.png"
                   alt="Crafting Process"
                   width={500}
                   height={400}

@@ -6,7 +6,6 @@ import toast from 'react-hot-toast';
 const CurrencyContext = createContext();
 
 export function CurrencyProvider({ children }) {
-  const [showUSD, setShowUSD] = useState(false);
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
 
@@ -24,8 +23,8 @@ export function CurrencyProvider({ children }) {
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
   }, [cart, wishlist]);
 
-  const formatPrice = (priceINR, priceUSD) => {
-    return showUSD ? `$${priceUSD.toFixed(2)}` : `₹${priceINR.toLocaleString()}`;
+  const formatPrice = (priceINR) => {
+    return `₹${priceINR.toLocaleString()}`;
   };
 
   const addToCart = (product) => {
@@ -61,8 +60,7 @@ export function CurrencyProvider({ children }) {
 
   const getCartTotal = () => {
     return cart.reduce((total, item) => {
-      const price = showUSD ? item.priceUSD : item.priceINR;
-      return total + price * item.quantity;
+      return total + item.priceINR * item.quantity;
     }, 0);
   };
 
@@ -89,8 +87,6 @@ export function CurrencyProvider({ children }) {
   return (
     <CurrencyContext.Provider
       value={{
-        showUSD,
-        setShowUSD,
         formatPrice,
         cart,
         addToCart,

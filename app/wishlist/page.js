@@ -91,7 +91,7 @@ export default function WishlistPage() {
                 </div>
 
                 <div className="item-price">
-                  <span className="price">{formatPrice(item.priceINR, item.priceUSD)}</span>
+                  <span className="price">{formatPrice(item.priceINR)}</span>
                   {!item.inStock && (
                     <span className="out-of-stock">Out of Stock</span>
                   )}

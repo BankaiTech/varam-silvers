@@ -103,7 +103,11 @@ export default function Navbar() {
                 <span>Logout</span>
               </button>
             ) : (
-              <button onClick={() => setIsAuthModalOpen(true)} className="login-btn">
+              <button 
+                className="login-btn disabled" 
+                disabled 
+                title="Login feature coming soon!"
+              >
                 <FaUser />
                 <span>Login</span>
               </button>
@@ -167,7 +171,11 @@ export default function Navbar() {
                   <span>Logout</span>
                 </button>
               ) : (
-                <button onClick={() => { setIsAuthModalOpen(true); setIsMenuOpen(false); }} className="mobile-login-btn">
+                <button 
+                  className="mobile-login-btn disabled" 
+                  disabled 
+                  title="Login feature coming soon!"
+                >
                   <FaUser />
                   <span>Login</span>
                 </button>

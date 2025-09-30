@@ -2025,6 +2025,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 128, 128, 0.1);
   position: relative;
+  height: 300px;
 }
 
 .image-frame::before {
@@ -2040,7 +2041,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .story-img {
   width: 100%;
-  height: auto;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -2304,6 +2307,14 @@ h1, h2, h3, h4, h5, h6 {
   .story-text .section-title {
     font-size: 2.5rem;
     text-align: center;
+  }
+  
+  .story-img {
+    height: 250px;
+  }
+  
+  .image-frame {
+    height: 250px;
   }
   
   .benefits-grid {
@@ -4430,7 +4441,7 @@ button.social-btn span:not(.social-icon-text) {
 
 .product-main-image {
   width: 100%;
-  height: 300px;
+  height: 500px;
   object-fit: cover;
   object-position: center;
   background: transparent;
@@ -5731,10 +5742,25 @@ main.container {
   color: var(--text-color);
 }
 
-.price-usd {
-  font-size: 0.9em;
-  color: var(--light-text);
-  margin-left: 0.5rem;
+/* USD pricing removed */
+
+/* Disabled Login Button Styles */
+.login-btn.disabled,
+.mobile-login-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: #f5f5f5;
+  color: #999;
+  border: 1px solid #ddd;
+}
+
+.login-btn.disabled:hover,
+.mobile-login-btn.disabled:hover {
+  background: #f5f5f5;
+  color: #999;
+  transform: none;
+  box-shadow: none;
 }
 
 /* Toast Notification */
