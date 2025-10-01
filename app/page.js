@@ -34,10 +34,11 @@ const featuredProducts = [
     id: 1,
     name: 'Butterfly Feet Chain',
     prices: {
-      silver: { priceINR: 2499 },
-      gold: { priceINR: 8999 },
-      roseGold: { priceINR: 6999 }
+      silver: { priceINR: 2050 },
+      gold: { priceINR: 2480 },
+      roseGold: { priceINR: 2799 }
     },
+    weightGrams: '3-4',
     image: '/images/Butterfly Feet Chain Rose Gold - Card.png',
     description: 'Beautiful butterfly-themed anklet chain with delicate butterfly charms, perfect for your little princess',
     wastagePercentage: 8,
@@ -50,61 +51,64 @@ const featuredProducts = [
     ageRange: '2-12 years'
   },
   {
-    id: 2,
-    name: 'Eye Chain',
+    id: 17,
+    name: 'House Sparrow Bracelet',
     prices: {
-      silver: { priceINR: 1999 },
-      gold: { priceINR: 7999 },
-      roseGold: { priceINR: 5999 }
+      silver: { priceINR: 1400 },
+      gold: { priceINR: 1780 },
+      roseGold: { priceINR: 1899 }
     },
-    image: '/images/Eye Chain Silver.jpg',
-    description: 'Elegant eye-shaped chain with protective symbolism, designed to ward off evil and bring good luck',
+    weightGrams: '1-2',
+    image: '/images/braclet/house sparrow (s).jpg',
+    description: 'Charming house sparrow bracelet that brings nature\'s beauty to your little one\'s wrist',
     wastagePercentage: 10,
-    category: 'Chains',
+    category: 'Bracelet',
     materials: {
       silver: '925 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
-    ageRange: '3-14 years'
+    ageRange: '3-12 years'
   },
   {
-    id: 3,
-    name: 'Panda Chain',
+    id: 25,
+    name: 'Cup Cake Kada',
     prices: {
-      silver: { priceINR: 3499 },
-      gold: { priceINR: 12999 },
-      roseGold: { priceINR: 9999 }
+      silver: { priceINR: 3460 },
+      gold: { priceINR: 3690 },
+      roseGold: { priceINR: 3799 }
     },
-    image: '/images/Panda Chain Silver - Card.png',
-    description: 'Adorable panda-themed chain with cute panda charms, bringing joy and playfulness to your child',
-    wastagePercentage: 12,
-    category: 'Chains',
-    materials: {
-      silver: '925 Sterling Silver',
-      gold: '18K Gold',
-      roseGold: '18K Rose Gold'
-    },
-    ageRange: '4-16 years'
-  },
-  {
-    id: 4,
-    name: 'Unicorn Chain',
-    prices: {
-      silver: { priceINR: 1299 },
-      gold: { priceINR: 4999 },
-      roseGold: { priceINR: 3999 }
-    },
-    image: '/images/Unicorn Chain Rose Gold - Card.png',
-    description: 'Magical unicorn-themed chain with enchanting unicorn charm, bringing dreams to life',
-    wastagePercentage: 5,
-    category: 'Chains',
+    weightGrams: '8-9',
+    image: '/images/kada/The cup cake s.jpg',
+    description: 'Sweet cup cake kada that brings joy and playfulness to your child',
+    wastagePercentage: 8,
+    category: 'Kada',
     materials: {
       silver: '925 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
     ageRange: '2-10 years'
+  },
+  {
+    id: 33,
+    name: 'Baby Feet Nazriya',
+    prices: {
+      silver: { priceINR: 1399 },
+      gold: { priceINR: 1620 },
+      roseGold: { priceINR: 1760 }
+    },
+    weightGrams: '2-3',
+    image: '/images/nazriya/the baby feet (S).jpg',
+    description: 'Adorable baby feet nazriya symbolizing the precious journey of childhood',
+    wastagePercentage: 5,
+    category: 'Nazriya',
+    materials: {
+      silver: '925 Sterling Silver',
+      gold: '18K Gold',
+      roseGold: '18K Rose Gold'
+    },
+    ageRange: '2-8 years'
   },
 ];
 

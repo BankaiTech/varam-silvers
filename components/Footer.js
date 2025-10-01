@@ -70,6 +70,10 @@ const Footer = () => {
               <h5 className="footer-title">Collections</h5>
               <ul className="footer-links">
                 <li><Link href="/products?category=chains">Chains</Link></li>
+                <li><Link href="/products?category=earrings">Earrings</Link></li>
+                <li><Link href="/products?category=bracelet">Bracelet</Link></li>
+                <li><Link href="/products?category=kada">Kada</Link></li>
+                <li><Link href="/products?category=nazriya">Nazriya</Link></li>
               </ul>
             </div>
 

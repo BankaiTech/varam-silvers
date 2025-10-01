@@ -56,11 +56,11 @@ export default function ProductDetailPage({ params }) {
         ]
       },
       '4': {
-        name: 'Yellow Car Chain',
+        name: 'Tiger Chain',
         images: [
-          '/images/Yellow Car Silver.jpg', 
-          '/images/Yellow Car Gold.jpg', 
-          '/images/Yellow Car Rose Gold.jpg'
+          '/images/Tiger Chain Silver.jpg', 
+          '/images/Tiger Chain Gold.jpg', 
+          '/images/Tiger Chain Rose Gold.jpg'
         ]
       },
       '5': {
@@ -72,6 +72,14 @@ export default function ProductDetailPage({ params }) {
         ]
       },
       '6': {
+        name: 'Yellow Car Chain',
+        images: [
+          '/images/Yellow Car Silver.jpg', 
+          '/images/Yellow Car Gold.jpg', 
+          '/images/Yellow Car Rose Gold.jpg'
+        ]
+      },
+      '7': {
         name: 'White Flower Chain',
         images: [
           '/images/White Flower Chain Silver.jpg', 
@@ -79,12 +87,201 @@ export default function ProductDetailPage({ params }) {
           '/images/White Flower Chain Rose Gold.jpg'
         ]
       },
-      '7': {
-        name: 'Tiger Chain',
+      // Earrings Collection
+      '8': {
+        name: 'Flower Earrings',
         images: [
-          '/images/Tiger Chain Silver.jpg', 
-          '/images/Tiger Chain Gold.jpg', 
-          '/images/Tiger Chain Rose Gold.jpg'
+          '/images/earring/flower (s).jpg', 
+          '/images/earring/flower (G).jpg'
+        ]
+      },
+      '9': {
+        name: 'House Sparrow Earrings',
+        images: [
+          '/images/earring/house sparrow (s).jpg', 
+          '/images/earring/house sparrow (g).jpg', 
+          '/images/earring/house sparrow (rg).jpg'
+        ]
+      },
+      '10': {
+        name: 'Butterfly Earrings',
+        images: [
+          '/images/earring/the butterfly (s).jpg', 
+          '/images/earring/the butterfly (G).jpg', 
+          '/images/earring/the butterfly (rg).jpg'
+        ]
+      },
+      '11': {
+        name: 'Rose Flower Earrings',
+        images: [
+          '/images/earring/the rose flower (rg).jpg'
+        ]
+      },
+      '12': {
+        name: 'Silver Elephant Earrings',
+        images: [
+          '/images/earring/the silver elephant (s).jpg', 
+          '/images/earring/the silver elephant (g).jpg', 
+          '/images/earring/the silver elephant (rg).jpg'
+        ]
+      },
+      '13': {
+        name: 'Silver Eye Earrings',
+        images: [
+          '/images/earring/the silver eye (s).jpg', 
+          '/images/earring/the silver eye (g).jpg', 
+          '/images/earring/the silver eye (rg).jpg'
+        ]
+      },
+      '14': {
+        name: 'Silver Moon Earrings',
+        images: [
+          '/images/earring/the silver moon(s).png', 
+          '/images/earring/the silver moon(g).png', 
+          '/images/earring/the silver moon(rg).png'
+        ]
+      },
+      '15': {
+        name: 'Silver Zebra Earrings',
+        images: [
+          '/images/earring/the silver zebra (s).jpg', 
+          '/images/earring/the silver zebra (rg).jpg'
+        ]
+      },
+      '16': {
+        name: 'White Elephant Earrings',
+        images: [
+          '/images/earring/white elephant (s).jpg'
+        ]
+      },
+      // Bracelet Collection
+      '17': {
+        name: 'House Sparrow Bracelet',
+        images: [
+          '/images/braclet/house sparrow (s).jpg', 
+          '/images/braclet/house sparrow (g).jpg', 
+          '/images/braclet/house sparrow (rg).jpg'
+        ]
+      },
+      '18': {
+        name: 'Silver Flower Bracelet',
+        images: [
+          '/images/braclet/the silver flower.jpg'
+        ]
+      },
+      '19': {
+        name: 'Yellow Elephant Bracelet',
+        images: [
+          '/images/braclet/the yellow elephant (g).jpg'
+        ]
+      },
+      '20': {
+        name: 'Unicorn Bracelet',
+        images: [
+          '/images/braclet/unicorn bralet(s).jpg', 
+          '/images/braclet/unicorn braclet(g).jpg', 
+          '/images/braclet/unicorn braclet(rg).jpg'
+        ]
+      },
+      // Kada Collection
+      '21': {
+        name: 'Unicorn Bracelet',
+        images: [
+          '/images/braclet/unicorn bralet(s).jpg', 
+          '/images/braclet/unicorn braclet(g).jpg', 
+          '/images/braclet/unicorn braclet(rg).jpg'
+        ]
+      },
+      '22': {
+        name: 'Singaa Kuty Kada',
+        images: [
+          '/images/kada/Singaa Kuty Kada (s).jpg', 
+          '/images/kada/Singaa Kuty Kada (g).jpg', 
+          '/images/kada/Singaa Kuty Kada (rg).jpg'
+        ]
+      },
+      '23': {
+        name: 'Aladdin Galaxy Star Kada',
+        images: [
+          '/images/kada/the aladdin galaxy star(s).jpg', 
+          '/images/kada/the aladdin galaxy star (g).jpg', 
+          '/images/kada/the aladdin galaxy star (rg).jpg'
+        ]
+      },
+      '24': {
+        name: 'Cup Cake Kada',
+        images: [
+          '/images/kada/The cup cake s.jpg', 
+          '/images/kada/The cup cake g.jpg', 
+          '/images/kada/The cup cake rg.jpg'
+        ]
+      },
+      '25': {
+        name: 'Kid Giraffe Kada',
+        images: [
+          '/images/kada/The Kid Giraffe kada (s).jpg', 
+          '/images/kada/The Kid Giraffe kada (G).jpg'
+        ]
+      },
+      '26': {
+        name: 'Pinky Flower Candy Pineapple Kada',
+        images: [
+          '/images/kada/The pinky flower candy pineapple s.jpg', 
+          '/images/kada/The pinky flower candy pineapple g.jpg', 
+          '/images/kada/The pinky flower candy pineapple rg.jpg'
+        ]
+      },
+      '27': {
+        name: 'Protection Evil Eye Kada',
+        images: [
+          '/images/kada/The Protection Evil eye (s).jpg', 
+          '/images/kada/The Protection Evil eye (rg).jpg'
+        ]
+      },
+      '28': {
+        name: 'Tiger Kada',
+        images: [
+          '/images/kada/the tiger kada (s).jpg', 
+          '/images/kada/the tiger kada (g).jpg', 
+          '/images/kada/the tiger kada (rg).jpg'
+        ]
+      },
+      '29': {
+        name: 'Unicorn Elephant Kada',
+        images: [
+          '/images/kada/unicorn elephant (s).jpg', 
+          '/images/kada/unicorn elephant (g).jpg', 
+          '/images/kada/unicorn elephant (rg).jpg'
+        ]
+      },
+      // Nazriya Collection
+      '30': {
+        name: 'Unicorn Elephant Kada',
+        images: [
+          '/images/kada/unicorn elephant (s).jpg', 
+          '/images/kada/unicorn elephant (g).jpg', 
+          '/images/kada/unicorn elephant (rg).jpg'
+        ]
+      },
+      '32': {
+        name: 'Butterfly Evil Eye Nazriya',
+        images: [
+          '/images/nazriya/buterfly evil eye (s).jpg', 
+          '/images/nazriya/butterfly evil eye (rg).jpg'
+        ]
+      },
+      '33': {
+        name: 'Baby Feet Nazriya',
+        images: [
+          '/images/nazriya/the baby feet (S).jpg', 
+          '/images/nazriya/the baby feet (g).jpg'
+        ]
+      },
+      '34': {
+        name: 'Lion Nazriya',
+        images: [
+          '/images/nazriya/the lion (s).jpg', 
+          '/images/nazriya/the lion  (g).jpg'
         ]
       }
     };
@@ -94,19 +291,79 @@ export default function ProductDetailPage({ params }) {
 
   const productData = getProductById(resolvedParams.id);
 
+  // Get correct prices based on product ID
+  const getProductPrices = (id) => {
+    const priceMap = {
+      // Chains
+      '1': { silver: { priceINR: 2050 }, gold: { priceINR: 2480 }, roseGold: { priceINR: 2799 } },
+      '2': { silver: { priceINR: 2290 }, gold: { priceINR: 2520 }, roseGold: { priceINR: 2799 } },
+      '3': { silver: { priceINR: 2150 }, gold: { priceINR: 2780 }, roseGold: { priceINR: 2590 } },
+      '4': { silver: { priceINR: 2190 }, gold: { priceINR: 2580 }, roseGold: { priceINR: 2760 } },
+      '5': { silver: { priceINR: 2299 }, gold: { priceINR: 2610 }, roseGold: { priceINR: 2799 } },
+      '6': { silver: { priceINR: 2190 }, gold: { priceINR: 2780 }, roseGold: { priceINR: 2599 } },
+      '7': { silver: { priceINR: 2299 }, gold: { priceINR: 2520 }, roseGold: { priceINR: 2810 } },
+      // Earrings
+      '8': { silver: { priceINR: 990 }, gold: { priceINR: 1100 }, roseGold: { priceINR: 1190 } },
+      '9': { silver: { priceINR: 1100 }, gold: { priceINR: 1299 }, roseGold: { priceINR: 1250 } },
+      '10': { silver: { priceINR: 1099 }, gold: { priceINR: 1250 }, roseGold: { priceINR: 1320 } },
+      '11': { silver: { priceINR: 1150 }, gold: { priceINR: 1340 }, roseGold: { priceINR: 1290 } },
+      '12': { silver: { priceINR: 980 }, gold: { priceINR: 1190 }, roseGold: { priceINR: 1310 } },
+      '13': { silver: { priceINR: 1299 }, gold: { priceINR: 1380 }, roseGold: { priceINR: 1499 } },
+      '14': { silver: { priceINR: 990 }, gold: { priceINR: 1180 }, roseGold: { priceINR: 1260 } },
+      '15': { silver: { priceINR: 980 }, gold: { priceINR: 980 }, roseGold: { priceINR: 980 } },
+      '16': { silver: { priceINR: 980 }, gold: { priceINR: 980 }, roseGold: { priceINR: 980 } },
+      // Bracelets
+      '17': { silver: { priceINR: 1400 }, gold: { priceINR: 1780 }, roseGold: { priceINR: 1899 } },
+      '18': { silver: { priceINR: 2280 }, gold: { priceINR: 2280 }, roseGold: { priceINR: 2280 } },
+      '19': { silver: { priceINR: 1280 }, gold: { priceINR: 1620 }, roseGold: { priceINR: 1780 } },
+      '20': { silver: { priceINR: 3499 }, gold: { priceINR: 3850 }, roseGold: { priceINR: 3990 } },
+      // Kada
+      '22': { silver: { priceINR: 3299 }, gold: { priceINR: 3670 }, roseGold: { priceINR: 3790 } },
+      '23': { silver: { priceINR: 2990 }, gold: { priceINR: 3799 }, roseGold: { priceINR: 3499 } },
+      '24': { silver: { priceINR: 3430 }, gold: { priceINR: 3799 }, roseGold: { priceINR: 3690 } },
+      '25': { silver: { priceINR: 3460 }, gold: { priceINR: 3690 }, roseGold: { priceINR: 3799 } },
+      '26': { silver: { priceINR: 3290 }, gold: { priceINR: 3570 }, roseGold: { priceINR: 3799 } },
+      '27': { silver: { priceINR: 3290 }, gold: { priceINR: 3499 }, roseGold: { priceINR: 3650 } },
+      '28': { silver: { priceINR: 3299 }, gold: { priceINR: 3699 }, roseGold: { priceINR: 3760 } },
+      '29': { silver: { priceINR: 3299 }, gold: { priceINR: 3680 }, roseGold: { priceINR: 3790 } },
+      '30': { silver: { priceINR: 3290 }, gold: { priceINR: 3799 }, roseGold: { priceINR: 3690 } },
+      // Nazriya
+      '32': { silver: { priceINR: 1499 }, gold: { priceINR: 1650 }, roseGold: { priceINR: 1799 } },
+      '33': { silver: { priceINR: 1399 }, gold: { priceINR: 1620 }, roseGold: { priceINR: 1760 } },
+      '34': { silver: { priceINR: 1450 }, gold: { priceINR: 1610 }, roseGold: { priceINR: 1740 } }
+    };
+    return priceMap[id] || { silver: { priceINR: 2499 }, gold: { priceINR: 8999 }, roseGold: { priceINR: 6999 } };
+  };
+
+  // Get correct weight based on product ID
+  const getProductWeight = (id) => {
+    const weightMap = {
+      // Chains
+      '1': '3-4', '2': '2-3', '3': '4-5', '4': '2-3', '5': '3-4', '6': '2-3', '7': '2-3',
+      // Earrings - no weights specified in image
+      // Bracelets
+      '17': '1-2', '18': '3-4', '19': '1-2', '20': '7-8',
+      // Kada
+      '22': '7-8', '23': '7-8', '24': '8-9', '25': '8-9', '26': '8-9', '27': '6-7', '28': '7-8', '29': '7-8', '30': '7-8',
+      // Nazriya
+      '32': '2-3', '33': '2-3', '34': '2-3'
+    };
+    return weightMap[id] || null; // Return null for earrings and other products without weights
+  };
+
   // Mock product data - in real app, fetch based on resolvedParams.id
   const product = {
     id: resolvedParams.id,
     name: productData.name,
-    prices: {
-      silver: { priceINR: 2499 },
-      gold: { priceINR: 8999 },
-      roseGold: { priceINR: 6999 }
-    },
+    prices: getProductPrices(resolvedParams.id),
+    ...(parseInt(resolvedParams.id) > 7 && parseInt(resolvedParams.id) <= 16 ? {} : { weightGrams: getProductWeight(resolvedParams.id) }),
     images: productData.images,
     description: `Beautiful ${productData.name.toLowerCase()} with intricate detailing, perfect for your little one. This beautiful piece is crafted with love and attention to detail.`,
     longDescription: `Our ${productData.name} is a timeless piece that combines elegance with durability. Available in multiple materials including 925 sterling silver, 18K gold, and 18K rose gold. The adjustable design ensures a perfect fit as your child grows.`,
-    category: 'Anklets',
+    category: parseInt(resolvedParams.id) <= 7 ? 'Chains' : 
+              parseInt(resolvedParams.id) <= 16 ? 'Earrings' :
+              parseInt(resolvedParams.id) <= 20 ? 'Bracelet' :
+              parseInt(resolvedParams.id) <= 30 ? 'Kada' : 'Nazriya',
     materials: {
       silver: '925 Sterling Silver',
       gold: '18K Gold',
@@ -127,7 +384,7 @@ export default function ProductDetailPage({ params }) {
     ],
     specifications: {
       'Materials Available': 'Silver, Gold, Rose Gold',
-      'Weight': '8.5 grams (Silver)',
+      ...(parseInt(resolvedParams.id) > 7 && parseInt(resolvedParams.id) <= 16 ? {} : { 'Weight': `${getProductWeight(resolvedParams.id)} grams (approx)` }),
       'Length': 'Adjustable 6-8 inches',
       'Finish': 'Polished',
       'Care': 'Clean with soft cloth'
