@@ -212,16 +212,16 @@ export default function HomePage() {
             <div className="about-text">
               <h2 className="about-title">Crafting Dreams in Silver</h2>
               <p className="about-description">
-                At Varam Silvers, we believe that every child deserves to feel like royalty. Our master craftsmen have been creating exquisite silver jewelry for over three decades, combining traditional techniques with modern elegance.
+                Founded by Praveen in 2025, Varam Silvers is a passionate startup dedicated to creating beautiful, safe, and meaningful silver jewelry for children. We believe every child deserves to feel special and loved, which is why each piece is crafted with care, combining traditional techniques with modern design.
               </p>
               <div className="stats-grid">
                 <div className="stat-item">
-                  <div className="stat-number">30+</div>
-                  <small className="stat-label">Years of Excellence</small>
+                  <div className="stat-number">2025</div>
+                  <small className="stat-label">Founded by Praveen</small>
                 </div>
                 <div className="stat-item">
-                  <div className="stat-number">10K+</div>
-                  <small className="stat-label">Happy Families</small>
+                  <div className="stat-number">5</div>
+                  <small className="stat-label">Collections</small>
                 </div>
               </div>
             </div>

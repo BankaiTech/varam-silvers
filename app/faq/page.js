@@ -17,10 +17,48 @@ export default function FAQPage() {
 
   const faqCategories = [
     {
+      id: 'collections',
+      title: 'Our Collections',
+      icon: FaGem,
+      color: '#008080',
+      questions: [
+        {
+          id: 'collections-overview',
+          question: 'What collections does Varam Silvers offer?',
+          answer: 'We offer five distinct collections: Chains (7 designs), Earrings (9 designs), Bracelets (4 designs), Kada (9 designs), and Nazriya (3 designs). Each collection features unique designs crafted with 925 Sterling Silver, available in Silver, Gold, and Rose Gold variants.'
+        },
+        {
+          id: 'chains-collection',
+          question: 'Tell me about your Chains collection',
+          answer: 'Our Chains collection features 7 beautiful designs including Butterfly Feet Chain, Eye Chain, Panda Chain, Tiger Chain, Unicorn Chain, Yellow Car Chain, and White Flower Chain. Each chain is designed for children aged 2-16 years with adjustable sizing and weights ranging from 2-5 grams.'
+        },
+        {
+          id: 'earrings-collection',
+          question: 'What earrings do you offer?',
+          answer: 'Our Earrings collection includes 9 designs: Flower Earrings, House Sparrow Earrings, Butterfly Earrings, Rose Flower Earrings, Silver Elephant Earrings, Silver Eye Earrings, Silver Moon Earrings, Silver Zebra Earrings, and White Elephant Earrings. All earrings are hypoallergenic and safe for sensitive skin.'
+        },
+        {
+          id: 'bracelets-collection',
+          question: 'What bracelets are available?',
+          answer: 'Our Bracelet collection features 4 designs: House Sparrow Bracelet, Silver Flower Bracelet, Yellow Elephant Bracelet, and Unicorn Bracelet. Each bracelet is adjustable and weighs between 1-8 grams, perfect for growing children.'
+        },
+        {
+          id: 'kada-collection',
+          question: 'What is your Kada collection?',
+          answer: 'Our Kada collection includes 9 traditional designs: Minimal Elephant Kada, Singaa Kuty Kada, Aladdin Galaxy Star Kada, Cup Cake Kada, Kid Giraffe Kada, Pinky Flower Candy Pineapple Kada, Protection Evil Eye Kada, Tiger Kada, and Unicorn Elephant Kada. Each kada weighs 6-9 grams and represents cultural significance.'
+        },
+        {
+          id: 'nazriya-collection',
+          question: 'What is the Nazriya collection?',
+          answer: 'Our Nazriya collection features 3 elegant designs: Butterfly Evil Eye Nazriya, Baby Feet Nazriya, and Lion Nazriya. These lightweight pieces (2-3 grams) are perfect for special occasions and carry protective symbolism.'
+        }
+      ]
+    },
+    {
       id: 'general',
       title: 'General Questions',
       icon: FaQuestionCircle,
-      color: '#008080',
+      color: '#20b2aa',
       questions: [
         {
           id: 'what-is-sterling-silver',
@@ -41,6 +79,11 @@ export default function FAQPage() {
           id: 'customization',
           question: 'Do you offer customization services?',
           answer: 'Yes, we offer personalized engraving services for most of our jewelry pieces. You can add your child\'s name, birthdate, or a special message. Customization options are available at checkout.'
+        },
+        {
+          id: 'founder-story',
+          question: 'Who founded Varam Silvers?',
+          answer: 'Varam Silvers was founded in 2025 by Praveen, a passionate entrepreneur and craftsman. Praveen\'s vision was to create beautiful, safe, and meaningful silver jewelry that celebrates the precious moments of childhood while maintaining the highest standards of quality and safety.'
         }
       ]
     },
@@ -48,7 +91,7 @@ export default function FAQPage() {
       id: 'care',
       title: 'Care & Maintenance',
       icon: FaGem,
-      color: '#20b2aa',
+      color: '#006666',
       questions: [
         {
           id: 'cleaning',

@@ -53,13 +53,13 @@ export default function AboutPage() {
                 viewport={{ once: true }}
               >
                 <p>
-                  Founded in 2025, Varam Silvers is a fresh and innovative jewelry brand with a simple yet profound mission: to create beautiful, safe, and meaningful silver jewelry for children. As a new company, we bring fresh perspectives and modern techniques to the traditional art of silver jewelry making.
+                  Founded in 2025 by Praveen, Varam Silvers emerged from a simple yet powerful vision: to create beautiful, safe, and meaningful silver jewelry that celebrates the precious moments of childhood. As a passionate entrepreneur and craftsman, Praveen recognized the need for high-quality, child-safe jewelry that parents could trust.
                 </p>
                 <p>
-                  Our founder, Mr. Praveen, a passionate craftsman with a vision for excellence, believed that every child deserves to feel special and loved. This belief became the cornerstone of our company, driving us to create jewelry that not only looks beautiful but also tells a story of love, care, and modern craftsmanship.
+                  Praveen&apos;s journey began with a deep appreciation for traditional silver craftsmanship combined with modern safety standards. Having witnessed the joy that jewelry brings to children and families, he set out to create a brand that would combine the timeless beauty of silver with contemporary design and uncompromising safety.
                 </p>
                 <p>
-                  Today, Varam Silvers is a family-owned business that combines traditional silver working techniques with contemporary design, ensuring that each piece is both timeless and relevant for today&apos;s children and families.
+                  Today, Varam Silvers offers five distinct collections - Chains, Earrings, Bracelets, Kada, and Nazriya - each carefully designed to bring joy, protection, and beauty to children&apos;s lives. Every piece reflects Praveen&apos;s commitment to quality, safety, and the belief that every child deserves to feel special and loved.
                 </p>
               </motion.div>
             </div>
@@ -304,7 +304,7 @@ export default function AboutPage() {
               >
                 2025
               </motion.div>
-              <div className="stat-label">Founded</div>
+              <div className="stat-label">Founded by Praveen</div>
             </div>
             <div className="stat-item">
               <motion.div 
@@ -314,9 +314,9 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                100+
+                5
               </motion.div>
-              <div className="stat-label">Happy Families</div>
+              <div className="stat-label">Collections</div>
             </div>
             <div className="stat-item">
               <motion.div 
@@ -326,9 +326,9 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                500+
+                30+
               </motion.div>
-              <div className="stat-label">Pieces Crafted</div>
+              <div className="stat-label">Unique Designs</div>
             </div>
             <div className="stat-item">
               <motion.div 
@@ -340,7 +340,7 @@ export default function AboutPage() {
               >
                 100%
               </motion.div>
-              <div className="stat-label">Customer Satisfaction</div>
+              <div className="stat-label">Child Safe</div>
             </div>
           </motion.div>
         </div>

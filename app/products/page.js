@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
@@ -744,7 +744,7 @@ const products = [
   }
 ];
 
-export default function ProductsPage() {
+function ProductsContent() {
   const { addToWishlist, removeFromWishlist, isInWishlist } = useCurrency();
   const searchParams = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -935,5 +935,23 @@ export default function ProductsPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={
+      <main>
+        <div className="products-hero">
+          <div className="products-hero-container">
+            <div className="loading-spinner-container" style={{ minHeight: '60vh' }}>
+              <LoadingSpinner size="large" message="Loading products..." />
+            </div>
+          </div>
+        </div>
+      </main>
+    }>
+      <ProductsContent />
+    </Suspense>
   );
 } 
