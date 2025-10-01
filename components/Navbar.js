@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCurrency } from '../context/CurrencyContext';
-import { FaShoppingCart, FaUser, FaHeart, FaBars, FaTimes } from 'react-icons/fa';
+import { FaShoppingCart, FaUser, FaHeart, FaBars, FaTimes, FaSearch } from 'react-icons/fa';
 import AuthModal from './AuthModal';
 import ProductSearch from './ProductSearch';
 
@@ -13,6 +13,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
   const { getCartCount, getWishlistCount } = useCurrency();
 
   useEffect(() => {
@@ -31,6 +32,20 @@ export default function Navbar() {
     const adminSession = localStorage.getItem('adminSession');
     setIsLoggedIn(!!(userSession || adminSession));
   }, []);
+
+  // Close mobile search when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMobileSearchOpen && !event.target.closest('.mobile-search-overlay') && !event.target.closest('.search-btn')) {
+        setIsMobileSearchOpen(false);
+      }
+    };
+
+    if (isMobileSearchOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [isMobileSearchOpen]);
 
   const handleLogout = () => {
     localStorage.removeItem('userSession');
@@ -83,6 +98,13 @@ export default function Navbar() {
 
           {/* Action Buttons */}
           <div className="nav-actions">
+            <button 
+              className="action-btn search-btn mobile-only"
+              onClick={() => setIsMobileSearchOpen(!isMobileSearchOpen)}
+              title="Search products"
+            >
+              <FaSearch />
+            </button>
             <Link href="/wishlist" className="action-btn wishlist-btn">
               <FaHeart />
               <span className="badge">{getWishlistCount()}</span>
@@ -121,6 +143,26 @@ export default function Navbar() {
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
+
+        {/* Mobile Search Input */}
+        {isMobileSearchOpen && (
+          <div className="mobile-search-overlay">
+            <div className="mobile-search-header">
+              <h3>Search Products</h3>
+              <button 
+                className="mobile-search-close"
+                onClick={() => setIsMobileSearchOpen(false)}
+                aria-label="Close search"
+              >
+                <FaTimes />
+              </button>
+            </div>
+            <ProductSearch 
+              isMobile={true} 
+              onClose={() => setIsMobileSearchOpen(false)} 
+            />
+          </div>
+        )}
 
         {/* Mobile Menu */}
         <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>

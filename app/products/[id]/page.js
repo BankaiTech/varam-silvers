@@ -193,6 +193,14 @@ export default function ProductDetailPage({ params }) {
         ]
       },
       '22': {
+        name: 'Minimal Elephant Kada',
+        images: [
+          '/images/kada/minimal elephant (s).jpg', 
+          '/images/kada/minimal elephant (g).jpg', 
+          '/images/kada/minimal elephant (rg).jpg'
+        ]
+      },
+      '23': {
         name: 'Singaa Kuty Kada',
         images: [
           '/images/kada/Singaa Kuty Kada (s).jpg', 
@@ -200,7 +208,7 @@ export default function ProductDetailPage({ params }) {
           '/images/kada/Singaa Kuty Kada (rg).jpg'
         ]
       },
-      '23': {
+      '24': {
         name: 'Aladdin Galaxy Star Kada',
         images: [
           '/images/kada/the aladdin galaxy star(s).jpg', 
@@ -208,7 +216,7 @@ export default function ProductDetailPage({ params }) {
           '/images/kada/the aladdin galaxy star (rg).jpg'
         ]
       },
-      '24': {
+      '25': {
         name: 'Cup Cake Kada',
         images: [
           '/images/kada/The cup cake s.jpg', 
@@ -216,14 +224,14 @@ export default function ProductDetailPage({ params }) {
           '/images/kada/The cup cake rg.jpg'
         ]
       },
-      '25': {
+      '26': {
         name: 'Kid Giraffe Kada',
         images: [
           '/images/kada/The Kid Giraffe kada (s).jpg', 
           '/images/kada/The Kid Giraffe kada (G).jpg'
         ]
       },
-      '26': {
+      '27': {
         name: 'Pinky Flower Candy Pineapple Kada',
         images: [
           '/images/kada/The pinky flower candy pineapple s.jpg', 
@@ -231,14 +239,14 @@ export default function ProductDetailPage({ params }) {
           '/images/kada/The pinky flower candy pineapple rg.jpg'
         ]
       },
-      '27': {
+      '28': {
         name: 'Protection Evil Eye Kada',
         images: [
           '/images/kada/The Protection Evil eye (s).jpg', 
           '/images/kada/The Protection Evil eye (rg).jpg'
         ]
       },
-      '28': {
+      '29': {
         name: 'Tiger Kada',
         images: [
           '/images/kada/the tiger kada (s).jpg', 
@@ -246,15 +254,6 @@ export default function ProductDetailPage({ params }) {
           '/images/kada/the tiger kada (rg).jpg'
         ]
       },
-      '29': {
-        name: 'Unicorn Elephant Kada',
-        images: [
-          '/images/kada/unicorn elephant (s).jpg', 
-          '/images/kada/unicorn elephant (g).jpg', 
-          '/images/kada/unicorn elephant (rg).jpg'
-        ]
-      },
-      // Nazriya Collection
       '30': {
         name: 'Unicorn Elephant Kada',
         images: [
@@ -263,6 +262,7 @@ export default function ProductDetailPage({ params }) {
           '/images/kada/unicorn elephant (rg).jpg'
         ]
       },
+      // Nazriya Collection
       '32': {
         name: 'Butterfly Evil Eye Nazriya',
         images: [
@@ -359,13 +359,13 @@ export default function ProductDetailPage({ params }) {
     ...(parseInt(resolvedParams.id) > 7 && parseInt(resolvedParams.id) <= 16 ? {} : { weightGrams: getProductWeight(resolvedParams.id) }),
     images: productData.images,
     description: `Beautiful ${productData.name.toLowerCase()} with intricate detailing, perfect for your little one. This beautiful piece is crafted with love and attention to detail.`,
-    longDescription: `Our ${productData.name} is a timeless piece that combines elegance with durability. Available in multiple materials including 925 sterling silver, 18K gold, and 18K rose gold. The adjustable design ensures a perfect fit as your child grows.`,
+    longDescription: `Our ${productData.name} is a timeless piece that combines elegance with durability. Available in multiple materials including 92.5 sterling silver, 18K gold, and 18K rose gold. The adjustable design ensures a perfect fit as your child grows.`,
     category: parseInt(resolvedParams.id) <= 7 ? 'Chains' : 
               parseInt(resolvedParams.id) <= 16 ? 'Earrings' :
               parseInt(resolvedParams.id) <= 20 ? 'Bracelet' :
               parseInt(resolvedParams.id) <= 30 ? 'Kada' : 'Nazriya',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },

@@ -59,7 +59,7 @@ export default function AboutPage() {
                   Praveen&apos;s journey began with a deep appreciation for traditional silver craftsmanship combined with modern safety standards. Having witnessed the joy that jewelry brings to children and families, he set out to create a brand that would combine the timeless beauty of silver with contemporary design and uncompromising safety.
                 </p>
                 <p>
-                  Today, Varam Silvers offers five distinct collections - Chains, Earrings, Bracelets, Kada, and Nazriya - each carefully designed to bring joy, protection, and beauty to children&apos;s lives. Every piece reflects Praveen&apos;s commitment to quality, safety, and the belief that every child deserves to feel special and loved.
+                  Today, Varam Silvers offers five distinct collections - Earrings, Bracelets, Kada, Nazriya, and Chains - each carefully designed to bring joy, protection, and beauty to children&apos;s lives. Every piece reflects Praveen&apos;s commitment to quality, safety, and the belief that every child deserves to feel special and loved.
                 </p>
               </motion.div>
             </div>
@@ -129,7 +129,7 @@ export default function AboutPage() {
               </div>
               <h3 className="benefit-title">Premium Quality</h3>
               <p className="benefit-description">
-                Our 925 sterling silver contains 92.5% pure silver and 7.5% other metals, ensuring durability while maintaining the beautiful luster and shine that silver is known for.
+                Our 92.5 sterling silver contains 92.5% pure silver and 7.5% other metals, ensuring durability while maintaining the beautiful luster and shine that silver is known for.
               </p>
             </motion.div>
 

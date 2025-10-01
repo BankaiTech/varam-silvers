@@ -25,7 +25,7 @@ export default function FAQPage() {
         {
           id: 'collections-overview',
           question: 'What collections does Varam Silvers offer?',
-          answer: 'We offer five distinct collections: Chains (7 designs), Earrings (9 designs), Bracelets (4 designs), Kada (9 designs), and Nazriya (3 designs). Each collection features unique designs crafted with 925 Sterling Silver, available in Silver, Gold, and Rose Gold variants.'
+          answer: 'We offer five distinct collections: Earrings (9 designs), Bracelets (4 designs), Kada (9 designs), Nazriya (3 designs), and Chains (7 designs). Each collection features unique designs crafted with 92.5 Sterling Silver, available in Silver, Gold, and Rose Gold variants.'
         },
         {
           id: 'chains-collection',
@@ -62,8 +62,8 @@ export default function FAQPage() {
       questions: [
         {
           id: 'what-is-sterling-silver',
-          question: 'What is 925 Sterling Silver?',
-          answer: '925 Sterling Silver is a high-quality silver alloy containing 92.5% pure silver and 7.5% other metals (usually copper). This composition makes it durable, hypoallergenic, and perfect for children\'s jewelry. It\'s the international standard for fine silver jewelry.'
+          question: 'What is 92.5 Sterling Silver?',
+          answer: '92.5 Sterling Silver is a high-quality silver alloy containing 92.5% pure silver and 7.5% other metals (usually copper). This composition makes it durable, hypoallergenic, and perfect for children\'s jewelry. It\'s the international standard for fine silver jewelry.'
         },
         {
           id: 'age-appropriate',
@@ -73,7 +73,7 @@ export default function FAQPage() {
         {
           id: 'hypoallergenic',
           question: 'Is your jewelry hypoallergenic?',
-          answer: 'Yes! Our 925 Sterling Silver jewelry is hypoallergenic and safe for sensitive skin. The high silver content and quality materials ensure that even children with sensitive skin can wear our jewelry comfortably.'
+          answer: 'Yes! Our 92.5 Sterling Silver jewelry is hypoallergenic and safe for sensitive skin. The high silver content and quality materials ensure that even children with sensitive skin can wear our jewelry comfortably.'
         },
         {
           id: 'customization',
@@ -144,30 +144,35 @@ export default function FAQPage() {
       ]
     },
     {
-      id: 'warranty',
-      title: 'Warranty & Returns',
+      id: 'returns',
+      title: 'Returns & Replacements',
       icon: FaShieldAlt,
       color: '#008080',
       questions: [
         {
-          id: 'warranty-coverage',
-          question: 'What does your warranty cover?',
-          answer: 'We offer a lifetime warranty against manufacturing defects. This covers issues like broken clasps, loose stones, or structural problems. Normal wear and tear, damage from misuse, or loss are not covered.'
-        },
-        {
           id: 'return-policy',
-          question: 'What is your return policy?',
-          answer: 'We offer a 30-day return policy for unused items in original packaging. Returns must be initiated within 30 days of delivery. Custom or personalized items cannot be returned unless there\'s a manufacturing defect.'
+          question: 'What is your 7-day replacement and refund policy?',
+          answer: 'We offer a 7-day replacement and refund policy for damaged, defective, or wrong items. An unboxing video is mandatory for all claims. The video must show the complete unboxing process from package opening to item reveal. This helps us ensure authenticity and process your request efficiently.'
         },
         {
           id: 'exchange-process',
-          question: 'How do I exchange or return an item?',
-          answer: 'Contact our customer service team to initiate a return or exchange. We\'ll provide you with a return authorization number and shipping instructions. Once received, we\'ll process your return within 3-5 business days.'
+          question: 'How do I request a size or style exchange?',
+          answer: 'For size or style exchanges, contact us within 7 days with your unboxing video. We\'ll provide shipping instructions for returning the original item. Once received, we\'ll ship your new item within 3-5 business days. Size exchanges are free, but style exchanges may have price differences.'
         },
         {
           id: 'defective-items',
-          question: 'What if I receive a defective item?',
-          answer: 'We apologize for any inconvenience. Contact us immediately with photos of the defect, and we\'ll arrange for a free replacement or full refund. We\'ll also cover return shipping costs for defective items.'
+          question: 'What if I receive a damaged or defective item?',
+          answer: 'We apologize for any inconvenience. Contact us immediately within 7 days with your unboxing video showing the damage. We\'ll arrange for a free replacement or full refund, and we\'ll cover all return shipping costs. This applies to items damaged during shipping or manufacturing defects.'
+        },
+        {
+          id: 'refund-policy',
+          question: 'Do you offer refunds?',
+          answer: 'Yes, we offer refunds for damaged or defective items within 7 days of delivery. An unboxing video is mandatory for all refund requests to document the condition of the item upon arrival. Refunds will be processed within 3-5 business days after we receive the returned item.'
+        },
+        {
+          id: 'unboxing-video-requirement',
+          question: 'Why is an unboxing video required?',
+          answer: 'An unboxing video is mandatory for all exchange, damage claims, and refund requests to ensure authenticity and help us maintain our quality standards. The video should show the complete unboxing process from package opening to item reveal, clearly documenting the condition of the item upon arrival.'
         }
       ]
     },
@@ -195,7 +200,7 @@ export default function FAQPage() {
         {
           id: 'wrong-size',
           question: 'What if I order the wrong size?',
-          answer: 'No worries! We offer free size exchanges within 30 days of purchase. Contact our customer service team, and we\'ll help you find the perfect fit for your child.'
+          answer: 'No worries! We offer free size exchanges within 7 days of delivery with an unboxing video. Contact our customer service team with your unboxing video, and we\'ll help you find the perfect fit for your child.'
         }
       ]
     },

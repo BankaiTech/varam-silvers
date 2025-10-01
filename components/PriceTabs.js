@@ -10,7 +10,7 @@ export default function PriceTabs({ product, onMaterialSelect, selectedMaterial 
       key: 'silver',
       name: 'Silver',
       color: '#C0C0C0',
-      description: '925 Sterling Silver'
+      description: '92.5 Sterling Silver'
     },
     {
       key: 'roseGold',

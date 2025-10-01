@@ -25,7 +25,7 @@ const products = [
     wastagePercentage: 8,
     category: 'Chains',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -48,7 +48,7 @@ const products = [
     wastagePercentage: 10,
     category: 'Chains',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -71,7 +71,7 @@ const products = [
     wastagePercentage: 12,
     category: 'Chains',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -94,7 +94,7 @@ const products = [
     wastagePercentage: 6,
     category: 'Chains',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -117,7 +117,7 @@ const products = [
     wastagePercentage: 5,
     category: 'Chains',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -140,7 +140,7 @@ const products = [
     wastagePercentage: 5,
     category: 'Chains',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -163,7 +163,7 @@ const products = [
     wastagePercentage: 15,
     category: 'Chains',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -186,7 +186,7 @@ const products = [
     wastagePercentage: 8,
     category: 'Earrings',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -208,7 +208,7 @@ const products = [
     wastagePercentage: 10,
     category: 'Earrings',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -230,7 +230,7 @@ const products = [
     wastagePercentage: 12,
     category: 'Earrings',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -252,7 +252,7 @@ const products = [
     wastagePercentage: 15,
     category: 'Earrings',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -274,7 +274,7 @@ const products = [
     wastagePercentage: 18,
     category: 'Earrings',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -296,7 +296,7 @@ const products = [
     wastagePercentage: 8,
     category: 'Earrings',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -318,7 +318,7 @@ const products = [
     wastagePercentage: 6,
     category: 'Earrings',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -340,7 +340,7 @@ const products = [
     wastagePercentage: 14,
     category: 'Earrings',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -362,7 +362,7 @@ const products = [
     wastagePercentage: 16,
     category: 'Earrings',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -381,12 +381,12 @@ const products = [
       roseGold: { priceINR: 1899 }
     },
     weightGrams: '1-2',
-    image: '/images/braclet/house sparrow (s).jpg',
+    image: '/images/braclet/house sparrow (s) - card.png',
     description: 'Charming house sparrow bracelet that brings nature\'s beauty to your little one\'s wrist',
     wastagePercentage: 10,
     category: 'Bracelet',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -409,7 +409,7 @@ const products = [
     wastagePercentage: 8,
     category: 'Bracelet',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -427,12 +427,12 @@ const products = [
       roseGold: { priceINR: 1780 }
     },
     weightGrams: '1-2',
-    image: '/images/braclet/the yellow elephant (g).jpg',
+    image: '/images/braclet/the yellow elephant (g) - card.png',
     description: 'Adorable yellow elephant bracelet that brings wisdom and good luck to your child',
     wastagePercentage: 12,
     category: 'Bracelet',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -455,7 +455,7 @@ const products = [
     wastagePercentage: 9,
     category: 'Bracelet',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -479,7 +479,7 @@ const products = [
     wastagePercentage: 15,
     category: 'Kada',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -502,7 +502,7 @@ const products = [
     wastagePercentage: 18,
     category: 'Kada',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -525,7 +525,7 @@ const products = [
     wastagePercentage: 11,
     category: 'Kada',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -548,7 +548,7 @@ const products = [
     wastagePercentage: 8,
     category: 'Kada',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -571,7 +571,7 @@ const products = [
     wastagePercentage: 13,
     category: 'Kada',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -594,7 +594,7 @@ const products = [
     wastagePercentage: 10,
     category: 'Kada',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -617,7 +617,7 @@ const products = [
     wastagePercentage: 7,
     category: 'Kada',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -640,7 +640,7 @@ const products = [
     wastagePercentage: 12,
     category: 'Kada',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -663,7 +663,7 @@ const products = [
     wastagePercentage: 14,
     category: 'Kada',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -687,7 +687,7 @@ const products = [
     wastagePercentage: 6,
     category: 'Nazriya',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -710,7 +710,7 @@ const products = [
     wastagePercentage: 5,
     category: 'Nazriya',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -733,7 +733,7 @@ const products = [
     wastagePercentage: 8,
     category: 'Nazriya',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -768,11 +768,20 @@ function ProductsContent() {
     return () => clearTimeout(timer);
   }, []);
 
-  const categories = ['all', 'Chains', 'Earrings', 'Bracelet', 'Kada', 'Nazriya'];
+  const categories = ['all', 'Earrings', 'Bracelet', 'Kada', 'Nazriya', 'Chains'];
 
   const filteredProducts = products.filter(product => 
     selectedCategory === 'all' || product.category === selectedCategory
-  );
+  ).sort((a, b) => {
+    if (selectedCategory === 'all') {
+      // Sort by category order: Earrings, Bracelet, Kada, Nazriya, Chains
+      const categoryOrder = ['Earrings', 'Bracelet', 'Kada', 'Nazriya', 'Chains'];
+      const aIndex = categoryOrder.indexOf(a.category);
+      const bIndex = categoryOrder.indexOf(b.category);
+      return aIndex - bIndex;
+    }
+    return 0; // No sorting for specific categories
+  });
 
   const handleToggleWishlist = (product) => {
     if (isInWishlist(product.id)) {

@@ -16,7 +16,7 @@ const heroImages = [
   {
     src: '/images/Eye Chain Rose Gold.jpg',
     title: 'Crafted with Love & Precision',
-    subtitle: 'Each piece tells a story of tradition, quality, and the pure joy of childhood. Made with 925 sterling silver and endless care',
+    subtitle: 'Each piece tells a story of tradition, quality, and the pure joy of childhood. Made with 92.5 sterling silver and endless care',
     cta: 'Shop Now',
     link: '/products'
   },
@@ -31,24 +31,27 @@ const heroImages = [
 
 const featuredProducts = [
   {
-    id: 1,
-    name: 'Butterfly Feet Chain',
+    id: 4,
+    name: 'Tiger Chain',
     prices: {
-      silver: { priceINR: 2050 },
-      gold: { priceINR: 2480 },
-      roseGold: { priceINR: 2799 }
+      silver: { priceINR: 2190 },
+      gold: { priceINR: 2580 },
+      roseGold: { priceINR: 2760 }
     },
-    weightGrams: '3-4',
-    image: '/images/Butterfly Feet Chain Rose Gold - Card.png',
-    description: 'Beautiful butterfly-themed anklet chain with delicate butterfly charms, perfect for your little princess',
-    wastagePercentage: 8,
+    weightGrams: '2-3',
+    image: '/images/Tiger Chain Silver.jpg',
+    description: 'Bold tiger-themed chain with fierce tiger charm, perfect for brave little ones',
+    wastagePercentage: 6,
     category: 'Chains',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
-    ageRange: '2-12 years'
+    ageRange: '3-12 years',
+    inStock: true,
+    isNew: false,
+    rating: 4.6
   },
   {
     id: 17,
@@ -59,12 +62,12 @@ const featuredProducts = [
       roseGold: { priceINR: 1899 }
     },
     weightGrams: '1-2',
-    image: '/images/braclet/house sparrow (s).jpg',
+    image: '/images/braclet/house sparrow (s) - card.png',
     description: 'Charming house sparrow bracelet that brings nature\'s beauty to your little one\'s wrist',
     wastagePercentage: 10,
     category: 'Bracelet',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -84,7 +87,7 @@ const featuredProducts = [
     wastagePercentage: 8,
     category: 'Kada',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -104,7 +107,7 @@ const featuredProducts = [
     wastagePercentage: 5,
     category: 'Nazriya',
     materials: {
-      silver: '925 Sterling Silver',
+      silver: '92.5 Sterling Silver',
       gold: '18K Gold',
       roseGold: '18K Rose Gold'
     },
@@ -228,7 +231,7 @@ export default function HomePage() {
             <div className="about-image">
               <div className="image-frame">
                 <Image
-                  src="/images/Baby with White Flower Chain.png"
+                  src="/images/Boy with Eye Chain - homepage.png"
                   alt="Crafting Process"
                   width={500}
                   height={400}
@@ -252,7 +255,7 @@ export default function HomePage() {
               <div className="feature-icon">
                 <i className="fas fa-gem"></i>
               </div>
-              <h4 className="feature-title">Premium 925 Sterling Silver</h4>
+              <h4 className="feature-title">Premium 92.5 Sterling Silver</h4>
               <p className="feature-description">Only the finest quality silver, hypoallergenic and safe for sensitive skin, ensuring your child&apos;s comfort and safety.</p>
             </div>
             <div className="feature-card">
@@ -273,8 +276,8 @@ export default function HomePage() {
               <div className="feature-icon">
                 <i className="fas fa-shield-alt"></i>
               </div>
-              <h4 className="feature-title">Lifetime Warranty</h4>
-              <p className="feature-description">We stand behind our craftsmanship with a comprehensive warranty, ensuring your investment is protected.</p>
+              <h4 className="feature-title">Quality Assurance</h4>
+              <p className="feature-description">Every piece undergoes rigorous quality checks to ensure it meets our high standards before reaching your child.</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">

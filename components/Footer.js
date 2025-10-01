@@ -38,12 +38,12 @@ const Footer = () => {
             <div className="trust-item">
               <FaAward className="trust-icon" />
               <h6 className="trust-title">Premium Quality</h6>
-              <small className="trust-subtitle">925 Sterling Silver</small>
+              <small className="trust-subtitle">92.5 Sterling Silver</small>
             </div>
             <div className="trust-item">
               <FaShieldAlt className="trust-icon" />
-              <h6 className="trust-title">Lifetime Warranty</h6>
-              <small className="trust-subtitle">Quality Guaranteed</small>
+              <h6 className="trust-title">Quality Guaranteed</h6>
+              <small className="trust-subtitle">Rigorous Quality Checks</small>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ const Footer = () => {
             <div className="footer-section company-info">
               <h3 className="footer-brand">Varam Silvers</h3>
               <p className="footer-description">
-                Creating timeless memories with exquisite silver jewelry for children. Each piece is handcrafted with love, precision, and the finest 925 sterling silver.
+                Creating timeless memories with exquisite silver jewelry for children. Each piece is handcrafted with love, precision, and the finest 92.5 sterling silver.
               </p>
               <div className="social-links">
                 <a href="https://www.instagram.com/varamsilvers/" target="_blank" rel="noopener noreferrer" className="social-icon">
@@ -69,11 +69,11 @@ const Footer = () => {
             <div className="footer-section">
               <h5 className="footer-title">Collections</h5>
               <ul className="footer-links">
-                <li><Link href="/products?category=chains">Chains</Link></li>
                 <li><Link href="/products?category=earrings">Earrings</Link></li>
                 <li><Link href="/products?category=bracelet">Bracelet</Link></li>
                 <li><Link href="/products?category=kada">Kada</Link></li>
                 <li><Link href="/products?category=nazriya">Nazriya</Link></li>
+                <li><Link href="/products?category=chains">Chains</Link></li>
               </ul>
             </div>
 

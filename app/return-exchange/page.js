@@ -9,8 +9,8 @@ export default function ReturnExchangePage() {
       <div className="return-exchange-container">
         {/* Header */}
         <div className="page-header">
-          <h1 className="page-title">Return & Exchange Policy</h1>
-          <p className="page-subtitle">Important information about our exchange process</p>
+          <h1 className="page-title">7-Day Replacement & Refund Policy</h1>
+          <p className="page-subtitle">Important information about our replacement and refund process with unboxing video requirements</p>
         </div>
 
         {/* Main Content */}
@@ -19,30 +19,33 @@ export default function ReturnExchangePage() {
           <div className="exchange-section">
             <div className="section-header">
               <FaBoxOpen className="section-icon" />
-              <h2>Exchange Process</h2>
+              <h2>Replacement & Refund Process</h2>
             </div>
             
             <div className="exchange-info">
               <div className="important-notice">
                 <FaExclamationTriangle className="notice-icon" />
                 <h3>Important Notice</h3>
-                <p>We do not process returns. Only exchanges are available for eligible items.</p>
+                <p><strong>Unboxing Video Required:</strong> For all replacement, damage claims, or refund requests, an unboxing video is mandatory. The video must show the complete unboxing process from package opening to item reveal.</p>
               </div>
 
               <div className="exchange-steps">
-                <h3>How to Exchange Your Item:</h3>
+                <h3>How to Request a Replacement or Refund:</h3>
                 <ol className="steps-list">
                   <li>
-                    <strong>Contact Us:</strong> Reach out to us via WhatsApp or email within 7 days of delivery
+                    <strong>Record Unboxing Video:</strong> Create a video showing the complete unboxing process from package opening to item reveal
                   </li>
                   <li>
-                    <strong>Provide Details:</strong> Share your order number and reason for exchange
+                    <strong>Contact Us:</strong> Reach out to us via WhatsApp or email within 7 days of delivery with your unboxing video
                   </li>
                   <li>
-                    <strong>Ship Item:</strong> We`ll provide shipping instructions for returning the item
+                    <strong>Provide Details:</strong> Share your order number, reason for replacement/refund, and attach the unboxing video
                   </li>
                   <li>
-                    <strong>Receive Exchange:</strong> Your new item will be shipped after we receive the original
+                    <strong>Ship Item:</strong> We&apos;ll provide shipping instructions for returning the original item
+                  </li>
+                  <li>
+                    <strong>Receive Replacement/Refund:</strong> Your new item will be shipped or refund will be processed after we receive the original
                   </li>
                 </ol>
               </div>
@@ -50,27 +53,27 @@ export default function ReturnExchangePage() {
           </div>
 
 
-          {/* Exchange Conditions */}
+          {/* Replacement & Refund Conditions */}
           <div className="conditions-section">
-            <h2 style={{margin: '0px'}}>Exchange Conditions</h2>
+            <h2 style={{margin: '0px'}}>Replacement & Refund Conditions</h2>
             <div className="conditions-grid">
               <div className="condition-item">
-                <h4 style={{margin: '5px',textDecoration: 'underline'}}>Eligible Items</h4>
+                <h4 style={{margin: '5px',textDecoration: 'underline'}}>Requirements</h4>
                 <ul style={{margin: '0px'}}>
-                  <li>Items in original condition</li>
-                  <li>Unworn jewelry pieces</li>
+                  <li>Unboxing video showing complete process</li>
+                  <li>Contact within 7 days of delivery</li>
                   <li>Original packaging included</li>
-                  <li>Within 7 days of delivery</li>
+                  <li>Clear reason for replacement/refund</li>
                 </ul>
               </div>
               
               <div className="condition-item">
-                <h4 style={{margin: '5px',textDecoration: 'underline'}}>Not Eligible</h4>
+                <h4 style={{margin: '5px',textDecoration: 'underline'}}>Eligible for Replacement/Refund</h4>
                 <ul style={{margin: '0px'}}>
-                  <li>Worn or damaged items</li>
-                  <li>Items without original packaging</li>
-                  <li>Custom or personalized items</li>
-                  <li>Items after 7 days of delivery</li>
+                  <li>Damaged items upon arrival</li>
+                  <li>Defective or faulty products</li>
+                  <li>Wrong item received</li>
+                  <li>Size or style exchanges</li>
                 </ul>
               </div>
             </div>
@@ -79,10 +82,10 @@ export default function ReturnExchangePage() {
           {/* Contact Information */}
           <div className="contact-section" style={{paddingBottom: '15px'}}>
             <h2 style={{margin: '0px'}}>Need Help?</h2>
-            <p>If you have any questions about our exchange process, please contact us:</p>
+            <p>If you have any questions about our replacement or refund process, or need assistance with your unboxing video, please contact us:</p>
             <div className="contact-methods">
               <a 
-                href="https://wa.me/919444885666?text=Hello! I need help with an exchange request." 
+                href="https://wa.me/919444885666?text=Hello! I need help with a replacement or refund request." 
                 className="contact-btn whatsapp-btn"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -94,7 +97,7 @@ export default function ReturnExchangePage() {
               </a>
               
               <a 
-                href="mailto:varamsilvers@gmail.com?subject=Exchange Request" 
+                href="mailto:varamsilvers@gmail.com?subject=Replacement or Refund Request" 
                 className="contact-btn email-btn"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
