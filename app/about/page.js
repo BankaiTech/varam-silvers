@@ -25,7 +25,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Crafting Dreams in Silver for Over Three Decades
+              Crafting Dreams in Silver with Passion and Care
             </motion.p>
           </div>
         </div>

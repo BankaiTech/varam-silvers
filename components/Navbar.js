@@ -125,11 +125,6 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
           <div className="mobile-content">
-            {/* Mobile Search */}
-            <div className="mobile-search">
-              <ProductSearch isMobile={true} />
-            </div>
-            
             {/* Mobile Navigation */}
             <div className="mobile-nav-links">
               <Link href="/products" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
