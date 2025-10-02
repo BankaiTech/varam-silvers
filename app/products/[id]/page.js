@@ -262,26 +262,26 @@ export default function ProductDetailPage({ params }) {
           '/images/kada/unicorn elephant (rg).jpg'
         ]
       },
-      // Nazriya Collection
+      // Nazariya Collection
       '32': {
-        name: 'Butterfly Evil Eye Nazriya',
+        name: 'Butterfly Evil Eye Nazariya',
         images: [
-          '/images/nazriya/buterfly evil eye (s).jpg', 
-          '/images/nazriya/butterfly evil eye (rg).jpg'
+          '/images/nazariya/buterfly evil eye (s).jpg', 
+          '/images/nazariya/butterfly evil eye (rg).jpg'
         ]
       },
       '33': {
-        name: 'Baby Feet Nazriya',
+        name: 'Baby Feet Nazariya',
         images: [
-          '/images/nazriya/the baby feet (S).jpg', 
-          '/images/nazriya/the baby feet (g).jpg'
+          '/images/nazariya/the baby feet (S).jpg', 
+          '/images/nazariya/the baby feet (g).jpg'
         ]
       },
       '34': {
-        name: 'Lion Nazriya',
+        name: 'Lion Nazariya',
         images: [
-          '/images/nazriya/the lion (s).jpg', 
-          '/images/nazriya/the lion  (g).jpg'
+          '/images/nazariya/the lion (s).jpg', 
+          '/images/nazariya/the lion  (g).jpg'
         ]
       }
     };
@@ -327,7 +327,7 @@ export default function ProductDetailPage({ params }) {
       '28': { silver: { priceINR: 3299 }, gold: { priceINR: 3699 }, roseGold: { priceINR: 3760 } },
       '29': { silver: { priceINR: 3299 }, gold: { priceINR: 3680 }, roseGold: { priceINR: 3790 } },
       '30': { silver: { priceINR: 3290 }, gold: { priceINR: 3799 }, roseGold: { priceINR: 3690 } },
-      // Nazriya
+      // Nazariya
       '32': { silver: { priceINR: 1499 }, gold: { priceINR: 1650 }, roseGold: { priceINR: 1799 } },
       '33': { silver: { priceINR: 1399 }, gold: { priceINR: 1620 }, roseGold: { priceINR: 1760 } },
       '34': { silver: { priceINR: 1450 }, gold: { priceINR: 1610 }, roseGold: { priceINR: 1740 } }
@@ -345,7 +345,7 @@ export default function ProductDetailPage({ params }) {
       '17': '1-2', '18': '3-4', '19': '1-2', '20': '7-8',
       // Kada
       '22': '7-8', '23': '7-8', '24': '8-9', '25': '8-9', '26': '8-9', '27': '6-7', '28': '7-8', '29': '7-8', '30': '7-8',
-      // Nazriya
+      // Nazariya
       '32': '2-3', '33': '2-3', '34': '2-3'
     };
     return weightMap[id] || null; // Return null for earrings and other products without weights
@@ -363,7 +363,7 @@ export default function ProductDetailPage({ params }) {
     category: parseInt(resolvedParams.id) <= 7 ? 'Chains' : 
               parseInt(resolvedParams.id) <= 16 ? 'Earrings' :
               parseInt(resolvedParams.id) <= 20 ? 'Bracelet' :
-              parseInt(resolvedParams.id) <= 30 ? 'Kada' : 'Nazriya',
+              parseInt(resolvedParams.id) <= 30 ? 'Kada' : 'Nazariya',
     materials: {
       silver: '92.5 Sterling Silver',
       gold: '18K Gold',

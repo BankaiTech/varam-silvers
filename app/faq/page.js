@@ -25,7 +25,7 @@ export default function FAQPage() {
         {
           id: 'collections-overview',
           question: 'What collections does Varam Silvers offer?',
-          answer: 'We offer five distinct collections: Earrings (9 designs), Bracelets (4 designs), Kada (9 designs), Nazriya (3 designs), and Chains (7 designs). Each collection features unique designs crafted with 92.5 Sterling Silver, available in Silver, Gold, and Rose Gold variants.'
+          answer: 'We offer five distinct collections: Earrings (9 designs), Bracelets (4 designs), Kada (9 designs), Nazariya (3 designs), and Chains (7 designs). Each collection features unique designs crafted with 92.5 Sterling Silver, available in Silver, Gold, and Rose Gold variants.'
         },
         {
           id: 'chains-collection',
@@ -48,9 +48,9 @@ export default function FAQPage() {
           answer: 'Our Kada collection includes 9 traditional designs: Minimal Elephant Kada, Singaa Kuty Kada, Aladdin Galaxy Star Kada, Cup Cake Kada, Kid Giraffe Kada, Pinky Flower Candy Pineapple Kada, Protection Evil Eye Kada, Tiger Kada, and Unicorn Elephant Kada. Each kada weighs 6-9 grams and represents cultural significance.'
         },
         {
-          id: 'nazriya-collection',
-          question: 'What is the Nazriya collection?',
-          answer: 'Our Nazriya collection features 3 elegant designs: Butterfly Evil Eye Nazriya, Baby Feet Nazriya, and Lion Nazriya. These lightweight pieces (2-3 grams) are perfect for special occasions and carry protective symbolism.'
+          id: 'nazariya-collection',
+          question: 'What is the Nazariya collection?',
+          answer: 'Our Nazariya collection features 3 elegant designs: Butterfly Evil Eye Nazariya, Baby Feet Nazariya, and Lion Nazariya. These lightweight pieces (2-3 grams) are perfect for special occasions and carry protective symbolism.'
         }
       ]
     },

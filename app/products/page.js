@@ -672,20 +672,20 @@ const products = [
     isNew: true,
     rating: 4.9
   },
-  // Nazriya Collection
+  // Nazariya Collection
   {
     id: 32,
-    name: 'Butterfly Evil Eye Nazriya',
+    name: 'Butterfly Evil Eye Nazariya',
     prices: {
       silver: { priceINR: 1499 },
       gold: { priceINR: 1650 },
       roseGold: { priceINR: 1799 }
     },
     weightGrams: '2-3',
-    image: '/images/nazriya/buterfly evil eye (s).jpg',
-    description: 'Beautiful butterfly evil eye nazriya with protective symbolism and elegant design',
+    image: '/images/nazariya/buterfly evil eye (s).jpg',
+    description: 'Beautiful butterfly evil eye nazariya with protective symbolism and elegant design',
     wastagePercentage: 6,
-    category: 'Nazriya',
+    category: 'Nazariya',
     materials: {
       silver: '92.5 Sterling Silver',
       gold: '18K Gold',
@@ -698,17 +698,17 @@ const products = [
   },
   {
     id: 33,
-    name: 'Baby Feet Nazriya',
+    name: 'Baby Feet Nazariya',
     prices: {
       silver: { priceINR: 1399 },
       gold: { priceINR: 1620 },
       roseGold: { priceINR: 1760 }
     },
     weightGrams: '2-3',
-    image: '/images/nazriya/the baby feet (S).jpg',
-    description: 'Adorable baby feet nazriya symbolizing the precious journey of childhood',
+    image: '/images/nazariya/the baby feet (S).jpg',
+    description: 'Adorable baby feet nazariya symbolizing the precious journey of childhood',
     wastagePercentage: 5,
-    category: 'Nazriya',
+    category: 'Nazariya',
     materials: {
       silver: '92.5 Sterling Silver',
       gold: '18K Gold',
@@ -721,17 +721,17 @@ const products = [
   },
   {
     id: 34,
-    name: 'Lion Nazriya',
+    name: 'Lion Nazariya',
     prices: {
       silver: { priceINR: 1450 },
       gold: { priceINR: 1610 },
       roseGold: { priceINR: 1740 }
     },
     weightGrams: '2-3',
-    image: '/images/nazriya/the lion (s).jpg',
-    description: 'Majestic lion nazriya representing courage, strength, and leadership',
+    image: '/images/nazariya/the lion (s).jpg',
+    description: 'Majestic lion nazariya representing courage, strength, and leadership',
     wastagePercentage: 8,
-    category: 'Nazriya',
+    category: 'Nazariya',
     materials: {
       silver: '92.5 Sterling Silver',
       gold: '18K Gold',
@@ -768,14 +768,14 @@ function ProductsContent() {
     return () => clearTimeout(timer);
   }, []);
 
-  const categories = ['all', 'Earrings', 'Bracelet', 'Kada', 'Nazriya', 'Chains'];
+  const categories = ['all', 'Earrings', 'Bracelet', 'Kada', 'Nazariya', 'Chains'];
 
   const filteredProducts = products.filter(product => 
     selectedCategory === 'all' || product.category === selectedCategory
   ).sort((a, b) => {
     if (selectedCategory === 'all') {
-      // Sort by category order: Earrings, Bracelet, Kada, Nazriya, Chains
-      const categoryOrder = ['Earrings', 'Bracelet', 'Kada', 'Nazriya', 'Chains'];
+      // Sort by category order: Earrings, Bracelet, Kada, Nazariya, Chains
+      const categoryOrder = ['Earrings', 'Bracelet', 'Kada', 'Nazariya', 'Chains'];
       const aIndex = categoryOrder.indexOf(a.category);
       const bIndex = categoryOrder.indexOf(b.category);
       return aIndex - bIndex;

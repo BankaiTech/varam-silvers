@@ -95,17 +95,17 @@ const featuredProducts = [
   },
   {
     id: 33,
-    name: 'Baby Feet Nazriya',
+    name: 'Baby Feet Nazariya',
     prices: {
       silver: { priceINR: 1399 },
       gold: { priceINR: 1620 },
       roseGold: { priceINR: 1760 }
     },
     weightGrams: '2-3',
-    image: '/images/nazriya/the baby feet (S).jpg',
-    description: 'Adorable baby feet nazriya symbolizing the precious journey of childhood',
+    image: '/images/nazariya/the baby feet (S).jpg',
+    description: 'Adorable baby feet nazariya symbolizing the precious journey of childhood',
     wastagePercentage: 5,
-    category: 'Nazriya',
+    category: 'Nazariya',
     materials: {
       silver: '92.5 Sterling Silver',
       gold: '18K Gold',

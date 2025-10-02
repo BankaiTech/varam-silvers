@@ -59,7 +59,7 @@ export default function AboutPage() {
                   Praveen&apos;s journey began with a deep appreciation for traditional silver craftsmanship combined with modern safety standards. Having witnessed the joy that jewelry brings to children and families, he set out to create a brand that would combine the timeless beauty of silver with contemporary design and uncompromising safety.
                 </p>
                 <p>
-                  Today, Varam Silvers offers five distinct collections - Earrings, Bracelets, Kada, Nazriya, and Chains - each carefully designed to bring joy, protection, and beauty to children&apos;s lives. Every piece reflects Praveen&apos;s commitment to quality, safety, and the belief that every child deserves to feel special and loved.
+                  Today, Varam Silvers offers five distinct collections - Earrings, Bracelets, Kada, Nazariya, and Chains - each carefully designed to bring joy, protection, and beauty to children&apos;s lives. Every piece reflects Praveen&apos;s commitment to quality, safety, and the belief that every child deserves to feel special and loved.
                 </p>
               </motion.div>
             </div>

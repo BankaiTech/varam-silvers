@@ -72,7 +72,7 @@ const Footer = () => {
                 <li><Link href="/products?category=earrings">Earrings</Link></li>
                 <li><Link href="/products?category=bracelet">Bracelet</Link></li>
                 <li><Link href="/products?category=kada">Kada</Link></li>
-                <li><Link href="/products?category=nazriya">Nazriya</Link></li>
+                <li><Link href="/products?category=nazariya">Nazariya</Link></li>
                 <li><Link href="/products?category=chains">Chains</Link></li>
               </ul>
             </div>
@@ -124,7 +124,18 @@ const Footer = () => {
           <div className="footer-copyright">
             <div className="copyright-content">
               <div className="copyright-text">
-                <p>© {currentYear} Varam Silvers. All rights reserved.</p>
+                <span className="copyright-left">© {currentYear} Varam Silvers. All rights reserved.</span>
+                <span className="attribution-right">
+                  Designed and developed with ❤️ by{' '}
+                  <a 
+                    href="https://bankaitech.co/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bankaitech-link"
+                  >
+                    BankaiTech
+                  </a>
+                </span>
               </div>
             </div>
           </div>
@@ -144,6 +155,59 @@ const Footer = () => {
         .footer .contact-link:hover {
           color: rgba(255, 255, 255, 0.8) !important;
           text-decoration: underline !important;
+        }
+        
+        .footer .copyright-content {
+          display: flex !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          width: 100% !important;
+        }
+        
+        .footer .copyright-text {
+          display: flex !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          width: 100% !important;
+          margin: 0 !important;
+        }
+        
+        .footer .copyright-left {
+          color: rgba(255, 255, 255, 0.7) !important;
+          font-size: 0.9rem !important;
+          margin: 0 !important;
+        }
+        
+        .footer .attribution-right {
+          font-size: 14px !important;
+          color: rgba(255, 255, 255, 0.7) !important;
+          margin: 0 !important;
+        }
+        
+        .bankaitech-link {
+          color: #4CAF50 !important;
+          text-decoration: none !important;
+          font-weight: 600;
+          transition: color 0.3s ease;
+        }
+        
+        .bankaitech-link:hover {
+          color: #66BB6A !important;
+          text-decoration: underline !important;
+        }
+        
+        @media (max-width: 768px) {
+          .footer .copyright-content {
+            flex-direction: column !important;
+            text-align: center !important;
+            gap: 8px !important;
+          }
+          
+          .footer .copyright-text {
+            flex-direction: column !important;
+            text-align: center !important;
+            gap: 8px !important;
+          }
         }
       `}</style>
     </>
