@@ -179,7 +179,7 @@
 
 /* Cart Product Info - Material Info Layout */
 .vs-cart-product-info {
-  margin: 8px 0;
+  margin: 4px 0;
 }
 
 .vs-material-info {
@@ -234,7 +234,7 @@
 
 /* Cart Pricing */
 .vs-cart-pricing {
-  margin: 8px 0;
+  margin: 4px 0;
 }
 
 .vs-price-row {
@@ -280,60 +280,82 @@
   font-style: italic;
 }
 
-/* Quantity Controls in Price Row */
-.vs-quantity-controls {
+/* Quantity Controls in Price Row - More Specific Selectors to Override Global Styles */
+.vs-cart-item-card .vs-quantity-controls {
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: #f8f9fa;
-  padding: 4px 8px;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
-}
-
-.vs-quantity-btn {
-  width: 28px;
-  height: 28px;
-  border: 1px solid #008080;
-  background: white;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-weight: 600;
-  color: #008080;
-  transition: all 0.2s ease;
-  font-size: 14px;
-}
-
-.vs-quantity-btn:hover {
-  background: #008080;
-  color: white;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 128, 128, 0.3);
-}
-
-.vs-quantity-btn:active {
-  transform: translateY(0);
-}
-
-.vs-quantity-input {
-  width: 40px;
-  height: 28px;
+  gap: 4px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 6px 10px;
+  border-radius: 12px;
   border: 1px solid #dee2e6;
-  border-radius: 6px;
-  text-align: center;
-  font-weight: 600;
-  color: #2c3e50;
-  font-size: 13px;
-  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.vs-quantity-input:focus {
-  outline: none;
-  border-color: #008080;
-  box-shadow: 0 0 0 2px rgba(0, 128, 128, 0.1);
+.vs-cart-item-card .vs-quantity-btn {
+  width: 26px !important;
+  height: 26px !important;
+  border: none !important;
+  background: linear-gradient(135deg, #008080, #006666) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  font-weight: 700 !important;
+  color: white !important;
+  transition: all 0.3s ease !important;
+  font-size: 13px !important;
+  box-shadow: 0 2px 6px rgba(0, 128, 128, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.vs-cart-item-card .vs-quantity-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.vs-cart-item-card .vs-quantity-btn:hover::before {
+  left: 100%;
+}
+
+.vs-cart-item-card .vs-quantity-btn:hover {
+  background: linear-gradient(135deg, #006666, #004d4d) !important;
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 4px 12px rgba(0, 128, 128, 0.4) !important;
+}
+
+.vs-cart-item-card .vs-quantity-btn:active {
+  transform: translateY(0) scale(0.98) !important;
+}
+
+.vs-cart-item-card .vs-quantity-input {
+  width: 38px !important;
+  height: 26px !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 6px !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+  color: #2c3e50 !important;
+  font-size: 13px !important;
+  background: white !important;
+  margin: 0 3px !important;
+  outline: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.vs-cart-item-card .vs-quantity-input:focus {
+  outline: none !important;
+  border-color: #008080 !important;
+  box-shadow: 0 0 0 2px rgba(0, 128, 128, 0.1) !important;
+  background: #f8f9fa !important;
 }
 
 /* Order Summary Product Details */
