@@ -1,0 +1,110 @@
+/* Product Detail Page Styles - Isolated with vs- prefix */
+
+/* Add to Cart Button */
+.vs-add-to-cart-btn {
+  background: linear-gradient(135deg, #008080, #006666);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  width: 50%;
+}
+
+.vs-add-to-cart-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 128, 128, 0.3);
+  background: linear-gradient(135deg, #006666, #004d4d);
+}
+
+.vs-add-to-cart-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.vs-add-to-cart-btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.vs-add-to-cart-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Add to Wishlist Button - Same size as Add to Cart */
+.vs-add-to-wishlist-btn {
+  background: transparent;
+  color: #008080;
+  border: 2px solid #008080;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  width: 50%;
+  margin-left: 12px;
+}
+
+.vs-add-to-wishlist-btn:hover {
+  background: #008080;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 128, 128, 0.3);
+}
+
+.vs-add-to-wishlist-btn.active {
+  background: #e74c3c;
+  color: white;
+  border-color: #e74c3c;
+}
+
+.vs-add-to-wishlist-btn.active:hover {
+  background: #c82333;
+  border-color: #c82333;
+}
+
+.vs-add-to-wishlist-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Button Container */
+.vs-product-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vs-add-to-cart-btn,
+  .vs-add-to-wishlist-btn {
+    padding: 14px 20px;
+    font-size: 15px;
+    min-height: 50px;
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .vs-product-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
