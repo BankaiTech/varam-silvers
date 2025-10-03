@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varam Silvers Admin - Inventory</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Admin Navbar -->
+    <nav class="admin-navbar">
+        <div class="navbar-brand">
+            <img src="../public/images/varam_silvers_logo.png" alt="Varam Silvers" class="brand-logo">
+            <span class="brand-text">Varam Silvers Admin</span>
+        </div>
+        <div class="navbar-menu" id="navbarMenu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="products.html" class="nav-link">Products</a>
+            <a href="add-product.html" class="nav-link">Add Product</a>
+            <a href="inventory.html" class="nav-link active">Inventory</a>
+        </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="page-header">
+            <h1>Inventory</h1>
+            <p>Track your product inventory and sales performance</p>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="page-controls">
+            <div class="search-container">
+                <input type="text" id="inventorySearch" placeholder="Search inventory..." class="search-input">
+                <button class="search-btn">🔍</button>
+            </div>
+            <div class="filter-container">
+                <select id="performanceFilter" class="filter-select">
+                    <option value="">All Performance</option>
+                    <option value="high">High Performance</option>
+                    <option value="medium">Medium Performance</option>
+                    <option value="low">Low Performance</option>
+                </select>
+                <select id="stockFilter" class="filter-select">
+                    <option value="">All Stock Levels</option>
+                    <option value="in-stock">In Stock</option>
+                    <option value="low-stock">Low Stock</option>
+                    <option value="out-of-stock">Out of Stock</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Inventory Table -->
+        <div class="dashboard-section">
+            <div class="section-header">
+                <h3>Inventory Overview</h3>
+                <div class="section-actions">
+                    <button class="export-btn" id="exportInventory">📊 Export Data</button>
+                    <button class="refresh-btn" id="refreshInventory">🔄 Refresh</button>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="data-table-container">
+                    <table class="data-table" id="inventoryTable">
+                        <thead>
+                            <tr>
+                                <th data-sort="name">Name</th>
+                                <th data-sort="price">Price</th>
+                                <th data-sort="stock">Stock Remaining</th>
+                                <th data-sort="sold">Total Sold</th>
+                                <th data-sort="performance">Sale Performance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="loading-row">
+                                <td colspan="5" class="loading-cell">
+                                    <div class="loading-spinner"></div>
+                                    Loading inventory...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination-container">
+                    <div class="pagination-info">
+                        <span id="paginationInfo">Showing 0 of 0 items</span>
+                    </div>
+                    <div class="pagination-controls">
+                        <button id="prevPage" class="pagination-btn" disabled>Previous</button>
+                        <div class="pagination-pages" id="paginationPages"></div>
+                        <button id="nextPage" class="pagination-btn" disabled>Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inventory Summary Cards -->
+        <div class="inventory-summary">
+            <div class="summary-card">
+                <div class="summary-icon">📦</div>
+                <div class="summary-content">
+                    <h4>Total Products</h4>
+                    <div class="summary-value" id="totalProducts">0</div>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-icon">✅</div>
+                <div class="summary-content">
+                    <h4>In Stock</h4>
+                    <div class="summary-value" id="inStockProducts">0</div>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-icon">⚠️</div>
+                <div class="summary-content">
+                    <h4>Low Stock</h4>
+                    <div class="summary-value" id="lowStockProducts">0</div>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-icon">❌</div>
+                <div class="summary-content">
+                    <h4>Out of Stock</h4>
+                    <div class="summary-value" id="outOfStockProducts">0</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/admin.js"></script>
+    <script src="js/pages/inventory.js"></script>
+</body>
+</html>
