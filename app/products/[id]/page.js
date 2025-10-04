@@ -3,7 +3,7 @@
 import React, { useState, use } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaHeart, FaShoppingCart, FaStar, FaTruck, FaShieldAlt, FaAward } from 'react-icons/fa';
+import { FaHeart, FaShoppingCart, FaStar } from 'react-icons/fa';
 import { useCurrency } from '../../../context/CurrencyContext';
 import toast from 'react-hot-toast';
 import LoadingSpinner from '../../../components/LoadingSpinner';
@@ -567,7 +567,7 @@ export default function ProductDetailPage({ params }) {
             />
 
             <div className="product-description">
-              <p>{product.description}</p>
+              <p>{product.longDescription}</p>
             </div>
 
             <div className="product-actions">
@@ -630,38 +630,18 @@ export default function ProductDetailPage({ params }) {
               </div>
             </div>
 
-            <div className="trust-indicators">
-              <div className="trust-item">
-                <FaTruck />
-                <span>Free Shipping in India</span>
-              </div>
-              <div className="trust-item">
-                <FaShieldAlt />
-                <span>Secure Payment</span>
-              </div>
-              <div className="trust-item">
-                <FaAward />
-                <span>Quality Guarantee</span>
-              </div>
+            <div className="care-instructions">
+              <h3>Care Instructions:</h3>
+              <ul>
+                <li>Store in a dry place when not in use</li>
+                <li>Clean gently with a soft cloth</li>
+                <li>Avoid contact with perfumes and lotions</li>
+                <li>Remove before swimming or bathing</li>
+              </ul>
             </div>
           </div>
         </div>
 
-        {/* Product Details Tabs */}
-        <div className="product-tabs">
-          <div className="tab-content">
-            <h3>Product Description</h3>
-            <p>{product.longDescription}</p>
-            
-            <h4>Care Instructions</h4>
-            <ul>
-              <li>Store in a dry place when not in use</li>
-              <li>Clean gently with a soft cloth</li>
-              <li>Avoid contact with perfumes and lotions</li>
-              <li>Remove before swimming or bathing</li>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
   );
