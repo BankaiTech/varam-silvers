@@ -637,6 +637,7 @@ export default function ProductDetailPage({ params }) {
                 <li>Clean gently with a soft cloth</li>
                 <li>Avoid contact with perfumes and lotions</li>
                 <li>Remove before swimming or bathing</li>
+                <li>Polish occasionally with a jewelry cleaning cloth</li>
               </ul>
             </div>
           </div>
