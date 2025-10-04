@@ -4950,7 +4950,6 @@ button.social-btn span:not(.social-icon-text) {
 
 .care-instructions {
   padding: 1.5rem;
-  background: rgba(192, 192, 192, 0.05);
   border-radius: 15px;
   margin-top: 0rem;
 }
@@ -4961,6 +4960,7 @@ button.social-btn span:not(.social-icon-text) {
   font-weight: 600;
   color: var(--dark-slate);
   margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 
 .care-instructions ul {
