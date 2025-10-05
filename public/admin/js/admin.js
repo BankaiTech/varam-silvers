@@ -760,6 +760,36 @@ function updateMaterialPricing() {
   `).join('');
 }
 
+// Initialize mobile menu toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const navbarMenu = document.getElementById('navbarMenu');
+  
+  if (mobileMenuToggle && navbarMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+      navbarMenu.classList.toggle('active');
+      mobileMenuToggle.classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking on a link
+    const navLinks = navbarMenu.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navbarMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navbarMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+        navbarMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      }
+    });
+  }
+});
+
 // Export classes for use in page scripts
 window.APIClient = APIClient;
 window.Utils = Utils;

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { FaTimes, FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const AuthModal = ({ isOpen, onClose }) => {
@@ -15,8 +14,6 @@ const AuthModal = ({ isOpen, onClose }) => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-
-  const router = useRouter();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -46,7 +43,7 @@ const AuthModal = ({ isOpen, onClose }) => {
         }));
         
         onClose();
-        router.push('/admin/dashboard');
+        window.location.href = '/admin/index.html';
         return;
       }
 
