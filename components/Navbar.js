@@ -109,14 +109,10 @@ export default function Navbar() {
               <FaHeart />
               <span className="badge">{getWishlistCount()}</span>
             </Link>
-            <button 
-              className="action-btn cart-btn disabled" 
-              disabled 
-              title="Cart feature coming soon!"
-            >
+            <Link href="/cart" className="action-btn cart-btn">
               <FaShoppingCart />
               <span className="badge">{getCartCount()}</span>
-            </button>
+            </Link>
             {isLoggedIn ? (
               <button onClick={handleLogout} className="login-btn">
                 <FaUser />
@@ -124,9 +120,8 @@ export default function Navbar() {
               </button>
             ) : (
               <button 
-                className="login-btn disabled" 
-                onClick={(e) => e.preventDefault()}
-                title="Login feature coming soon!"
+                className="login-btn" 
+                onClick={() => setIsAuthModalOpen(true)}
               >
                 <FaUser />
                 <span>Login</span>
@@ -189,14 +184,10 @@ export default function Navbar() {
                 <FaHeart />
                 <span>Wishlist ({getWishlistCount()})</span>
               </Link>
-              <button 
-                className="mobile-action-btn disabled" 
-                disabled 
-                title="Cart feature coming soon!"
-              >
+              <Link href="/cart" className="mobile-action-btn" onClick={() => setIsMenuOpen(false)}>
                 <FaShoppingCart />
                 <span>Cart ({getCartCount()})</span>
-              </button>
+              </Link>
               {isLoggedIn ? (
                 <button onClick={() => { handleLogout(); setIsMenuOpen(false); }} className="mobile-login-btn">
                   <FaUser />
@@ -204,9 +195,8 @@ export default function Navbar() {
                 </button>
               ) : (
                 <button 
-                  className="mobile-login-btn disabled" 
-                  onClick={(e) => e.preventDefault()}
-                  title="Login feature coming soon!"
+                  className="mobile-login-btn" 
+                  onClick={() => { setIsAuthModalOpen(true); setIsMenuOpen(false); }}
                 >
                   <FaUser />
                   <span>Login</span>

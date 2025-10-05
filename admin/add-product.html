@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varam Silvers Admin - Add Product</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Admin Navbar -->
+    <nav class="admin-navbar">
+        <div class="navbar-brand">
+            <img src="../public/images/varam_silvers_logo.png" alt="Varam Silvers" class="brand-logo">
+            <span class="brand-text">Varam Silvers Admin</span>
+        </div>
+        <div class="navbar-menu" id="navbarMenu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="products.html" class="nav-link">Products</a>
+            <a href="add-product.html" class="nav-link active">Add Product</a>
+            <a href="inventory.html" class="nav-link">Inventory</a>
+        </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="page-header">
+            <h1>Add New Product</h1>
+            <p>Create a new product for your catalog</p>
+        </div>
+
+        <!-- Product Form -->
+        <div class="form-container">
+            <form id="productForm" class="product-form">
+                <div class="form-section">
+                    <h3>Basic Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="productName">Product Name *</label>
+                            <input type="text" id="productName" name="name" required>
+                            <div class="error-message" id="nameError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="productCategory">Category *</label>
+                            <div class="category-input-container">
+                                <select id="productCategory" name="category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="Chains">Chains</option>
+                                    <option value="Rings">Rings</option>
+                                    <option value="Earrings">Earrings</option>
+                                    <option value="Pendants">Pendants</option>
+                                    <option value="Bracelets">Bracelets</option>
+                                    <option value="custom">Custom Category</option>
+                                </select>
+                                <input type="text" id="customCategory" name="customCategory" placeholder="Enter custom category" style="display: none;">
+                            </div>
+                            <div class="error-message" id="categoryError"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Materials & Pricing</h3>
+                    <div class="form-group">
+                        <label>Materials *</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="materials" value="Silver">
+                                <span class="checkmark"></span>
+                                Silver
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="materials" value="Gold">
+                                <span class="checkmark"></span>
+                                Gold
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="materials" value="Rose Gold">
+                                <span class="checkmark"></span>
+                                Rose Gold
+                            </label>
+                        </div>
+                        <div class="error-message" id="materialsError"></div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <div class="form-group">
+                            <label for="actualPrice">Actual Price (INR) *</label>
+                            <input type="number" id="actualPrice" name="actualPrice" step="0.01" required>
+                            <div class="error-message" id="actualPriceError"></div>
+                        </div>
+                        
+                        <div id="materialPricingContainer">
+                            <!-- Dynamic pricing inputs will be added here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Product Details</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="wastage">Wastage (%)</label>
+                            <input type="number" id="wastage" name="wastage" step="0.01" min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="stock">Stock Quantity *</label>
+                            <input type="number" id="stock" name="stock" min="0" required>
+                            <div class="error-message" id="stockError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="length">Length (mm)</label>
+                            <input type="number" id="length" name="length" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="toggle-label">
+                                <input type="checkbox" id="outOfStock" name="outOfStock">
+                                <span class="toggle-slider"></span>
+                                Out of Stock
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Product Description</h3>
+                    <div class="form-group">
+                        <label for="description">Description *</label>
+                        <textarea id="description" name="description" rows="4" required></textarea>
+                        <div class="error-message" id="descriptionError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="keyFeatures">Key Features</label>
+                        <textarea id="keyFeatures" name="keyFeatures" rows="3" placeholder="Enter key features separated by commas"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Product Image</h3>
+                    <div class="form-group">
+                        <label for="productImage">Product Image *</label>
+                        <div class="file-upload-container">
+                            <input type="file" id="productImage" name="image" accept="image/*" required>
+                            <div class="file-upload-display">
+                                <div class="file-upload-placeholder">
+                                    <span class="upload-icon">📷</span>
+                                    <span>Click to upload image</span>
+                                </div>
+                                <div class="file-preview" id="filePreview" style="display: none;">
+                                    <img id="previewImage" src="" alt="Preview">
+                                    <button type="button" id="removeImage" class="remove-image-btn">×</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="error-message" id="imageError"></div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="window.location.href='products.html'">Cancel</button>
+                    <button type="submit" class="btn-primary" id="submitBtn">
+                        <span class="btn-text">Add Product</span>
+                        <div class="btn-loading" style="display: none;">
+                            <div class="loading-spinner"></div>
+                            Adding...
+                        </div>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/admin.js"></script>
+    <script src="js/pages/add-product.js"></script>
+</body>
+</html>
