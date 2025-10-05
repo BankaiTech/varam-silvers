@@ -725,6 +725,37 @@ function initializeCommonFeatures() {
       checkbox.addEventListener('change', updateMaterialPricing);
     });
   }
+  
+  // Handle out of stock dropdown
+  const outOfStockSelect = document.getElementById('outOfStock');
+  const stockInput = document.getElementById('stock');
+  const warningIcon = document.getElementById('outOfStockWarningIcon');
+  
+  if (outOfStockSelect && stockInput && warningIcon) {
+    outOfStockSelect.addEventListener('change', function() {
+      if (this.value === 'Yes') {
+        stockInput.value = 0;
+        stockInput.disabled = true;
+        stockInput.style.opacity = '0.5';
+        warningIcon.classList.add('show');
+      } else {
+        stockInput.disabled = false;
+        stockInput.style.opacity = '1';
+        warningIcon.classList.remove('show');
+      }
+    });
+    
+    // Also handle stock input changes
+    stockInput.addEventListener('input', function() {
+      if (this.value == 0) {
+        outOfStockSelect.value = 'Yes';
+        warningIcon.classList.add('show');
+      } else {
+        outOfStockSelect.value = 'No';
+        warningIcon.classList.remove('show');
+      }
+    });
+  }
 }
 
 function handleFilePreview(e) {
@@ -751,14 +782,48 @@ function updateMaterialPricing() {
   const container = document.getElementById('materialPricingContainer');
   if (!container) return;
   
-  container.innerHTML = selectedMaterials.map(material => `
-    <div class="form-group">
-      <label for="price_${material.toLowerCase().replace(' ', '_')}">Current Price for ${material} (INR) *</label>
-      <input type="number" id="price_${material.toLowerCase().replace(' ', '_')}" 
-             name="prices[${material}]" step="0.01" required>
-    </div>
-  `).join('');
+  // Material pricing data - starting with 0 values
+  const materialRates = {
+    'Silver': { actual: 0, current: 0 },
+    'Gold': { actual: 0, current: 0 },
+    'Rose Gold': { actual: 0, current: 0 }
+  };
+  
+  container.innerHTML = selectedMaterials.map(material => {
+    const rates = materialRates[material] || { actual: 0, current: 0 };
+    const materialKey = material.toLowerCase().replace(' ', '-');
+    
+    return `
+      <div class="material-price-card">
+        <div class="material-price-header">
+          <div class="material-icon ${materialKey}">${material.charAt(0)}</div>
+          <div class="material-name">${material}</div>
+        </div>
+        <div class="price-inputs">
+          <div class="price-input-group">
+            <label>Actual Price (₹/gm)</label>
+            <input type="number" 
+                   id="actual_${materialKey}" 
+                   name="actualPrices[${material}]" 
+                   value="${rates.actual}"
+                   step="0.01" 
+                   required>
+          </div>
+          <div class="price-input-group">
+            <label>Current Price (₹/gm)</label>
+            <input type="number" 
+                   id="current_${materialKey}" 
+                   name="currentPrices[${material}]" 
+                   value="${rates.current}"
+                   step="0.01" 
+                   required>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
 }
+
 
 // Initialize mobile menu toggle
 document.addEventListener('DOMContentLoaded', () => {
