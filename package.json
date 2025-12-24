@@ -6,7 +6,10 @@
     "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy:s3": "node deploy-s3.js",
+    "deploy:s3:windows": "node deploy-s3.js",
+    "deploy:s3:unix": "bash deploy-s3.sh"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.1",
